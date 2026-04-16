@@ -24,7 +24,7 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="py-24 md:py-32 bg-surface-warm">
+    <section id="testimonials" className="py-24 md:py-32 bg-surface-elevated">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -32,9 +32,9 @@ const TestimonialsSection = () => {
           viewport={{ once: true }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <span className="text-sm font-semibold text-primary uppercase tracking-widest">Testimonials</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-800 mt-3 mb-4">
-            Loved by <span className="text-gradient">industry leaders</span>
+          <span className="text-xs font-semibold text-primary uppercase tracking-[0.2em]">Testimonials</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-800 mt-4 mb-4">
+            Loved by industry leaders
           </h2>
         </motion.div>
 
@@ -48,18 +48,18 @@ const TestimonialsSection = () => {
               transition={{ delay: i * 0.1 }}
               className="p-8 rounded-2xl bg-card border border-border"
             >
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-1 mb-5">
                 {[...Array(5)].map((_, j) => (
                   <Star key={j} className="h-4 w-4 fill-primary text-primary" />
                 ))}
               </div>
-              <p className="text-foreground leading-relaxed mb-6">"{t.text}"</p>
+              <p className="text-foreground/90 leading-relaxed mb-6 text-sm">"{t.text}"</p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-sm font-bold text-primary">
+                <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center text-sm font-bold text-primary">
                   {t.avatar}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold">{t.name}</p>
+                  <p className="text-sm font-semibold text-foreground">{t.name}</p>
                   <p className="text-xs text-muted-foreground">{t.role}</p>
                 </div>
               </div>

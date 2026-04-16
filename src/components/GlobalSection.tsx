@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { MapPin } from "lucide-react";
 
 const cities = [
   { name: "New York", top: "35%", left: "25%" },
@@ -22,9 +21,9 @@ const GlobalSection = () => {
           viewport={{ once: true }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <span className="text-sm font-semibold text-primary uppercase tracking-widest">Global Coverage</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-800 mt-3 mb-4">
-            We work <span className="text-gradient">anywhere</span>
+          <span className="text-xs font-semibold text-primary uppercase tracking-[0.2em]">Global Coverage</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-800 mt-4 mb-4">
+            We work anywhere
           </h2>
           <p className="text-muted-foreground text-lg">
             Production crews in 80+ cities across 6 continents.
@@ -35,12 +34,10 @@ const GlobalSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="relative max-w-4xl mx-auto aspect-[2/1] rounded-3xl bg-secondary/50 border border-border overflow-hidden"
+          className="relative max-w-4xl mx-auto aspect-[2/1] rounded-2xl bg-card border border-border overflow-hidden"
         >
-          {/* Simple world map representation with dots */}
-          <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 opacity-15">
             <svg viewBox="0 0 100 50" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
-              {/* Simplified continent shapes */}
               <ellipse cx="25" cy="20" rx="12" ry="8" fill="hsl(var(--muted-foreground))" opacity="0.3" />
               <ellipse cx="50" cy="18" rx="10" ry="10" fill="hsl(var(--muted-foreground))" opacity="0.3" />
               <ellipse cx="65" cy="22" rx="8" ry="7" fill="hsl(var(--muted-foreground))" opacity="0.3" />
@@ -62,7 +59,7 @@ const GlobalSection = () => {
             >
               <div className="relative">
                 <div className="w-3 h-3 rounded-full bg-primary shadow-lg shadow-primary/40 animate-pulse" />
-                <div className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-foreground text-background text-xs font-semibold py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-card text-foreground text-xs font-semibold py-1 px-2 rounded border border-border opacity-0 group-hover:opacity-100 transition-opacity">
                   {city.name}
                 </div>
               </div>

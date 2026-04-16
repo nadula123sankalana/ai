@@ -11,8 +11,8 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           <div className="col-span-2 md:col-span-1">
             <a href="#" className="text-xl font-heading font-800 tracking-tight">
-              <span className="text-gradient">Lumina</span>
-              <span className="text-foreground">Studios</span>
+              <span className="text-primary">lumina</span>
+              <span className="text-foreground">studios</span>
             </a>
             <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
               World-class video production for brands that demand excellence.
@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="text-sm font-semibold mb-4">{title}</h4>
+              <h4 className="text-sm font-semibold mb-4 text-foreground">{title}</h4>
               <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link}>
