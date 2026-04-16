@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const navLinks = ["Services", "Portfolio", "Process", "Testimonials", "Contact"];
+const navLinks = ["Services", "Our Work", "Process", "Testimonials"];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -17,7 +17,13 @@ const Navbar = () => {
 
   const scrollTo = (id: string) => {
     setMobileOpen(false);
-    document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
+    const sectionMap: Record<string, string> = {
+      "Services": "services",
+      "Our Work": "portfolio",
+      "Process": "process",
+      "Testimonials": "testimonials",
+    };
+    document.getElementById(sectionMap[id] || id.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -26,13 +32,12 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/90 backdrop-blur-lg shadow-sm border-b border-border" : "bg-transparent"
+        scrolled ? "bg-background/95 backdrop-blur-lg border-b border-border" : "bg-transparent"
       }`}
     >
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="text-xl md:text-2xl font-heading font-800 tracking-tight">
-          <span className="text-gradient">Lumina</span>
-          <span className="text-foreground">Studios</span>
+        <a href="#" className="text-xl md:text-2xl font-heading font-800 tracking-tight text-foreground">
+          <span className="text-primary">lumina</span>studios
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
@@ -45,7 +50,11 @@ const Navbar = () => {
               {link}
             </button>
           ))}
-          <Button onClick={() => scrollTo("Contact")} size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6">
+          <Button
+            onClick={() => scrollTo("Contact")}
+            size="sm"
+            className="rounded-full px-6 border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground transition-all"
+          >
             Get Started
           </Button>
         </nav>
@@ -73,7 +82,10 @@ const Navbar = () => {
                   {link}
                 </button>
               ))}
-              <Button onClick={() => scrollTo("Contact")} className="bg-primary text-primary-foreground rounded-full mt-2">
+              <Button
+                onClick={() => scrollTo("Contact")}
+                className="rounded-full mt-2 border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground"
+              >
                 Get Started
               </Button>
             </div>

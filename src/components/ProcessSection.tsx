@@ -24,7 +24,7 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section id="process" className="py-24 md:py-32 bg-surface-warm">
+    <section id="process" className="py-24 md:py-32 bg-surface-elevated">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -32,9 +32,9 @@ const ProcessSection = () => {
           viewport={{ once: true }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <span className="text-sm font-semibold text-primary uppercase tracking-widest">Our Process</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-800 mt-3 mb-4">
-            Simple. <span className="text-gradient">Seamless.</span> Professional.
+          <span className="text-xs font-semibold text-primary uppercase tracking-[0.2em]">Our Process</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-800 mt-4 mb-4">
+            Simple. Seamless. Professional.
           </h2>
           <p className="text-muted-foreground text-lg">
             Three steps to world-class video content.
@@ -42,8 +42,7 @@ const ProcessSection = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 relative">
-          {/* Connecting line */}
-          <div className="hidden md:block absolute top-16 left-[20%] right-[20%] h-0.5 bg-border" />
+          <div className="hidden md:block absolute top-12 left-[20%] right-[20%] h-px bg-border" />
 
           {steps.map((s, i) => (
             <motion.div
@@ -54,12 +53,12 @@ const ProcessSection = () => {
               transition={{ delay: i * 0.15 }}
               className="relative text-center"
             >
-              <div className="relative z-10 w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/25">
-                <s.icon className="h-7 w-7" />
+              <div className="relative z-10 w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-6">
+                <s.icon className="h-6 w-6" />
               </div>
               <span className="text-5xl font-heading font-800 text-primary/10">{s.step}</span>
-              <h3 className="text-xl font-heading font-700 mt-2 mb-3">{s.title}</h3>
-              <p className="text-muted-foreground leading-relaxed max-w-xs mx-auto">{s.desc}</p>
+              <h3 className="text-xl font-heading font-700 mt-2 mb-3 text-foreground">{s.title}</h3>
+              <p className="text-muted-foreground leading-relaxed max-w-xs mx-auto text-sm">{s.desc}</p>
             </motion.div>
           ))}
         </div>

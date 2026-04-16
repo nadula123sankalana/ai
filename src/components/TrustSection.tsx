@@ -1,35 +1,34 @@
 import { motion } from "framer-motion";
 
-const brands = ["Spotify", "Airbnb", "Stripe", "Shopify", "Slack", "HubSpot", "Notion", "Figma"];
+const brands = [
+  "Amazon", "Toyota", "Walmart", "Airbnb", "Dyson", "Nestlé",
+  "Google", "Coca-Cola", "Audi", "Tesla", "Uber", "Porsche",
+];
 
 const TrustSection = () => {
   return (
-    <section className="py-16 border-y border-border bg-secondary/30">
+    <section className="py-16 border-y border-border">
       <div className="container">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center text-sm font-semibold text-muted-foreground uppercase tracking-widest mb-10"
+          className="text-center text-xs font-semibold text-muted-foreground uppercase tracking-[0.2em] mb-10"
         >
-          Trusted by 4,000+ brands worldwide
+          Trusted by over 4,500 brands
         </motion.p>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="flex flex-wrap items-center justify-center gap-8 md:gap-14"
-        >
-          {brands.map((brand) => (
-            <span
-              key={brand}
-              className="text-lg md:text-xl font-heading font-700 text-muted-foreground/40 hover:text-muted-foreground/70 transition-colors cursor-default select-none"
-            >
-              {brand}
-            </span>
-          ))}
-        </motion.div>
+        <div className="overflow-hidden">
+          <div className="flex animate-marquee gap-16 w-max items-center">
+            {[...brands, ...brands].map((brand, i) => (
+              <span
+                key={i}
+                className="text-lg md:text-xl font-heading font-700 text-muted-foreground/30 whitespace-nowrap select-none"
+              >
+                {brand}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

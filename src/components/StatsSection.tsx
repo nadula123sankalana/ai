@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
@@ -57,10 +57,10 @@ const StatsSection = () => {
               transition={{ delay: i * 0.1 }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl lg:text-6xl font-heading font-800 text-gradient mb-2">
+              <div className="text-4xl md:text-5xl lg:text-6xl font-heading font-800 text-foreground mb-2">
                 <Counter target={s.value} suffix={s.suffix} />
               </div>
-              <p className="text-muted-foreground font-medium">{s.label}</p>
+              <p className="text-muted-foreground font-medium text-sm">{s.label}</p>
             </motion.div>
           ))}
         </div>

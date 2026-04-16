@@ -2,12 +2,16 @@ import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 
 const videos = [
-  { title: "Nike — Just Do It Campaign", category: "Ad Campaign", color: "from-orange-400 to-red-500" },
-  { title: "Slack — Team Collaboration", category: "Explainer", color: "from-blue-400 to-indigo-500" },
-  { title: "Airbnb — Live Anywhere", category: "Brand Story", color: "from-pink-400 to-rose-500" },
-  { title: "Stripe — Developer Tools", category: "Product Video", color: "from-violet-400 to-purple-500" },
-  { title: "Notion — Workspace Demo", category: "Product Video", color: "from-amber-400 to-orange-500" },
-  { title: "Figma — Design Systems", category: "Explainer", color: "from-teal-400 to-cyan-500" },
+  { title: "Meaningful Beauty", gradient: "from-rose-700 to-pink-900" },
+  { title: "Stella Rosa", gradient: "from-purple-700 to-violet-900" },
+  { title: "Walmart | Maui", gradient: "from-blue-700 to-indigo-900" },
+  { title: "Rolex", gradient: "from-amber-700 to-yellow-900" },
+  { title: "Amazon I AM", gradient: "from-teal-700 to-emerald-900" },
+  { title: "Samsonite CLite", gradient: "from-slate-600 to-zinc-800" },
+  { title: "Din Tai Fung", gradient: "from-red-700 to-orange-900" },
+  { title: "Potent Hockey", gradient: "from-sky-700 to-cyan-900" },
+  { title: "AAA Membership", gradient: "from-green-700 to-emerald-900" },
+  { title: "Edmunds", gradient: "from-indigo-700 to-blue-900" },
 ];
 
 const PortfolioSection = () => {
@@ -18,40 +22,68 @@ const PortfolioSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-6"
         >
-          <span className="text-sm font-semibold text-primary uppercase tracking-widest">Portfolio</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-800 mt-3 mb-4">
-            Our <span className="text-gradient">latest work</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-800 leading-tight">
+            We've produced over 30,000 videos.
           </h2>
-          <p className="text-muted-foreground text-lg">
-            A selection of projects we're proud of.
-          </p>
         </motion.div>
+      </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {videos.map((v, i) => (
-            <motion.div
-              key={v.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="group cursor-pointer"
+      {/* Horizontal scrolling carousel */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="mt-12 overflow-hidden"
+      >
+        <div className="flex animate-marquee gap-5 w-max px-4">
+          {[...videos, ...videos].map((v, i) => (
+            <div
+              key={i}
+              className={`group relative w-[300px] md:w-[380px] h-[200px] md:h-[250px] rounded-2xl bg-gradient-to-br ${v.gradient} flex-shrink-0 overflow-hidden cursor-pointer`}
             >
-              <div className={`relative aspect-video rounded-2xl bg-gradient-to-br ${v.color} overflow-hidden mb-4`}>
-                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors flex items-center justify-center">
-                  <div className="w-14 h-14 rounded-full bg-background/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all shadow-lg">
-                    <Play className="h-6 w-6 text-primary fill-primary ml-0.5" />
-                  </div>
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3">
+                  <Play className="h-6 w-6 text-white fill-white ml-0.5" />
                 </div>
+                <span className="text-white text-sm font-medium">Watch Now</span>
               </div>
-              <span className="text-xs font-semibold text-primary uppercase tracking-wider">{v.category}</span>
-              <h3 className="text-lg font-heading font-700 mt-1">{v.title}</h3>
-            </motion.div>
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <h3 className="text-white font-heading font-700 text-base">{v.title}</h3>
+              </div>
+            </div>
           ))}
         </div>
-      </div>
+      </motion.div>
+
+      {/* Second row - smaller thumbnails */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="mt-5 overflow-hidden"
+      >
+        <div className="flex animate-marquee-reverse gap-5 w-max px-4">
+          {[...videos.slice(5), ...videos.slice(0, 5), ...videos.slice(5), ...videos.slice(0, 5)].map((v, i) => (
+            <div
+              key={i}
+              className={`group relative w-[240px] md:w-[300px] h-[160px] md:h-[190px] rounded-xl bg-gradient-to-br ${v.gradient} flex-shrink-0 overflow-hidden cursor-pointer`}
+            >
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors" />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <Play className="h-5 w-5 text-white fill-white ml-0.5" />
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <h3 className="text-white font-heading font-600 text-sm">{v.title}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 };
