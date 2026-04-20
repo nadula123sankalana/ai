@@ -9,7 +9,7 @@ const videos = [
   { title: "Amazon I AM", gradient: "from-teal-700 to-emerald-900" },
   { title: "Samsonite CLite", gradient: "from-slate-600 to-zinc-800" },
   { title: "Din Tai Fung", gradient: "from-red-700 to-orange-900" },
-  { title: "Potent Hockey", gradient: "from-sky-700 to-cyan-900" },
+  { title: "Potent Hockey", gradient: "from-amber-700 to-yellow-900" },
   { title: "AAA Membership", gradient: "from-green-700 to-emerald-900" },
   { title: "Edmunds", gradient: "from-indigo-700 to-blue-900" },
 ];
@@ -89,3 +89,4 @@ const PortfolioSection = () => {
 };
 
 export default PortfolioSection;
+

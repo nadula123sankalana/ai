@@ -36,8 +36,13 @@ const Navbar = () => {
       }`}
     >
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="text-xl md:text-2xl font-heading font-800 tracking-tight text-foreground">
-          <span className="text-primary">lumina</span>studios
+        <a href="#" className="flex items-center" aria-label="Lumina Studios home">
+          <img
+            src="/c.png"
+            alt="Lumina Studios"
+            className="h-8 w-auto md:h-10"
+            loading="eager"
+          />
         </a>
 
         <nav className="hidden md:flex items-center gap-8">

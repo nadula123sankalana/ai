@@ -32,7 +32,9 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Lumina Studios enables brands to create any video they need with a single, trusted partner. Our fast, simple, and transparent process redefines efficiency in video production.
+            Lumina Studios enables brands to create any video they need with a
+            single, trusted partner. Our fast, simple, and transparent process
+            redefines efficiency in video production.
           </motion.p>
 
           <motion.div
@@ -42,7 +44,7 @@ const HeroSection = () => {
           >
             <Button
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-10 h-13 text-base font-semibold"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-14 h-17 text-xl font-semibold shadow-[0_10px_30px_-12px_hsl(var(--primary))]"
             >
               Get Started
             </Button>
@@ -64,7 +66,9 @@ const HeroSection = () => {
               className={`w-[280px] md:w-[360px] h-[180px] md:h-[240px] rounded-2xl bg-gradient-to-br ${img.gradient} flex-shrink-0 flex items-end p-5 relative overflow-hidden`}
             >
               <div className="absolute inset-0 bg-black/20" />
-              <span className="relative z-10 text-white font-heading font-700 text-sm md:text-base">{img.label}</span>
+              <span className="relative z-10 text-white font-heading font-700 text-sm md:text-base">
+                {img.label}
+              </span>
             </div>
           ))}
         </div>
@@ -74,3 +78,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
