@@ -5,13 +5,13 @@ const testimonials = [
   {
     name: "Sarah Chen",
     role: "CMO at TechFlow",
-    text: "Lumina Studios transformed our brand presence. The quality of their video production is unmatched—every project exceeded our expectations.",
+    text: "Catalyst AI transformed our brand presence. The quality of their video production is unmatched—every project exceeded our expectations.",
     avatar: "SC",
   },
   {
     name: "Marcus Rodriguez",
     role: "Head of Marketing, Elevate",
-    text: "Working with Lumina was seamless from start to finish. They delivered 50+ videos for our global campaign on time and under budget.",
+    text: "Working with Catalyst AI was seamless from start to finish. They delivered 50+ videos for our global campaign on time and under budget.",
     avatar: "MR",
   },
   {

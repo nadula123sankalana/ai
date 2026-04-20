@@ -31,15 +31,15 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/95 backdrop-blur-lg border-b border-border" : "bg-transparent"
+      className={`fixed left-0 right-0 top-0 z-50 border-b border-white/10 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.35)] backdrop-blur-xl backdrop-saturate-150 transition-[background-color,box-shadow] duration-300 ${
+        scrolled ? "bg-black/45" : "bg-black/25"
       }`}
     >
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="flex items-center" aria-label="Lumina Studios home">
+        <a href="#" className="flex items-center" aria-label="Catalyst AI home">
           <img
             src="/c.png"
-            alt="Lumina Studios"
+            alt="Catalyst AI"
             className="h-8 w-auto md:h-10"
             loading="eager"
           />
@@ -50,7 +50,7 @@ const Navbar = () => {
             <button
               key={link}
               onClick={() => scrollTo(link)}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-white/75 transition-colors hover:text-white"
             >
               {link}
             </button>
@@ -64,7 +64,13 @@ const Navbar = () => {
           </Button>
         </nav>
 
-        <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
+        <button
+          type="button"
+          className="text-white md:hidden"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-expanded={mobileOpen}
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+        >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -75,14 +81,14 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border"
+            className="border-b border-white/10 bg-black/40 backdrop-blur-xl md:hidden"
           >
             <div className="container py-4 flex flex-col gap-3">
               {navLinks.map((link) => (
                 <button
                   key={link}
                   onClick={() => scrollTo(link)}
-                  className="text-left py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="py-2 text-left text-sm font-medium text-white/75 transition-colors hover:text-white"
                 >
                   {link}
                 </button>

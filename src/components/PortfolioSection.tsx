@@ -2,16 +2,56 @@ import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 
 const videos = [
-  { title: "Meaningful Beauty", gradient: "from-rose-700 to-pink-900" },
-  { title: "Stella Rosa", gradient: "from-purple-700 to-violet-900" },
-  { title: "Walmart | Maui", gradient: "from-blue-700 to-indigo-900" },
-  { title: "Rolex", gradient: "from-amber-700 to-yellow-900" },
-  { title: "Amazon I AM", gradient: "from-teal-700 to-emerald-900" },
-  { title: "Samsonite CLite", gradient: "from-slate-600 to-zinc-800" },
-  { title: "Din Tai Fung", gradient: "from-red-700 to-orange-900" },
-  { title: "Potent Hockey", gradient: "from-amber-700 to-yellow-900" },
-  { title: "AAA Membership", gradient: "from-green-700 to-emerald-900" },
-  { title: "Edmunds", gradient: "from-indigo-700 to-blue-900" },
+  {
+    title: "Meaningful Beauty",
+    image:
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1200&h=800&fit=crop&q=85",
+  },
+  {
+    title: "Stella Rosa",
+    image:
+      "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=1200&h=800&fit=crop&q=85",
+  },
+  {
+    title: "Walmart | Maui",
+    image:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=800&fit=crop&q=85",
+  },
+  {
+    title: "Rolex",
+    image:
+      "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=1200&h=800&fit=crop&q=85",
+  },
+  {
+    title: "Amazon I AM",
+    image:
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=800&fit=crop&q=85",
+  },
+  {
+    title: "Samsonite CLite",
+    image:
+      "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=1200&h=800&fit=crop&q=85",
+  },
+  {
+    title: "Din Tai Fung",
+    image:
+      "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=1200&h=800&fit=crop&q=85",
+  },
+  {
+    title: "Potent Hockey",
+    image:
+      "https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=1200&h=800&fit=crop&q=85",
+  },
+  {
+    title: "AAA Membership",
+    image:
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&h=800&fit=crop&q=85",
+  },
+  {
+    title: "Edmunds",
+    image:
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1200&h=800&fit=crop&q=85",
+  },
 ];
 
 const PortfolioSection = () => {
@@ -41,17 +81,27 @@ const PortfolioSection = () => {
           {[...videos, ...videos].map((v, i) => (
             <div
               key={i}
-              className={`group relative w-[300px] md:w-[380px] h-[200px] md:h-[250px] rounded-2xl bg-gradient-to-br ${v.gradient} flex-shrink-0 overflow-hidden cursor-pointer`}
+              className="group relative h-[200px] w-[300px] flex-shrink-0 cursor-pointer overflow-hidden rounded-2xl shadow-[0_24px_55px_-28px_rgba(0,0,0,0.65)] ring-1 ring-white/10 md:h-[250px] md:w-[380px]"
             >
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3">
-                  <Play className="h-6 w-6 text-white fill-white ml-0.5" />
+              <img
+                src={v.image}
+                alt=""
+                className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/10" />
+              <div className="absolute inset-0 bg-black/20 transition-colors group-hover:bg-black/45" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
+                <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                  <Play className="ml-0.5 h-6 w-6 fill-white text-white" />
                 </div>
-                <span className="text-white text-sm font-medium">Watch Now</span>
+                <span className="text-sm font-medium text-white">Watch Now</span>
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-5">
-                <h3 className="text-white font-heading font-700 text-base">{v.title}</h3>
+                <h3 className="font-heading text-base font-700 text-white drop-shadow-md">
+                  {v.title}
+                </h3>
               </div>
             </div>
           ))}
@@ -69,16 +119,24 @@ const PortfolioSection = () => {
           {[...videos.slice(5), ...videos.slice(0, 5), ...videos.slice(5), ...videos.slice(0, 5)].map((v, i) => (
             <div
               key={i}
-              className={`group relative w-[240px] md:w-[300px] h-[160px] md:h-[190px] rounded-xl bg-gradient-to-br ${v.gradient} flex-shrink-0 overflow-hidden cursor-pointer`}
+              className="group relative h-[160px] w-[240px] flex-shrink-0 cursor-pointer overflow-hidden rounded-xl shadow-[0_18px_45px_-22px_rgba(0,0,0,0.6)] ring-1 ring-white/10 md:h-[190px] md:w-[300px]"
             >
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors" />
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <Play className="h-5 w-5 text-white fill-white ml-0.5" />
+              <img
+                src={v.image}
+                alt=""
+                className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/30 to-black/10" />
+              <div className="absolute inset-0 bg-black/25 transition-colors group-hover:bg-black/48" />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                  <Play className="ml-0.5 h-5 w-5 fill-white text-white" />
                 </div>
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-4">
-                <h3 className="text-white font-heading font-600 text-sm">{v.title}</h3>
+                <h3 className="font-heading text-sm font-600 text-white drop-shadow-md">{v.title}</h3>
               </div>
             </div>
           ))}

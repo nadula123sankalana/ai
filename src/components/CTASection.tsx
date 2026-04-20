@@ -20,7 +20,7 @@ const CTASection = () => {
               Ready to create your video?
             </h2>
             <p className="text-primary-foreground/70 text-lg max-w-xl mx-auto mb-8">
-              Join thousands of brands producing world-class video content with Lumina Studios.
+              Join thousands of brands producing world-class video content with Catalyst AI.
             </p>
             <Button
               size="lg"

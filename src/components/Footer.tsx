@@ -11,8 +11,8 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           <div className="col-span-2 md:col-span-1">
             <a href="#" className="text-xl font-heading font-800 tracking-tight">
-              <span className="text-primary">lumina</span>
-              <span className="text-foreground">studios</span>
+              <span className="text-primary">Catalyst</span>
+              <span className="text-foreground"> AI</span>
             </a>
             <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
               World-class video production for brands that demand excellence.
@@ -35,7 +35,7 @@ const Footer = () => {
         </div>
         <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Lumina Studios. All rights reserved.
+            © {new Date().getFullYear()} Catalyst AI. All rights reserved.
           </p>
           <div className="flex gap-6">
             {["Twitter", "LinkedIn", "Instagram", "YouTube"].map((social) => (
