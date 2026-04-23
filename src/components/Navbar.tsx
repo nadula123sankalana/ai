@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type NavGroup = {
@@ -53,23 +53,23 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed left-0 right-0 top-0 z-50 border-b backdrop-blur-xl backdrop-saturate-150 transition-[background-color,border-color,box-shadow] duration-300 ${
+      className={`fixed left-0 right-0 top-0 z-50 border-b border-transparent backdrop-blur-xl transition-[background-color,border-color,box-shadow] duration-300 ${
         scrolled
-          ? "border-border bg-white/85 shadow-[0_6px_24px_-12px_rgba(15,23,42,0.12)]"
-          : "border-transparent bg-white/60"
+          ? "bg-transparent shadow-none"
+          : "bg-transparent"
       }`}
     >
-      <div className="container flex items-center justify-between h-16 md:h-20">
+      <div className="container relative flex items-center justify-between h-16 md:h-20">
         <a href="#" className="flex items-center gap-2" aria-label="Catalyst AI home">
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-hero-gradient shadow-[0_8px_20px_-6px_hsl(var(--glow-primary)/0.5)]">
             <span className="font-heading text-lg font-900 text-white">C</span>
           </div>
-          <span className="font-heading text-lg font-800 tracking-tight text-foreground">
-            Catalyst<span className="text-gradient">AI</span>
+          <span className="font-heading text-lg font-800 tracking-tight text-white">
+            Catalyst<span className="text-white/75">AI</span>
           </span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden rounded-2xl border border-white/20 bg-white/10 p-1.5 md:absolute md:left-1/2 md:flex md:-translate-x-1/2 md:items-center md:gap-1">
           {navGroups.map((group) => {
             const hasItems = !!group.items;
             const isOpen = openGroup === group.label;
@@ -82,7 +82,7 @@ const Navbar = () => {
               >
                 <button
                   onClick={() => (hasItems ? setOpenGroup(isOpen ? null : group.label) : group.sectionId && scrollTo(group.sectionId))}
-                  className="flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-surface hover:text-foreground"
+                  className="flex items-center gap-1 rounded-xl px-4 py-2 text-sm font-medium text-white/90 transition-colors hover:bg-white/15 hover:text-white"
                 >
                   {group.label}
                   {hasItems && <ChevronDown className={`h-3.5 w-3.5 transition-transform ${isOpen ? "rotate-180" : ""}`} />}
@@ -96,15 +96,15 @@ const Navbar = () => {
                       transition={{ duration: 0.15 }}
                       className="absolute left-1/2 top-full z-50 w-[320px] -translate-x-1/2 pt-2"
                     >
-                      <div className="overflow-hidden rounded-2xl border border-border bg-white p-2 soft-shadow">
+                      <div className="overflow-hidden rounded-2xl border border-white/20 bg-[#313995]/95 p-2 shadow-[0_24px_40px_-22px_rgba(0,0,0,0.7)] backdrop-blur-xl">
                         {group.items!.map((item) => (
                           <button
                             key={item.label}
                             onClick={() => scrollTo(item.sectionId)}
-                            className="flex w-full flex-col gap-0.5 rounded-xl px-3.5 py-2.5 text-left transition-colors hover:bg-surface"
+                            className="flex w-full flex-col gap-0.5 rounded-xl px-3.5 py-2.5 text-left transition-colors hover:bg-white/10"
                           >
-                            <span className="text-sm font-semibold text-foreground">{item.label}</span>
-                            {item.desc && <span className="text-xs text-muted-foreground">{item.desc}</span>}
+                            <span className="text-sm font-semibold text-white">{item.label}</span>
+                            {item.desc && <span className="text-xs text-white/60">{item.desc}</span>}
                           </button>
                         ))}
                       </div>
@@ -119,22 +119,24 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-2">
           <button
             onClick={() => scrollTo("cta")}
-            className="rounded-full px-4 py-2 text-sm font-medium text-foreground/75 transition-colors hover:text-foreground"
+            className="rounded-lg px-3 py-2 text-xs font-semibold uppercase tracking-wider text-white/80 transition-colors hover:text-white"
           >
-            Log in
+            Book Demo
           </button>
-          <Button
+          <button
             onClick={() => scrollTo("cta")}
-            size="sm"
-            className="btn-shine rounded-full bg-hero-gradient px-5 h-10 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_hsl(var(--glow-primary)/0.6)] hover:opacity-95"
+            className="group flex h-12 overflow-hidden rounded-xl border border-black bg-black text-white shadow-[0_8px_22px_-10px_rgba(0,0,0,0.65)]"
           >
-            Start free
-          </Button>
+            <span className="flex w-12 items-center justify-center bg-[#5b3df5] transition-colors group-hover:bg-[#6a4dff]">
+              <ChevronRight className="h-5 w-5" />
+            </span>
+            <span className="px-4 text-xs font-bold uppercase tracking-wider leading-[3rem]">Create</span>
+          </button>
         </div>
 
         <button
           type="button"
-          className="text-foreground md:hidden"
+          className="text-white md:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-expanded={mobileOpen}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -149,21 +151,21 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="border-b border-border bg-white md:hidden"
+            className="border-b border-white/10 bg-[#272f86]/95 backdrop-blur-2xl md:hidden"
           >
             <div className="container py-4 flex flex-col gap-1">
               {navGroups.map((group) => (
                 <div key={group.label} className="py-1">
                   {group.items ? (
                     <>
-                      <div className="px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+                      <div className="px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-white/55">
                         {group.label}
                       </div>
                       {group.items.map((item) => (
                         <button
                           key={item.label}
                           onClick={() => scrollTo(item.sectionId)}
-                          className="w-full rounded-lg px-2 py-2 text-left text-sm font-medium text-foreground/85 transition-colors hover:bg-surface"
+                          className="w-full rounded-lg px-2 py-2 text-left text-sm font-medium text-white/90 transition-colors hover:bg-white/10"
                         >
                           {item.label}
                         </button>
@@ -172,7 +174,7 @@ const Navbar = () => {
                   ) : (
                     <button
                       onClick={() => group.sectionId && scrollTo(group.sectionId)}
-                      className="w-full rounded-lg px-2 py-2 text-left text-sm font-semibold text-foreground/85 transition-colors hover:bg-surface"
+                      className="w-full rounded-lg px-2 py-2 text-left text-sm font-semibold text-white/90 transition-colors hover:bg-white/10"
                     >
                       {group.label}
                     </button>
@@ -181,9 +183,9 @@ const Navbar = () => {
               ))}
               <Button
                 onClick={() => scrollTo("cta")}
-                className="rounded-full mt-3 bg-hero-gradient text-white font-semibold"
+                className="rounded-xl mt-3 bg-black text-white font-semibold border border-white/15"
               >
-                Start free
+                Create
               </Button>
             </div>
           </motion.div>

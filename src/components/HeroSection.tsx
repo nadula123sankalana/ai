@@ -1,4 +1,4 @@
-import { ArrowRight, Link as LinkIcon, Play, Sparkles, Star, TrendingUp, Eye, Clock } from "lucide-react";
+import { ArrowRight, Link as LinkIcon, Play, TrendingUp, Eye, Clock } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -38,21 +38,6 @@ const HeroSection = () => {
 
       <div className="container relative z-10">
         <div className="mx-auto max-w-5xl text-center">
-          <div className="mx-auto mb-7 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 backdrop-blur-md">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-hero-gradient">
-              <Sparkles className="h-3 w-3 text-white" strokeWidth={2.5} />
-            </span>
-            <span className="text-xs font-semibold tracking-wide text-white">
-              Trusted by 4,500+ brands worldwide
-            </span>
-            <span className="ml-1 flex items-center gap-0.5">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-3 w-3 fill-[hsl(var(--warm))] text-[hsl(var(--warm))]" />
-              ))}
-            </span>
-            <span className="text-xs font-semibold text-white/60">4.9/5</span>
-          </div>
-
           <h1 className="mb-6 text-[2.8rem] font-heading font-800 leading-[1.02] tracking-[-0.035em] text-white sm:text-6xl md:text-7xl lg:text-[5.6rem]">
             Videos that
             <span className="block">
