@@ -21,7 +21,7 @@ const steps: Step[] = [
     ],
     icon: Compass,
     accent: "primary",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&h=900&fit=crop&q=85",
+    image: "https://picsum.photos/seed/catalyst-discover/1400/900",
   },
   {
     eyebrow: "CREATE",
@@ -33,7 +33,7 @@ const steps: Step[] = [
     ],
     icon: Wand2,
     accent: "accent",
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1400&h=900&fit=crop&q=85",
+    image: "https://picsum.photos/seed/catalyst-create/1400/900",
   },
   {
     eyebrow: "LAUNCH",
@@ -45,7 +45,7 @@ const steps: Step[] = [
     ],
     icon: Rocket,
     accent: "warm",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&h=900&fit=crop&q=85",
+    image: "https://picsum.photos/seed/catalyst-launch/1400/900",
   },
   {
     eyebrow: "OPTIMIZE",
@@ -57,7 +57,7 @@ const steps: Step[] = [
     ],
     icon: LineChart,
     accent: "pink",
-    image: "https://images.unsplash.com/photo-1551288049-4b1b95e86f46?w=1400&h=900&fit=crop&q=85",
+    image: "https://picsum.photos/seed/catalyst-optimize/1400/900",
   },
 ];
 
