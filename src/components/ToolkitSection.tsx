@@ -38,7 +38,9 @@ const ToolkitSection = () => {
   return (
     <section id="toolkit" className="relative overflow-hidden bg-neutral-950 py-20 md:py-24">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(120deg,#2f2ba8_0%,#6f43d6_35%,#ce6a92_70%,#e38c6f_100%)] opacity-85" />
+        <div className="absolute inset-0 bg-hero-gradient opacity-80" />
+        <div className="absolute inset-0 bg-black/45" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/45" />
         <div className="absolute inset-0 bg-noise opacity-20 mix-blend-soft-light" />
       </div>
       <div className="container relative">
