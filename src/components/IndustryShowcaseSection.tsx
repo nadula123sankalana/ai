@@ -1,131 +1,180 @@
-import { useCallback, useRef } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { ArrowUpRight, ShoppingBag, Building2, Cpu, HeartPulse, GraduationCap, Stethoscope, Plane, Car } from "lucide-react";
 
 type Industry = {
   name: string;
   image: string;
-  overlayClass: string;
+  icon: typeof ShoppingBag;
+  clients: number;
+  stat: { value: string; label: string };
+  clientLogos: string[];
+  gradient: string;
+  span: string;
 };
 
 const industries: Industry[] = [
   {
     name: "Retail & E-commerce",
-    image:
-      "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&h=800&fit=crop&q=80",
-    overlayClass: "from-emerald-950/85 via-emerald-900/45 to-emerald-800/30",
-  },
-  {
-    name: "Professional Services",
-    image:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=800&fit=crop&q=80",
-    overlayClass: "from-amber-950/80 via-stone-900/50 to-stone-800/35",
+    image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&h=800&fit=crop&q=80",
+    icon: ShoppingBag,
+    clients: 1420,
+    stat: { value: "2.7×", label: "Lift in conversions" },
+    clientLogos: ["Shopify", "Alo Yoga", "Gymshark", "Allbirds"],
+    gradient: "from-emerald-500/70 via-teal-500/40 to-transparent",
+    span: "md:col-span-3 md:row-span-2",
   },
   {
     name: "Software & Tech",
-    image:
-      "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=800&fit=crop&q=80",
-    overlayClass: "from-indigo-950/90 via-blue-950/55 to-violet-900/40",
-  },
-  {
-    name: "Medical & Biotech",
-    image:
-      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=800&fit=crop&q=80",
-    overlayClass: "from-neutral-950/88 via-slate-900/50 to-slate-800/35",
-  },
-  {
-    name: "Education",
-    image:
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=800&fit=crop&q=80",
-    overlayClass: "from-rose-950/75 via-rose-900/40 to-orange-900/30",
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1000&h=800&fit=crop&q=80",
+    icon: Cpu,
+    clients: 860,
+    stat: { value: "1,000+", label: "Creatives / month" },
+    clientLogos: ["Vercel", "Notion", "Linear", "Figma"],
+    gradient: "from-violet-600/70 via-indigo-500/40 to-transparent",
+    span: "md:col-span-3 md:row-span-2",
   },
   {
     name: "Healthcare",
-    image:
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=800&fit=crop&q=80",
-    overlayClass: "from-teal-950/80 via-cyan-950/45 to-sky-900/35",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&q=80",
+    icon: Stethoscope,
+    clients: 340,
+    stat: { value: "$3k", label: "Saved per video" },
+    clientLogos: ["Curology", "Hims", "Ro"],
+    gradient: "from-sky-500/70 via-cyan-500/40 to-transparent",
+    span: "md:col-span-2",
+  },
+  {
+    name: "Professional Services",
+    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop&q=80",
+    icon: Building2,
+    clients: 612,
+    stat: { value: "45%", label: "CPA reduction" },
+    clientLogos: ["Deloitte", "PwC"],
+    gradient: "from-amber-500/70 via-orange-500/40 to-transparent",
+    span: "md:col-span-2",
+  },
+  {
+    name: "Education",
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop&q=80",
+    icon: GraduationCap,
+    clients: 280,
+    stat: { value: "3×", label: "Enrollment lift" },
+    clientLogos: ["Masterclass", "Coursera"],
+    gradient: "from-rose-500/70 via-pink-500/40 to-transparent",
+    span: "md:col-span-2",
+  },
+  {
+    name: "Medical & Biotech",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&h=600&fit=crop&q=80",
+    icon: HeartPulse,
+    clients: 190,
+    stat: { value: "98%", label: "Compliance ready" },
+    clientLogos: ["Illumina", "Moderna"],
+    gradient: "from-slate-600/70 via-slate-500/40 to-transparent",
+    span: "md:col-span-2",
+  },
+  {
+    name: "Travel & Hospitality",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop&q=80",
+    icon: Plane,
+    clients: 415,
+    stat: { value: "47%", label: "CTR increase" },
+    clientLogos: ["Airbnb", "Booking"],
+    gradient: "from-indigo-500/70 via-blue-500/40 to-transparent",
+    span: "md:col-span-2",
+  },
+  {
+    name: "Automotive & Mobility",
+    image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop&q=80",
+    icon: Car,
+    clients: 325,
+    stat: { value: "4.7×", label: "Avg. ROAS" },
+    clientLogos: ["Toyota", "Audi", "Tesla"],
+    gradient: "from-neutral-800/75 via-neutral-700/45 to-transparent",
+    span: "md:col-span-2",
   },
 ];
 
 const IndustryShowcaseSection = () => {
-  const scrollerRef = useRef<HTMLDivElement>(null);
-
-  const scrollByCards = useCallback((direction: "left" | "right") => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    const card = el.querySelector<HTMLElement>("[data-industry-card]");
-    const width = card?.offsetWidth ?? 280;
-    const gap = 16;
-    el.scrollBy({
-      left: direction === "left" ? -(width + gap) : width + gap,
-      behavior: "smooth",
-    });
-  }, []);
-
   return (
-    <section className="border-t border-neutral-200 bg-white py-20 md:py-28">
+    <section id="industries" className="relative py-24 md:py-32">
       <div className="container">
-        <div className="mb-10 flex flex-col gap-6 sm:mb-12 sm:flex-row sm:items-start sm:justify-between">
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.45 }}
-            className="max-w-xl font-heading text-3xl font-extrabold leading-tight tracking-tight text-neutral-950 sm:text-4xl md:text-[2.15rem] md:leading-[1.2]"
-          >
-            We&apos;ve delivered results for companies in every industry.
-          </motion.h2>
-          <div className="flex shrink-0 gap-2 self-end sm:self-auto sm:pt-1">
-            <button
-              type="button"
-              onClick={() => scrollByCards("left")}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-900 transition hover:border-neutral-300 hover:bg-neutral-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-400"
-              aria-label="Scroll industries left"
-            >
-              <ChevronLeft className="h-5 w-5" strokeWidth={1.5} />
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollByCards("right")}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-900 transition hover:border-neutral-300 hover:bg-neutral-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-400"
-              aria-label="Scroll industries right"
-            >
-              <ChevronRight className="h-5 w-5" strokeWidth={1.5} />
-            </button>
-          </div>
-        </div>
-
-        <div
-          ref={scrollerRef}
-          className="scrollbar-none -mx-4 flex gap-4 overflow-x-auto scroll-smooth px-4 pt-1 md:mx-0 md:px-0"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-14 flex flex-col items-start gap-6 md:flex-row md:items-end md:justify-between"
         >
-          {industries.map((item) => (
-            <div
+          <div className="max-w-2xl">
+            <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/8 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-accent">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+              Built for every vertical
+            </span>
+            <h2 className="mt-5 font-heading text-3xl font-800 leading-[1.05] tracking-tight text-foreground md:text-5xl">
+              Proven results across
+              <span className="block text-gradient-accent">every industry you serve.</span>
+            </h2>
+          </div>
+          <p className="max-w-sm text-[15px] text-muted-foreground">
+            4,500+ brands trust Catalyst with video that moves the needle — from DTC
+            launches to enterprise rollouts to regulated healthcare.
+          </p>
+        </motion.div>
+
+        <div className="grid auto-rows-[minmax(200px,auto)] grid-cols-1 gap-4 md:grid-cols-6 md:gap-5">
+          {industries.map((item, i) => (
+            <motion.a
               key={item.name}
-              data-industry-card
-              className="group relative w-[min(280px,78vw)] shrink-0 snap-start overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-[0_12px_40px_-12px_rgba(15,23,42,0.12)]"
+              href="#"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ delay: (i % 4) * 0.08, duration: 0.5 }}
+              className={`card-hover group relative overflow-hidden rounded-3xl border border-border bg-white soft-shadow ${item.span}`}
             >
-              <div className="relative aspect-[3/4] w-full overflow-hidden">
+              <div className="absolute inset-0">
                 <img
                   src={item.image}
                   alt=""
-                  className="h-full w-full object-cover transition duration-500 ease-out group-hover:scale-105"
+                  className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.06]"
                   loading="lazy"
                 />
-                <div
-                  className={cn(
-                    "absolute inset-0 bg-gradient-to-t",
-                    item.overlayClass,
-                  )}
-                />
-                <div className="absolute inset-0 flex items-center justify-center p-4">
-                  <p className="text-center font-heading text-lg font-bold leading-snug text-white drop-shadow-sm sm:text-xl">
+                <div className={`absolute inset-0 bg-gradient-to-tr ${item.gradient}`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+              </div>
+
+              <div className="relative flex h-full min-h-[200px] flex-col justify-between p-5 md:p-6">
+                <div className="flex items-start justify-between">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/30 bg-white/15 text-white backdrop-blur">
+                    <item.icon className="h-5 w-5" strokeWidth={2.25} />
+                  </div>
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/25 bg-white/15 text-white opacity-0 backdrop-blur transition-all group-hover:opacity-100 group-hover:translate-x-0">
+                    <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="font-heading text-xl font-800 text-white drop-shadow md:text-[1.6rem]">
                     {item.name}
-                  </p>
+                  </h3>
+                  <div className="mt-3 flex flex-wrap items-center gap-2">
+                    <span className="rounded-full border border-white/30 bg-white/15 px-2.5 py-0.5 font-heading text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur">
+                      {item.clients.toLocaleString()}+ clients
+                    </span>
+                    <span className="rounded-full bg-white/90 px-2.5 py-0.5 font-heading text-[10px] font-bold uppercase tracking-wider text-foreground">
+                      {item.stat.value} {item.stat.label}
+                    </span>
+                  </div>
+                  <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1">
+                    {item.clientLogos.map((logo) => (
+                      <span key={logo} className="font-heading text-[11px] font-800 uppercase tracking-wider text-white/80">
+                        {logo}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            </motion.a>
           ))}
         </div>
       </div>
@@ -134,4 +183,3 @@ const IndustryShowcaseSection = () => {
 };
 
 export default IndustryShowcaseSection;
-
