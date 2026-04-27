@@ -30,6 +30,9 @@ const Index = () => {
         <PipelineSection />
       </div>
       <div className="scroll-perf-section">
+        <PortfolioSection />
+      </div>
+      <div className="scroll-perf-section">
         <ToolkitSection />
       </div>
       <div className="scroll-perf-section">
@@ -40,9 +43,6 @@ const Index = () => {
       </div>
       <div className="scroll-perf-section">
         <IndustryShowcaseSection />
-      </div>
-      <div className="scroll-perf-section">
-        <PortfolioSection />
       </div>
       <div className="scroll-perf-section">
         <ProcessSection />

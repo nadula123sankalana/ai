@@ -12,7 +12,6 @@ type Stat = {
 const stats: Stat[] = [
   { value: 30000, suffix: "+", label: "Videos produced", tone: "primary" },
   { value: 4500, suffix: "+", label: "Brands served", tone: "accent" },
-  { value: 80, suffix: "+", label: "Cities covered", tone: "warm" },
   { value: 1, suffix: "B+", prefix: "~$", label: "Ad spend powered", tone: "pink" },
 ];
 
@@ -69,13 +68,11 @@ const ResultsBannerSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55 }}
-          className="relative overflow-hidden rounded-3xl border border-border bg-white p-8 md:p-12 ring-glow"
+          className="relative overflow-hidden rounded-3xl border border-border bg-white p-8 md:p-12 soft-shadow"
         >
-          <div className="pointer-events-none absolute -top-32 left-1/2 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]" />
-          <div className="pointer-events-none absolute -bottom-32 -right-20 h-[320px] w-[420px] rounded-full bg-accent/10 blur-[100px]" />
           <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-40" />
 
-          <div className="relative grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-6">
+          <div className="relative grid grid-cols-1 md:grid-cols-3">
             {stats.map((s, i) => (
               <motion.div
                 key={s.label}
@@ -83,12 +80,14 @@ const ResultsBannerSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="text-center"
+                className={`text-center py-6 md:py-5 ${
+                  i > 0 ? "border-t border-border md:border-t-0 md:border-l" : ""
+                }`}
               >
-                <div className={`font-heading text-3xl font-800 tracking-tight sm:text-4xl md:text-5xl ${toneMap[s.tone]}`}>
+                <div className={`font-heading text-4xl font-800 tracking-tight sm:text-5xl md:text-6xl ${toneMap[s.tone]}`}>
                   <Counter target={s.value} suffix={s.suffix} prefix={s.prefix} />
                 </div>
-                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground sm:text-sm sm:tracking-wider">
+                <p className="mt-3 text-sm font-semibold uppercase tracking-[0.16em] text-muted-foreground md:text-base">
                   {s.label}
                 </p>
               </motion.div>

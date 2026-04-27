@@ -55,7 +55,7 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className={`fixed left-0 right-0 top-0 z-50 border-b border-transparent backdrop-blur-xl transition-[background-color,border-color,box-shadow] duration-300 ${
         scrolled
-          ? "bg-transparent shadow-none"
+          ? "border-white/10 bg-black/45 shadow-[0_10px_35px_-18px_rgba(0,0,0,0.75)]"
           : "bg-transparent"
       }`}
     >
@@ -126,12 +126,14 @@ const Navbar = () => {
           </button>
           <button
             onClick={() => scrollTo("cta")}
-            className="group flex h-12 overflow-hidden rounded-xl border border-black bg-black text-white shadow-[0_8px_22px_-10px_rgba(0,0,0,0.65)]"
+            className="group flex h-12 overflow-hidden rounded-xl border border-cyan-300/35 bg-black text-white shadow-[0_10px_28px_-10px_rgba(42,77,255,0.6)]"
           >
-            <span className="flex w-12 items-center justify-center bg-[#5b3df5] transition-colors group-hover:bg-[#6a4dff]">
+            <span className="flex w-12 items-center justify-center bg-gradient-to-br from-[#14c6b7] via-[#14a6ff] to-[#5b3df5] transition-all duration-300 group-hover:brightness-110">
               <ChevronRight className="h-5 w-5" />
             </span>
-            <span className="px-4 text-xs font-bold uppercase tracking-wider leading-[3rem]">Create</span>
+            <span className="bg-gradient-to-r from-[#0f1118] via-[#171a28] to-[#1d1230] px-4 text-xs font-bold uppercase tracking-wider leading-[3rem]">
+              Create
+            </span>
           </button>
         </div>
 
@@ -184,7 +186,7 @@ const Navbar = () => {
               ))}
               <Button
                 onClick={() => scrollTo("cta")}
-                className="rounded-xl mt-3 bg-black text-white font-semibold border border-white/15"
+                className="mt-3 rounded-xl border border-cyan-300/35 bg-gradient-to-r from-[#14c6b7] via-[#14a6ff] to-[#5b3df5] font-semibold text-white shadow-[0_10px_28px_-10px_rgba(42,77,255,0.6)] hover:brightness-110"
               >
                 Create
               </Button>

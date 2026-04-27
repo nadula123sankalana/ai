@@ -111,10 +111,10 @@ const DiscoverMock = () => {
   ];
   return (
     <div className="relative h-full w-full p-4 md:p-5">
-      <div className="flex items-center gap-2 rounded-xl border border-white/15 bg-black/35 px-3 py-2 backdrop-blur">
-        <Search className="h-3.5 w-3.5 text-white/70" />
-        <span className="text-[12px] text-white/80">What's converting in fitness apps?</span>
-        <span className="ml-auto inline-flex items-center gap-1 rounded-full border border-white/15 bg-white/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white/85">
+      <div className="flex items-center gap-2 rounded-xl border border-border bg-white/90 px-3 py-2 backdrop-blur">
+        <Search className="h-3.5 w-3.5 text-foreground/60" />
+        <span className="text-[12px] text-foreground/75">What's converting in fitness apps?</span>
+        <span className="ml-auto inline-flex items-center gap-1 rounded-full border border-border bg-surface px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-foreground/75">
           <Flame className="h-3 w-3 text-orange-400" />
           Live
         </span>
@@ -123,7 +123,7 @@ const DiscoverMock = () => {
         {["Industry", "Platform", "Hook", "Format", "Length"].map((f) => (
           <span
             key={f}
-            className="rounded-full border border-white/15 bg-white/10 px-2 py-0.5 text-[10px] font-semibold text-white/80"
+            className="rounded-full border border-border bg-white px-2 py-0.5 text-[10px] font-semibold text-foreground/75"
           >
             {f}
           </span>
@@ -133,19 +133,19 @@ const DiscoverMock = () => {
         {cards.map((c, i) => (
           <div
             key={i}
-            className="group relative aspect-[3/4] overflow-hidden rounded-lg border border-white/15 bg-black/35"
+            className="group relative aspect-[3/4] overflow-hidden rounded-lg border border-border/70 bg-white"
           >
             <div className={`absolute inset-0 bg-gradient-to-br ${c.hue} opacity-80`} />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.35),transparent_60%)]" />
-            <div className="absolute left-1.5 top-1.5 inline-flex items-center gap-1 rounded-full bg-black/55 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-white/90 backdrop-blur">
+            <div className="absolute left-1.5 top-1.5 inline-flex items-center gap-1 rounded-full border border-border bg-white/85 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-foreground/80 backdrop-blur">
               <span className={`h-1 w-1 rounded-full ${a.bg}`} />
               {c.tag}
             </div>
             <div className="absolute bottom-1.5 left-1.5 right-1.5 flex items-center justify-between">
-              <span className="rounded-md bg-black/60 px-1.5 py-0.5 text-[8px] font-bold text-emerald-300">
+              <span className="rounded-md bg-white/90 px-1.5 py-0.5 text-[8px] font-bold text-emerald-600">
                 {c.roas}
               </span>
-              <span className="flex h-4 w-4 items-center justify-center rounded-full bg-white/95 text-black">
+              <span className="flex h-4 w-4 items-center justify-center rounded-full bg-foreground text-white">
                 <Play className="h-2 w-2" fill="currentColor" />
               </span>
             </div>
@@ -170,32 +170,32 @@ const CreateMock = () => {
     <div className="relative h-full w-full p-4 md:p-5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className={`flex h-6 w-6 items-center justify-center rounded-md bg-white/95 ${a.text}`}>
+          <span className={`flex h-6 w-6 items-center justify-center rounded-md bg-surface-elevated ${a.text}`}>
             <Wand2 className="h-3 w-3" strokeWidth={2.5} />
           </span>
           <div>
-            <p className="text-[11px] font-bold text-white/95">Generating 12 variants</p>
-            <p className="text-[9px] text-white/60">UGC · Cinematic · Explainer</p>
+            <p className="text-[11px] font-bold text-foreground">Generating 12 variants</p>
+            <p className="text-[9px] text-muted-foreground">UGC · Cinematic · Explainer</p>
           </div>
         </div>
-        <span className="rounded-full border border-white/15 bg-white/10 px-2 py-0.5 text-[10px] font-bold text-white/85">
+        <span className="rounded-full border border-border bg-white px-2 py-0.5 text-[10px] font-bold text-foreground/75">
           AI Studio
         </span>
       </div>
-      <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+      <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-border/70">
         <div className={`h-full w-3/5 rounded-full bg-gradient-to-r ${a.gradient} animate-pulse-glow`} />
       </div>
       <div className="mt-3 grid grid-cols-3 gap-2">
         {variants.map((v, i) => (
           <div
             key={i}
-            className="relative aspect-[4/5] overflow-hidden rounded-lg border border-white/15 bg-black/30"
+            className="relative aspect-[4/5] overflow-hidden rounded-lg border border-border/70 bg-white"
           >
             <div className={`absolute inset-0 bg-gradient-to-br ${v.hue} ${v.state === "queued" ? "opacity-25" : "opacity-85"}`} />
             {v.state === "rendering" && (
               <div className="absolute inset-0 animate-shine" />
             )}
-            <div className="absolute left-1 top-1 rounded bg-black/55 px-1 py-0.5 text-[8px] font-bold text-white/90">
+            <div className="absolute left-1 top-1 rounded bg-white/90 px-1 py-0.5 text-[8px] font-bold text-foreground/80">
               {v.v}
             </div>
             {v.state === "done" && (
@@ -204,16 +204,16 @@ const CreateMock = () => {
               </div>
             )}
             {v.state === "rendering" && (
-              <div className="absolute right-1 top-1 rounded-full bg-black/55 px-1 py-0.5 text-[7px] font-bold uppercase tracking-wider text-white/90">
+              <div className="absolute right-1 top-1 rounded-full border border-border bg-white/90 px-1 py-0.5 text-[7px] font-bold uppercase tracking-wider text-foreground/75">
                 ...
               </div>
             )}
           </div>
         ))}
       </div>
-      <div className="mt-3 flex items-center gap-2 rounded-lg border border-white/15 bg-black/35 px-2.5 py-1.5">
+      <div className="mt-3 flex items-center gap-2 rounded-lg border border-border bg-white/85 px-2.5 py-1.5">
         <Sparkles className={`h-3 w-3 ${a.text}`} />
-        <span className="text-[10px] text-white/85">8 of 12 ready · ETA 1m 24s</span>
+        <span className="text-[10px] text-foreground/75">8 of 12 ready · ETA 1m 24s</span>
       </div>
     </div>
   );
@@ -231,12 +231,12 @@ const LaunchMock = () => {
     <div className="relative h-full w-full p-4 md:p-5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className={`flex h-6 w-6 items-center justify-center rounded-md bg-white/95 ${a.text}`}>
+          <span className={`flex h-6 w-6 items-center justify-center rounded-md bg-surface-elevated ${a.text}`}>
             <Rocket className="h-3 w-3" strokeWidth={2.5} />
           </span>
           <div>
-            <p className="text-[11px] font-bold text-white/95">Deploying campaign</p>
-            <p className="text-[9px] text-white/60">4 platforms · 12 creatives</p>
+            <p className="text-[11px] font-bold text-foreground">Deploying campaign</p>
+            <p className="text-[9px] text-muted-foreground">4 platforms · 12 creatives</p>
           </div>
         </div>
         <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/30 bg-emerald-400/15 px-2 py-0.5 text-[10px] font-bold text-emerald-300">
@@ -248,29 +248,29 @@ const LaunchMock = () => {
         {platforms.map((p, i) => (
           <div
             key={i}
-            className="flex items-center gap-2 rounded-lg border border-white/15 bg-black/35 px-2.5 py-2"
+            className="flex items-center gap-2 rounded-lg border border-border bg-white/90 px-2.5 py-2"
           >
             <span className={`h-6 w-6 rounded-md ${p.color} flex items-center justify-center`}>
               <Globe className="h-3 w-3 text-white" />
             </span>
             <div className="flex-1">
-              <p className="text-[11px] font-bold text-white/95">{p.name}</p>
+              <p className="text-[11px] font-bold text-foreground">{p.name}</p>
               <div className="mt-0.5 flex items-center gap-1.5">
                 <span
                   className={`h-1 w-1 rounded-full ${
                     p.status === "Live" ? "bg-emerald-400" : "bg-amber-400 animate-pulse"
                   }`}
                 />
-                <span className="text-[9px] text-white/65">{p.status}</span>
+                <span className="text-[9px] text-muted-foreground">{p.status}</span>
               </div>
             </div>
-            <span className="text-[10px] font-bold text-white/85">{p.value}</span>
+            <span className="text-[10px] font-bold text-foreground/75">{p.value}</span>
           </div>
         ))}
       </div>
-      <div className="mt-3 flex items-center gap-2 rounded-lg border border-white/15 bg-gradient-to-r from-emerald-500/20 to-transparent px-2.5 py-1.5">
+      <div className="mt-3 flex items-center gap-2 rounded-lg border border-border bg-gradient-to-r from-emerald-500/10 to-transparent px-2.5 py-1.5">
         <Zap className="h-3 w-3 text-emerald-300" />
-        <span className="text-[10px] font-semibold text-white/90">All systems live in 24s</span>
+        <span className="text-[10px] font-semibold text-foreground/80">All systems live in 24s</span>
       </div>
     </div>
   );
@@ -288,15 +288,15 @@ const OptimizeMock = () => {
     <div className="relative h-full w-full p-4 md:p-5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className={`flex h-6 w-6 items-center justify-center rounded-md bg-white/95 ${a.text}`}>
+          <span className={`flex h-6 w-6 items-center justify-center rounded-md bg-surface-elevated ${a.text}`}>
             <Activity className="h-3 w-3" strokeWidth={2.5} />
           </span>
           <div>
-            <p className="text-[11px] font-bold text-white/95">Performance · Today</p>
-            <p className="text-[9px] text-white/60">Live · refreshed 2s ago</p>
+            <p className="text-[11px] font-bold text-foreground">Performance · Today</p>
+            <p className="text-[9px] text-muted-foreground">Live · refreshed 2s ago</p>
           </div>
         </div>
-        <span className="inline-flex items-center gap-1 rounded-full border border-white/15 bg-white/10 px-2 py-0.5 text-[10px] font-bold text-white/85">
+        <span className="inline-flex items-center gap-1 rounded-full border border-border bg-white px-2 py-0.5 text-[10px] font-bold text-foreground/75">
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
           Realtime
         </span>
@@ -305,10 +305,10 @@ const OptimizeMock = () => {
         {kpis.map((k, i) => (
           <div
             key={i}
-            className="rounded-lg border border-white/15 bg-black/35 p-2"
+            className="rounded-lg border border-border bg-white/90 p-2"
           >
-            <p className="text-[9px] uppercase tracking-wider text-white/55">{k.label}</p>
-            <p className="mt-0.5 text-[14px] font-extrabold text-white">{k.value}</p>
+            <p className="text-[9px] uppercase tracking-wider text-foreground/55">{k.label}</p>
+            <p className="mt-0.5 text-[14px] font-extrabold text-foreground">{k.value}</p>
             <span
               className={`mt-1 inline-flex items-center gap-0.5 text-[9px] font-bold ${
                 k.up ? "text-emerald-300" : "text-rose-300"
@@ -320,7 +320,7 @@ const OptimizeMock = () => {
           </div>
         ))}
       </div>
-      <div className="mt-3 rounded-lg border border-white/15 bg-black/35 p-2.5">
+      <div className="mt-3 rounded-lg border border-border bg-white/90 p-2.5">
         <div className="flex items-end gap-1.5">
           {bars.map((h, i) => (
             <div
@@ -335,7 +335,7 @@ const OptimizeMock = () => {
             </div>
           ))}
         </div>
-        <div className="mt-2 flex items-center justify-between text-[9px] text-white/55">
+        <div className="mt-2 flex items-center justify-between text-[9px] text-foreground/50">
           <span>Mon</span>
           <span>Tue</span>
           <span>Wed</span>
@@ -428,53 +428,69 @@ const PipelineSection = () => {
       id="pipeline"
       className="scroll-perf-section relative overflow-hidden bg-surface py-24 md:py-32"
     >
-      {/* Animated color field */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-32 top-24 h-[28rem] w-[28rem] rounded-full bg-primary/15 blur-3xl animate-orb-a" />
-        <div className="absolute right-[-6rem] top-1/3 h-[26rem] w-[26rem] rounded-full bg-accent/15 blur-3xl animate-orb-b" />
-        <div className="absolute bottom-24 left-1/3 h-[22rem] w-[22rem] rounded-full bg-[hsl(var(--warm))]/15 blur-3xl animate-orb-c" />
-        <div className="absolute right-1/4 top-2/3 h-[20rem] w-[20rem] rounded-full bg-[hsl(var(--pink))]/15 blur-3xl animate-orb-a" />
-        <div className="absolute inset-0 bg-dot-grid opacity-40" />
+        <div className="absolute -left-28 top-16 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -right-24 top-1/3 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
+        <div className="absolute bottom-8 left-1/3 h-56 w-56 rounded-full bg-[hsl(var(--warm))/0.12] blur-3xl" />
       </div>
 
       <div className="container relative">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mx-auto mb-20 max-w-3xl text-center"
+          className="mx-auto mb-16 max-w-3xl text-center"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/80 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-primary backdrop-blur">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
-            </span>
-            The Catalyst Pipeline
-          </span>
-          <h2 className="mt-5 font-heading text-3xl font-800 leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
-            From brief to winning creative.
-            <span className="mt-1 block bg-gradient-to-r from-primary via-accent to-[hsl(var(--pink))] bg-clip-text text-transparent animate-gradient-pan">
-              All in one platform.
-            </span>
-          </h2>
+          <div className="relative">
+            <div className="pointer-events-none absolute -left-64 top-1/2 hidden -translate-y-1/2 lg:block xl:-left-80">
+              <div className="relative rotate-[-6deg]">
+                <div className="absolute -inset-4 rounded-[28px] bg-primary/10 blur-2xl" />
+                <div className="relative overflow-hidden rounded-2xl border border-border/70 bg-white p-1.5 soft-shadow">
+                  <img
+                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=720&h=900&fit=crop&q=85"
+                    alt=""
+                    className="h-64 w-52 rounded-xl object-cover xl:h-72 xl:w-60"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="pointer-events-none absolute -right-64 top-1/2 hidden -translate-y-1/2 lg:block xl:-right-80">
+              <div className="relative rotate-[6deg]">
+                <div className="absolute -inset-4 rounded-[28px] bg-accent/10 blur-2xl" />
+                <div className="relative overflow-hidden rounded-2xl border border-border/70 bg-white p-1.5 soft-shadow">
+                  <img
+                    src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=720&h=900&fit=crop&q=85"
+                    alt=""
+                    className="h-64 w-52 rounded-xl object-cover xl:h-72 xl:w-60"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+            </div>
+            <h2 className="font-heading text-4xl font-800 leading-tight tracking-tight text-foreground md:text-6xl">
+              From brief to winning creative.
+              <span className="mt-1 block text-gradient">
+                All in one platform.
+              </span>
+            </h2>
+          </div>
           <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
             Four steps. One partner. Built to make high-performing video the new default — not a moonshot.
           </p>
         </motion.div>
 
-        {/* Steps with animated spine */}
         <div className="relative">
-          {/* Vertical gradient spine (desktop only) */}
           <div
             aria-hidden
             className="pointer-events-none absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 md:block"
           >
-            <div className="h-full w-full bg-gradient-to-b from-primary/0 via-primary/30 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/30 to-[hsl(var(--pink))]/30" />
+            <div className="h-full w-full bg-gradient-to-b from-transparent via-border to-transparent" />
           </div>
 
-          <div className="space-y-24 md:space-y-32">
+          <div className="space-y-20 md:space-y-28">
             {steps.map((step, i) => {
               const accent = accentMap[step.accent];
               const imageFirst = i % 2 === 1;
@@ -491,26 +507,19 @@ const PipelineSection = () => {
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   className="relative"
                 >
-                  {/* Step pill on the spine (desktop) */}
                   <div className="absolute left-1/2 top-0 z-10 hidden -translate-x-1/2 md:block">
-                    <div className="relative">
-                      <div
-                        className={`absolute inset-0 ${accent.glow} blur-xl animate-pulse-glow`}
-                      />
-                      <div
-                        className={`relative flex h-12 w-12 items-center justify-center rounded-full border border-white bg-gradient-to-br ${accent.gradient} text-white soft-shadow`}
-                      >
-                        <Icon className="h-5 w-5" strokeWidth={2.5} />
-                      </div>
+                    <div
+                      className={`relative flex h-11 w-11 items-center justify-center rounded-full border border-white bg-gradient-to-br ${accent.gradient} text-white soft-shadow`}
+                    >
+                      <Icon className="h-5 w-5" strokeWidth={2.5} />
                     </div>
                   </div>
 
-                  <div className="grid items-center gap-10 md:grid-cols-2 md:gap-20 md:pt-20">
-                    {/* Text column */}
+                  <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16 md:pt-16">
                     <div className={imageFirst ? "md:order-2 md:pl-8" : "md:pr-8"}>
                       <div className="flex items-center gap-3">
                         <span
-                          className={`bg-gradient-to-br ${accent.gradient} bg-clip-text font-heading text-5xl font-900 leading-none tracking-tight text-transparent md:text-6xl`}
+                          className={`bg-gradient-to-br ${accent.gradient} bg-clip-text font-heading text-6xl font-800 leading-none tracking-tight text-transparent md:text-7xl`}
                         >
                           {stepNum}
                         </span>
@@ -522,130 +531,69 @@ const PipelineSection = () => {
                         </span>
                       </div>
 
-                      <h3 className="mt-5 font-heading text-3xl font-800 leading-[1.05] tracking-tight text-foreground md:text-[2.5rem]">
+                      <h3 className="mt-5 font-heading text-4xl font-800 leading-[1.02] tracking-tight text-foreground md:text-[3rem]">
                         {step.title}
                       </h3>
-                      <p className="mt-3 text-base text-muted-foreground md:text-lg">
+                      <p className="mt-4 max-w-xl text-lg text-muted-foreground md:text-xl">
                         {step.description}
                       </p>
 
-                      <ul className="mt-6 space-y-3 text-[15px] text-muted-foreground md:text-base">
+                      <ul className="mt-7 space-y-4 text-base text-muted-foreground md:text-lg">
                         {step.bullets.map((b) => (
                           <li key={b} className="flex items-start gap-3">
                             <span
-                              className={`mt-1.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${accent.gradient} text-white`}
+                              className={`mt-1.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${accent.gradient} text-white`}
                             >
-                              <CheckCircle2 className="h-2.5 w-2.5" strokeWidth={3} />
+                              <CheckCircle2 className="h-3 w-3" strokeWidth={3} />
                             </span>
                             <span className="text-foreground/85">{b}</span>
                           </li>
                         ))}
                       </ul>
 
-                      <div className="mt-6 flex flex-wrap gap-2">
-                        {step.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className={`inline-flex items-center rounded-full border border-border/60 bg-gradient-to-br ${accent.chipGradient} px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-foreground/75`}
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-
-                      <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                        {step.kpis.map((kpi) => (
-                          <div
-                            key={kpi.label}
-                            className={`relative overflow-hidden rounded-2xl border border-border/70 bg-white p-4 soft-shadow`}
-                          >
-                            <div
-                              className={`pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-gradient-to-br ${accent.gradient} opacity-15 blur-2xl`}
-                            />
-                            <p className="relative text-[11px] font-semibold uppercase tracking-wider text-foreground/60">
-                              {kpi.label}
-                            </p>
-                            <p
-                              className={`relative mt-1 bg-gradient-to-br ${accent.gradient} bg-clip-text text-2xl font-extrabold tracking-tight text-transparent`}
-                            >
-                              {kpi.value}
-                            </p>
-                            {kpi.delta && (
-                              <p className="relative mt-0.5 text-[11px] text-foreground/55">
-                                {kpi.delta}
-                              </p>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-
                       <button
-                        className={`btn-shine mt-8 inline-flex items-center gap-2 rounded-full border border-border bg-white px-5 py-2.5 text-sm font-semibold text-foreground transition-all hover:border-transparent hover:bg-gradient-to-r hover:${accent.gradient} hover:text-white hover:shadow-lg`}
+                        className="btn-shine mt-10 inline-flex h-14 items-center gap-2 rounded-xl border border-black bg-black px-8 text-base font-bold uppercase tracking-wider text-white shadow-[0_10px_28px_-10px_rgba(0,0,0,0.55)] transition-all hover:-translate-y-0.5 hover:bg-neutral-900"
                       >
                         Learn more
-                        <ArrowRight className="h-4 w-4" />
+                        <ArrowRight className="h-5 w-5" />
                       </button>
                     </div>
 
-                    {/* Visual column */}
                     <div className={imageFirst ? "md:order-1" : ""}>
                       <div className="relative">
-                        {/* Layered glows */}
                         <div
-                          className={`absolute -inset-8 rounded-[36px] bg-gradient-to-br ${accent.gradient} opacity-30 blur-3xl animate-pulse-glow`}
+                          className={`absolute -inset-6 rounded-[32px] ${accent.glow} blur-2xl opacity-60`}
                         />
-                        <div
-                          className={`absolute -inset-2 rounded-[28px] bg-gradient-to-br ${accent.gradient} opacity-40 blur-xl`}
-                        />
-
-                        {/* Card */}
-                        <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] border border-white/10 bg-[#0c0c14] soft-shadow">
-                          {/* Gradient mesh background */}
-                          <div className="absolute inset-0 bg-aurora opacity-60" />
+                        <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] border border-border bg-white soft-shadow">
+                          <div className="absolute inset-0 bg-surface" />
                           <div
-                            className={`absolute inset-0 bg-gradient-to-br ${accent.gradient} opacity-25 mix-blend-overlay`}
+                            className={`absolute inset-0 bg-gradient-to-br ${accent.chipGradient} opacity-70`}
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent" />
 
-                          {/* Top status bar */}
                           <div className="pointer-events-none absolute inset-x-0 top-0 z-20 flex items-center justify-between p-3">
-                            <div className="flex items-center gap-2 rounded-full border border-white/15 bg-black/45 px-2.5 py-1 backdrop-blur">
-                              <span className="flex h-2 w-2">
-                                <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-emerald-400 opacity-75" />
-                                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-                              </span>
-                              <span className="font-heading text-[10px] font-bold uppercase tracking-wider text-white">
+                            <div className="flex items-center gap-2 rounded-full border border-border bg-white/85 px-2.5 py-1 backdrop-blur">
+                              <span className={`h-2 w-2 rounded-full ${accent.bg}`} />
+                              <span className="font-heading text-[10px] font-bold uppercase tracking-wider text-foreground/80">
                                 Live · Step {i + 1} of 4
                               </span>
                             </div>
                             <div className="flex items-center gap-1">
-                              <span className="h-1.5 w-1.5 rounded-full bg-rose-400/80" />
-                              <span className="h-1.5 w-1.5 rounded-full bg-amber-400/80" />
-                              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400/80" />
+                              <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/40" />
+                              <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/40" />
+                              <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/40" />
                             </div>
                           </div>
 
-                          {/* Live mockup content */}
                           <div className="absolute inset-0 z-10 pt-12">
                             <Visual />
                           </div>
-
-                          {/* Sweep beam */}
-                          <div className="pointer-events-none absolute inset-0 z-30 overflow-hidden">
-                            <div className="absolute inset-y-0 -left-1/2 w-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-beam-sweep" />
-                          </div>
-
-                          {/* Corner accent */}
-                          <div
-                            className={`pointer-events-none absolute -bottom-12 -right-12 h-44 w-44 rounded-full ${accent.glow} blur-2xl`}
-                          />
                         </div>
 
-                        {/* Floating badge */}
                         <div
                           className={`absolute -bottom-4 ${
                             imageFirst ? "right-6" : "left-6"
-                          } z-20 flex items-center gap-2 rounded-full border border-white bg-white px-3.5 py-1.5 soft-shadow`}
+                          } z-20 flex items-center gap-2 rounded-full border border-border bg-white px-3.5 py-1.5 soft-shadow`}
                         >
                           <span
                             className={`flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br ${accent.gradient} text-white`}
