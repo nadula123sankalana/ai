@@ -1,0 +1,1470 @@
+- generic [ref=e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "Catalyst AI home" [ref=e6] [cursor=pointer]:
+          - /url: "#"
+          - img "Catalyst AI" [ref=e7]
+        - navigation [ref=e8]:
+          - button "Platform" [ref=e10] [cursor=pointer]:
+            - text: Platform
+            - img [ref=e11]
+          - button "Solutions" [ref=e14] [cursor=pointer]:
+            - text: Solutions
+            - img [ref=e15]
+          - button "Pricing" [ref=e18] [cursor=pointer]
+          - button "Resources" [ref=e20] [cursor=pointer]
+        - generic [ref=e21]:
+          - button "Book Demo" [ref=e22] [cursor=pointer]
+          - button "Create" [ref=e23] [cursor=pointer]:
+            - img [ref=e25]
+            - generic [ref=e27]: Create
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - heading "Videos that actually convert." [level=1] [ref=e31]:
+          - text: Videos that
+          - generic [ref=e32]: actually convert.
+        - paragraph [ref=e33]: Paste a product URL or brief. Get cinematic video ads, explainers, and social content — produced by world-class crews in 80+ cities, delivered in days, optimized for performance.
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - img [ref=e37]
+            - textbox "Paste your product URL…" [ref=e40]
+            - button "Generate" [ref=e41] [cursor=pointer]:
+              - text: Generate
+              - img
+          - paragraph [ref=e42]: No credit card · First video free · Delivered in 48 hours
+        - paragraph [ref=e45]: Joined by 2,300+ marketers this month
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - generic [ref=e55]:
+            - img [ref=e56]
+            - text: catalyst.ai / studio / preview
+          - generic [ref=e59]: Live
+        - generic [ref=e60]:
+          - iframe [ref=e61]:
+            - generic [active] [ref=f1e1]:
+              - generic "YouTube Video Player" [ref=f1e3]
+              - generic [ref=f1e5]:
+                - generic:
+                  - generic:
+                    - button "Play video" [ref=f1e10] [cursor=pointer]:
+                      - generic [ref=f1e13]:
+                        - img
+                    - button "Hide player controls" [ref=f1e14] [cursor=pointer]
+                    - generic [ref=f1e16]:
+                      - generic [ref=f1e21]:
+                        - generic [ref=f1e22]:
+                          - 'link "Revion | Engineered Performance: The Hoodie System" [ref=f1e23] [cursor=pointer]':
+                            - /url: https://www.youtube.com/watch?v=I9qBS0zLGKo
+                          - link "Twist Digital Live" [ref=f1e24] [cursor=pointer]:
+                            - /url: /channel/UCc5E4jPUCeGcowJDKJ14rcQ
+                            - generic [ref=f1e25]: Twist Digital Live
+                        - generic [ref=f1e26]:
+                          - button "thumbnail-image" [ref=f1e27] [cursor=pointer]:
+                            - img "thumbnail-image" [ref=f1e28]
+                          - generic [ref=f1e30]:
+                            - generic: Twist Digital Live
+                            - generic: No subscribers
+                      - generic [ref=f1e31]:
+                        - button "Copy link" [ref=f1e34] [cursor=pointer]:
+                          - generic [ref=f1e38]:
+                            - img
+                        - link "Watch on YouTube" [ref=f1e45] [cursor=pointer]:
+                          - /url: https://www.youtube.com/watch?v=I9qBS0zLGKo
+                          - generic [ref=f1e48]:
+                            - text: Watch on
+                            - img [ref=f1e50]:
+                              - generic [ref=f1e52]:
+                                - img
+          - generic [ref=e62]:
+            - img [ref=e64]
+            - generic [ref=e67]:
+              - generic [ref=e68]: 1.2M
+              - generic [ref=e69]: views · this week
+          - generic [ref=e70]:
+            - img [ref=e72]
+            - generic [ref=e75]:
+              - generic [ref=e76]: +273%
+              - generic [ref=e77]: ROAS vs. baseline
+          - generic [ref=e78]:
+            - button [ref=e79] [cursor=pointer]:
+              - img [ref=e80]
+            - generic [ref=e84]:
+              - img [ref=e85]
+              - text: 0:18 / 0:60
+        - generic [ref=e88]:
+          - generic [ref=e89]:
+            - generic [ref=e90]: 94%
+            - generic [ref=e91]: Hook retention
+          - generic [ref=e92]:
+            - generic [ref=e93]: 6.8%
+            - generic [ref=e94]: CTR
+          - generic [ref=e95]:
+            - generic [ref=e96]: –42%
+            - generic [ref=e97]: CPA
+          - generic [ref=e98]:
+            - generic [ref=e99]: "24"
+            - generic [ref=e100]: Variants live
+      - generic [ref=e102]:
+        - generic [ref=e103]:
+          - img [ref=e106]
+          - generic [ref=e108]: Brand Films
+        - generic [ref=e109]:
+          - img [ref=e112]
+          - generic [ref=e114]: Product Videos
+        - generic [ref=e115]:
+          - img [ref=e118]
+          - generic [ref=e120]: Commercials
+        - generic [ref=e121]:
+          - img [ref=e124]
+          - generic [ref=e126]: Social Content
+        - generic [ref=e127]:
+          - img [ref=e130]
+          - generic [ref=e132]: Testimonials
+        - generic [ref=e133]:
+          - img [ref=e136]
+          - generic [ref=e138]: Explainers
+        - generic [ref=e139]:
+          - img [ref=e142]
+          - generic [ref=e144]: Event Coverage
+        - generic [ref=e145]:
+          - img [ref=e148]
+          - generic [ref=e150]: Animations
+        - generic [ref=e151]:
+          - img [ref=e154]
+          - generic [ref=e156]: Brand Films
+        - generic [ref=e157]:
+          - img [ref=e160]
+          - generic [ref=e162]: Product Videos
+        - generic [ref=e163]:
+          - img [ref=e166]
+          - generic [ref=e168]: Commercials
+        - generic [ref=e169]:
+          - img [ref=e172]
+          - generic [ref=e174]: Social Content
+        - generic [ref=e175]:
+          - img [ref=e178]
+          - generic [ref=e180]: Testimonials
+        - generic [ref=e181]:
+          - img [ref=e184]
+          - generic [ref=e186]: Explainers
+        - generic [ref=e187]:
+          - img [ref=e190]
+          - generic [ref=e192]: Event Coverage
+        - generic [ref=e193]:
+          - img [ref=e196]
+          - generic [ref=e198]: Animations
+    - generic [ref=e201]:
+      - paragraph [ref=e202]: Supporting 4,500+ brands and agencies
+      - generic [ref=e204]:
+        - generic [ref=e205]: Amazon
+        - generic [ref=e206]: Toyota
+        - generic [ref=e207]: Walmart
+        - generic [ref=e208]: Airbnb
+        - generic [ref=e209]: Dyson
+        - generic [ref=e210]: Nestlé
+        - generic [ref=e211]: Google
+        - generic [ref=e212]: Coca-Cola
+        - generic [ref=e213]: Audi
+        - generic [ref=e214]: Tesla
+        - generic [ref=e215]: Uber
+        - generic [ref=e216]: Porsche
+        - generic [ref=e217]: Samsung
+        - generic [ref=e218]: Microsoft
+        - generic [ref=e219]: Spotify
+        - generic [ref=e220]: Adobe
+        - generic [ref=e221]: Amazon
+        - generic [ref=e222]: Toyota
+        - generic [ref=e223]: Walmart
+        - generic [ref=e224]: Airbnb
+        - generic [ref=e225]: Dyson
+        - generic [ref=e226]: Nestlé
+        - generic [ref=e227]: Google
+        - generic [ref=e228]: Coca-Cola
+        - generic [ref=e229]: Audi
+        - generic [ref=e230]: Tesla
+        - generic [ref=e231]: Uber
+        - generic [ref=e232]: Porsche
+        - generic [ref=e233]: Samsung
+        - generic [ref=e234]: Microsoft
+        - generic [ref=e235]: Spotify
+        - generic [ref=e236]: Adobe
+    - generic [ref=e241]:
+      - generic [ref=e242]:
+        - generic [ref=e244]: 0+
+        - paragraph [ref=e245]: Videos produced
+      - generic [ref=e246]:
+        - generic [ref=e248]: 0+
+        - paragraph [ref=e249]: Brands served
+      - generic [ref=e250]:
+        - generic [ref=e252]: 0+
+        - paragraph [ref=e253]: Cities covered
+      - generic [ref=e254]:
+        - generic [ref=e256]: ~$0B+
+        - paragraph [ref=e257]: Ad spend powered
+    - generic [ref=e260]:
+      - generic [ref=e261]:
+        - generic [ref=e262]: The Catalyst Pipeline
+        - heading "From brief to winning creative. All in one platform." [level=2] [ref=e266]:
+          - text: From brief to winning creative.
+          - generic [ref=e267]: All in one platform.
+        - paragraph [ref=e268]: Four steps. One partner. Built to make high-performing video the new default — not a moonshot.
+      - generic [ref=e270]:
+        - generic [ref=e271]:
+          - img [ref=e276]
+          - generic [ref=e279]:
+            - generic [ref=e280]:
+              - generic [ref=e281]:
+                - generic [ref=e282]: "01"
+                - generic [ref=e283]: DISCOVER
+              - heading "See exactly what's converting right now" [level=3] [ref=e285]
+              - paragraph [ref=e286]: Your live signal feed of winning creative — by industry, platform & format.
+              - list [ref=e287]:
+                - listitem [ref=e288]:
+                  - img [ref=e290]
+                  - generic [ref=e293]: Browse winning creative by industry & platform
+                - listitem [ref=e294]:
+                  - img [ref=e296]
+                  - generic [ref=e299]: Analyze competitors' actual video strategy
+                - listitem [ref=e300]:
+                  - img [ref=e302]
+                  - generic [ref=e305]: Remix proven concepts in seconds
+              - generic [ref=e306]:
+                - generic [ref=e307]: Meta Ads
+                - generic [ref=e308]: TikTok Shop
+                - generic [ref=e309]: YouTube Shorts
+                - generic [ref=e310]: Reels
+              - generic [ref=e311]:
+                - generic [ref=e312]:
+                  - paragraph [ref=e313]: Winning angles
+                  - paragraph [ref=e314]: 27x
+                  - paragraph [ref=e315]: vs. manual research
+                - generic [ref=e316]:
+                  - paragraph [ref=e317]: Time to concept
+                  - paragraph [ref=e318]: 2.3m
+                  - paragraph [ref=e319]: avg. session
+              - button "Learn more" [ref=e320] [cursor=pointer]:
+                - text: Learn more
+                - img [ref=e321]
+            - generic [ref=e324]:
+              - generic [ref=e327]:
+                - generic:
+                  - generic:
+                    - generic: Live · Step 1 of 4
+                - generic [ref=e332]:
+                  - generic [ref=e333]:
+                    - img [ref=e334]
+                    - generic [ref=e337]: What's converting in fitness apps?
+                    - generic [ref=e338]:
+                      - img [ref=e339]
+                      - text: Live
+                  - generic [ref=e341]:
+                    - generic [ref=e342]: Industry
+                    - generic [ref=e343]: Platform
+                    - generic [ref=e344]: Hook
+                    - generic [ref=e345]: Format
+                    - generic [ref=e346]: Length
+                  - generic [ref=e347]:
+                    - generic [ref=e348]:
+                      - generic [ref=e351]: Viral
+                      - generic [ref=e353]:
+                        - generic [ref=e354]: +312%
+                        - img [ref=e356]
+                    - generic [ref=e358]:
+                      - generic [ref=e361]: Hot
+                      - generic [ref=e363]:
+                        - generic [ref=e364]: +184%
+                        - img [ref=e366]
+                    - generic [ref=e368]:
+                      - generic [ref=e371]: Rising
+                      - generic [ref=e373]:
+                        - generic [ref=e374]: +96%
+                        - img [ref=e376]
+                    - generic [ref=e378]:
+                      - generic [ref=e381]: Proven
+                      - generic [ref=e383]:
+                        - generic [ref=e384]: +221%
+                        - img [ref=e386]
+                    - generic [ref=e388]:
+                      - generic [ref=e391]: Trending
+                      - generic [ref=e393]:
+                        - generic [ref=e394]: +148%
+                        - img [ref=e396]
+                    - generic [ref=e398]:
+                      - generic [ref=e401]: New
+                      - generic [ref=e403]:
+                        - generic [ref=e404]: +72%
+                        - img [ref=e406]
+              - generic [ref=e408]:
+                - img [ref=e410]
+                - generic [ref=e414]: discover.catalyst
+                - img [ref=e415]
+        - generic [ref=e418]:
+          - img [ref=e423]
+          - generic [ref=e426]:
+            - generic [ref=e427]:
+              - generic [ref=e428]:
+                - generic [ref=e429]: "02"
+                - generic [ref=e430]: CREATE
+              - heading "Every video format, one creative partner" [level=3] [ref=e432]
+              - paragraph [ref=e433]: Generate dozens of on-brand variants in parallel — UGC, cinematic, explainer.
+              - list [ref=e434]:
+                - listitem [ref=e435]:
+                  - img [ref=e437]
+                  - generic [ref=e440]: Product, explainer, UGC, brand films & ads
+                - listitem [ref=e441]:
+                  - img [ref=e443]
+                  - generic [ref=e446]: Cinematic production or authentic UGC style
+                - listitem [ref=e447]:
+                  - img [ref=e449]
+                  - generic [ref=e452]: Batch-produce dozens of variants in parallel
+              - generic [ref=e453]:
+                - generic [ref=e454]: UGC
+                - generic [ref=e455]: Cinematic
+                - generic [ref=e456]: Explainer
+                - generic [ref=e457]: Product
+              - generic [ref=e458]:
+                - generic [ref=e459]:
+                  - paragraph [ref=e460]: Variants / sprint
+                  - paragraph [ref=e461]: 48+
+                  - paragraph [ref=e462]: in parallel
+                - generic [ref=e463]:
+                  - paragraph [ref=e464]: Revisions saved
+                  - paragraph [ref=e465]: 63%
+                  - paragraph [ref=e466]: vs. agency
+              - button "Learn more" [ref=e467] [cursor=pointer]:
+                - text: Learn more
+                - img [ref=e468]
+            - generic [ref=e471]:
+              - generic [ref=e474]:
+                - generic:
+                  - generic:
+                    - generic: Live · Step 2 of 4
+                - generic [ref=e479]:
+                  - generic [ref=e480]:
+                    - generic [ref=e481]:
+                      - img [ref=e483]
+                      - generic [ref=e486]:
+                        - paragraph [ref=e487]: Generating 12 variants
+                        - paragraph [ref=e488]: UGC · Cinematic · Explainer
+                    - generic [ref=e489]: AI Studio
+                  - generic [ref=e492]:
+                    - generic [ref=e493]:
+                      - generic [ref=e495]: v01
+                      - img [ref=e497]
+                    - generic [ref=e500]:
+                      - generic [ref=e502]: v02
+                      - img [ref=e504]
+                    - generic [ref=e507]:
+                      - generic [ref=e510]: v03
+                      - generic [ref=e511]: ...
+                    - generic [ref=e512]:
+                      - generic [ref=e514]: v04
+                      - img [ref=e516]
+                    - generic [ref=e519]:
+                      - generic [ref=e522]: v05
+                      - generic [ref=e523]: ...
+                    - generic [ref=e526]: v06
+                  - generic [ref=e527]:
+                    - img [ref=e528]
+                    - generic [ref=e531]: 8 of 12 ready · ETA 1m 24s
+              - generic [ref=e532]:
+                - img [ref=e534]
+                - generic [ref=e538]: create.catalyst
+                - img [ref=e539]
+        - generic [ref=e542]:
+          - img [ref=e547]
+          - generic [ref=e552]:
+            - generic [ref=e553]:
+              - generic [ref=e554]:
+                - generic [ref=e555]: "03"
+                - generic [ref=e556]: LAUNCH
+              - heading "Push live to every channel instantly" [level=3] [ref=e558]
+              - paragraph [ref=e559]: One-click deploy across Meta, TikTok, YouTube and Google with platform-perfect specs.
+              - list [ref=e560]:
+                - listitem [ref=e561]:
+                  - img [ref=e563]
+                  - generic [ref=e566]: Auto-optimized for Meta, TikTok, YouTube & more
+                - listitem [ref=e567]:
+                  - img [ref=e569]
+                  - generic [ref=e572]: Connect ad accounts once, launch forever
+                - listitem [ref=e573]:
+                  - img [ref=e575]
+                  - generic [ref=e578]: Built-in A/B testing across campaigns
+              - generic [ref=e579]:
+                - generic [ref=e580]: Meta
+                - generic [ref=e581]: TikTok
+                - generic [ref=e582]: YouTube
+                - generic [ref=e583]: Google
+              - generic [ref=e584]:
+                - generic [ref=e585]:
+                  - paragraph [ref=e586]: Accounts linked
+                  - paragraph [ref=e587]: "12"
+                  - paragraph [ref=e588]: one-click sync
+                - generic [ref=e589]:
+                  - paragraph [ref=e590]: Launch latency
+                  - paragraph [ref=e591]: <30s
+                  - paragraph [ref=e592]: to live
+              - button "Learn more" [ref=e593] [cursor=pointer]:
+                - text: Learn more
+                - img [ref=e594]
+            - generic [ref=e597]:
+              - generic [ref=e600]:
+                - generic:
+                  - generic:
+                    - generic: Live · Step 3 of 4
+                - generic [ref=e605]:
+                  - generic [ref=e606]:
+                    - generic [ref=e607]:
+                      - img [ref=e609]
+                      - generic [ref=e614]:
+                        - paragraph [ref=e615]: Deploying campaign
+                        - paragraph [ref=e616]: 4 platforms · 12 creatives
+                    - generic [ref=e617]: Sync
+                  - generic [ref=e619]:
+                    - generic [ref=e620]:
+                      - img [ref=e622]
+                      - generic [ref=e625]:
+                        - paragraph [ref=e626]: Meta
+                        - generic [ref=e629]: Live
+                      - generic [ref=e630]: $3.4k
+                    - generic [ref=e631]:
+                      - img [ref=e633]
+                      - generic [ref=e636]:
+                        - paragraph [ref=e637]: TikTok
+                        - generic [ref=e640]: Live
+                      - generic [ref=e641]: $2.1k
+                    - generic [ref=e642]:
+                      - img [ref=e644]
+                      - generic [ref=e647]:
+                        - paragraph [ref=e648]: YouTube
+                        - generic [ref=e651]: Deploying
+                      - generic [ref=e652]: —
+                    - generic [ref=e653]:
+                      - img [ref=e655]
+                      - generic [ref=e658]:
+                        - paragraph [ref=e659]: Google
+                        - generic [ref=e662]: Live
+                      - generic [ref=e663]: $1.8k
+                  - generic [ref=e664]:
+                    - img [ref=e665]
+                    - generic [ref=e667]: All systems live in 24s
+              - generic [ref=e668]:
+                - img [ref=e670]
+                - generic [ref=e674]: launch.catalyst
+                - img [ref=e675]
+        - generic [ref=e678]:
+          - img [ref=e683]
+          - generic [ref=e686]:
+            - generic [ref=e687]:
+              - generic [ref=e688]:
+                - generic [ref=e689]: "04"
+                - generic [ref=e690]: OPTIMIZE
+              - heading "Track what works. Kill what doesn't." [level=3] [ref=e692]
+              - paragraph [ref=e693]: Real-time performance for every variant, hook and angle — automatically.
+              - list [ref=e694]:
+                - listitem [ref=e695]:
+                  - img [ref=e697]
+                  - generic [ref=e700]: Spend, ROAS and CTR per creative, in real time
+                - listitem [ref=e701]:
+                  - img [ref=e703]
+                  - generic [ref=e706]: Compare performance across every variant
+                - listitem [ref=e707]:
+                  - img [ref=e709]
+                  - generic [ref=e712]: Know which hooks and angles actually convert
+              - generic [ref=e713]:
+                - generic [ref=e714]: ROAS
+                - generic [ref=e715]: CTR
+                - generic [ref=e716]: CPA
+                - generic [ref=e717]: Hook Quality
+              - generic [ref=e718]:
+                - generic [ref=e719]:
+                  - paragraph [ref=e720]: Live creative
+                  - paragraph [ref=e721]: 3.4k
+                  - paragraph [ref=e722]: tracked
+                - generic [ref=e723]:
+                  - paragraph [ref=e724]: Wasted spend
+                  - paragraph [ref=e725]: −41%
+                  - paragraph [ref=e726]: auto-killed
+              - button "Learn more" [ref=e727] [cursor=pointer]:
+                - text: Learn more
+                - img [ref=e728]
+            - generic [ref=e731]:
+              - generic [ref=e734]:
+                - generic:
+                  - generic:
+                    - generic: Live · Step 4 of 4
+                - generic [ref=e739]:
+                  - generic [ref=e740]:
+                    - generic [ref=e741]:
+                      - img [ref=e743]
+                      - generic [ref=e745]:
+                        - paragraph [ref=e746]: Performance · Today
+                        - paragraph [ref=e747]: Live · refreshed 2s ago
+                    - generic [ref=e748]: Realtime
+                  - generic [ref=e750]:
+                    - generic [ref=e751]:
+                      - paragraph [ref=e752]: ROAS
+                      - paragraph [ref=e753]: 4.8x
+                      - generic [ref=e754]:
+                        - img [ref=e755]
+                        - text: "+0.6"
+                    - generic [ref=e758]:
+                      - paragraph [ref=e759]: CTR
+                      - paragraph [ref=e760]: 3.2%
+                      - generic [ref=e761]:
+                        - img [ref=e762]
+                        - text: "+0.4"
+                    - generic [ref=e765]:
+                      - paragraph [ref=e766]: CPA
+                      - paragraph [ref=e767]: $8.40
+                      - generic [ref=e768]:
+                        - img [ref=e769]
+                        - text: "-12%"
+                  - generic [ref=e794]:
+                    - generic [ref=e795]: Mon
+                    - generic [ref=e796]: Tue
+                    - generic [ref=e797]: Wed
+                    - generic [ref=e798]: Thu
+                    - generic [ref=e799]: Fri
+              - generic [ref=e800]:
+                - img [ref=e802]
+                - generic [ref=e806]: optimize.catalyst
+                - img [ref=e807]
+    - generic [ref=e812]:
+      - generic [ref=e813]:
+        - heading "Vertical video tools bar" [level=2] [ref=e814]
+        - paragraph [ref=e815]: Browse quick-start creative modules in a scrollable reel.
+      - generic [ref=e816]:
+        - link "Inspiration Library Find what is trending and remix winners fast." [ref=e817] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e820]
+          - generic [ref=e822]:
+            - heading "Inspiration Library" [level=3] [ref=e823]
+            - paragraph [ref=e824]: Find what is trending and remix winners fast.
+        - link "Ad Cloner Recreate winning ads for your brand in minutes." [ref=e825] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e828]
+          - generic [ref=e830]:
+            - heading "Ad Cloner" [level=3] [ref=e831]
+            - paragraph [ref=e832]: Recreate winning ads for your brand in minutes.
+        - link "URL to Video Turn product links into ready-to-launch videos." [ref=e833] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e836]
+          - generic [ref=e838]:
+            - heading "URL to Video" [level=3] [ref=e839]
+            - paragraph [ref=e840]: Turn product links into ready-to-launch videos.
+        - link "Asset Generator Images, scripts and voice in one workflow." [ref=e841] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e844]
+          - generic [ref=e846]:
+            - heading "Asset Generator" [level=3] [ref=e847]
+            - paragraph [ref=e848]: Images, scripts and voice in one workflow.
+        - link "AI Avatars Create realistic avatar videos in multiple languages." [ref=e849] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e852]
+          - generic [ref=e854]:
+            - heading "AI Avatars" [level=3] [ref=e855]
+            - paragraph [ref=e856]: Create realistic avatar videos in multiple languages.
+        - link "Product Ads Generate product-led concepts and ad variants quickly." [ref=e857] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e860]
+          - generic [ref=e862]:
+            - heading "Product Ads" [level=3] [ref=e863]
+            - paragraph [ref=e864]: Generate product-led concepts and ad variants quickly.
+    - generic [ref=e867]:
+      - generic [ref=e868]:
+        - generic [ref=e869]:
+          - generic [ref=e870]: Why Catalyst
+          - heading "Your fast, reliable production partner." [level=2] [ref=e872]:
+            - text: Your fast, reliable
+            - generic [ref=e873]: production partner.
+        - generic [ref=e874]:
+          - button "Get in Touch" [ref=e875] [cursor=pointer]
+          - button "Watch Reel" [ref=e876] [cursor=pointer]:
+            - img
+            - text: Watch Reel
+      - generic [ref=e877]:
+        - generic [ref=e878]:
+          - img [ref=e882]
+          - generic [ref=e887]:
+            - heading "Streamlined process" [level=3] [ref=e888]
+            - paragraph [ref=e889]: Strategy, production and post under one roof — your brand voice stays consistent across every asset.
+        - generic [ref=e890]:
+          - img [ref=e894]
+          - generic [ref=e897]:
+            - heading "Global coverage" [level=3] [ref=e898]
+            - paragraph [ref=e899]: On-the-ground crews in 80+ cities worldwide, ready to shoot where your story actually lives.
+        - generic [ref=e900]:
+          - img [ref=e904]
+          - generic [ref=e906]:
+            - heading "Scalable volume" [level=3] [ref=e907]
+            - paragraph [ref=e908]: From one hero film to 1,000 personalized variants — the quality bar never drops.
+        - generic [ref=e909]:
+          - img [ref=e913]
+          - generic [ref=e916]:
+            - heading "Fast turnarounds" [level=3] [ref=e917]
+            - paragraph [ref=e918]: Briefs to delivery in days, not months, without ever shortcutting craft or sound design.
+        - generic [ref=e919]:
+          - img [ref=e923]
+          - generic [ref=e926]:
+            - heading "AI-powered ideation" [level=3] [ref=e927]
+            - paragraph [ref=e928]: Discover what's converting in your category and remix winning angles in a single click.
+        - generic [ref=e929]:
+          - img [ref=e933]
+          - generic [ref=e936]:
+            - heading "Enterprise-grade" [level=3] [ref=e937]
+            - paragraph [ref=e938]: SOC 2 Type II, SSO, role-based access, and NDAs that scale across your entire org.
+    - generic [ref=e941]:
+      - generic [ref=e942]:
+        - generic [ref=e943]: Every format
+        - heading "Create any video. With one partner." [level=2] [ref=e945]:
+          - text: Create any video.
+          - generic [ref=e946]: With one partner.
+        - paragraph [ref=e947]: From 15-second TikToks to 60-second brand films — one production team, one creative standard, zero friction.
+      - generic [ref=e948]:
+        - link "Product Videos Showcase, demo & lifestyle" [ref=e949] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e952]:
+            - generic [ref=e953]: Product Videos
+            - generic [ref=e954]: Showcase, demo & lifestyle
+          - img [ref=e956]
+        - link "About Us Videos Brand films that convert" [ref=e959] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e962]:
+            - generic [ref=e963]: About Us Videos
+            - generic [ref=e964]: Brand films that convert
+          - img [ref=e966]
+        - link "Explainer Videos Simplify complex stories" [ref=e969] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e972]:
+            - generic [ref=e973]: Explainer Videos
+            - generic [ref=e974]: Simplify complex stories
+          - img [ref=e976]
+        - link "Testimonial Videos Real customer, real impact" [ref=e979] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e982]:
+            - generic [ref=e983]: Testimonial Videos
+            - generic [ref=e984]: Real customer, real impact
+          - img [ref=e986]
+        - link "Video Ads Meta, TikTok, YouTube ready" [ref=e989] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e992]:
+            - generic [ref=e993]: Video Ads
+            - generic [ref=e994]: Meta, TikTok, YouTube ready
+          - img [ref=e996]
+        - link "Animated Videos 2D, 3D & motion graphics" [ref=e999] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1002]:
+            - generic [ref=e1003]: Animated Videos
+            - generic [ref=e1004]: 2D, 3D & motion graphics
+          - img [ref=e1006]
+        - link "Event Videos Multi-cam, live-to-edit" [ref=e1009] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1012]:
+            - generic [ref=e1013]: Event Videos
+            - generic [ref=e1014]: Multi-cam, live-to-edit
+          - img [ref=e1016]
+        - link "Tutorial Videos Product-led onboarding" [ref=e1019] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1022]:
+            - generic [ref=e1023]: Tutorial Videos
+            - generic [ref=e1024]: Product-led onboarding
+          - img [ref=e1026]
+        - link "Crowdfunding Videos From Kickstarter to scale" [ref=e1029] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1032]:
+            - generic [ref=e1033]: Crowdfunding Videos
+            - generic [ref=e1034]: From Kickstarter to scale
+          - img [ref=e1036]
+    - generic [ref=e1041]:
+      - generic [ref=e1042]:
+        - generic [ref=e1043]:
+          - generic [ref=e1044]: Built for every vertical
+          - heading "Proven results across every industry you serve." [level=2] [ref=e1046]:
+            - text: Proven results across
+            - generic [ref=e1047]: every industry you serve.
+        - paragraph [ref=e1048]: 4,500+ brands trust Catalyst with video that moves the needle — from DTC launches to enterprise rollouts to regulated healthcare.
+      - generic [ref=e1049]:
+        - link "Retail & E-commerce High-converting product videos for launches, promotions, and always-on acquisition campaigns." [ref=e1050] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1054]:
+            - img [ref=e1057]
+            - generic [ref=e1060]:
+              - heading "Retail & E-commerce" [level=3] [ref=e1061]
+              - paragraph [ref=e1062]: High-converting product videos for launches, promotions, and always-on acquisition campaigns.
+        - link "Software & Tech Explainers, demos, and launch films that clarify complex products and accelerate growth." [ref=e1063] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1067]:
+            - img [ref=e1070]
+            - generic [ref=e1073]:
+              - heading "Software & Tech" [level=3] [ref=e1074]
+              - paragraph [ref=e1075]: Explainers, demos, and launch films that clarify complex products and accelerate growth.
+        - link "Healthcare Patient-first creative built for strict review workflows and regulated brand requirements." [ref=e1076] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1080]:
+            - img [ref=e1083]
+            - generic [ref=e1087]:
+              - heading "Healthcare" [level=3] [ref=e1088]
+              - paragraph [ref=e1089]: Patient-first creative built for strict review workflows and regulated brand requirements.
+        - link "Professional Services Trust-building brand content that converts high-intent audiences into qualified pipeline." [ref=e1090] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1094]:
+            - img [ref=e1097]
+            - generic [ref=e1101]:
+              - heading "Professional Services" [level=3] [ref=e1102]
+              - paragraph [ref=e1103]: Trust-building brand content that converts high-intent audiences into qualified pipeline.
+        - link "Education Story-led campaigns that increase enrollments and make curriculum value immediately clear." [ref=e1104] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1108]:
+            - img [ref=e1111]
+            - generic [ref=e1114]:
+              - heading "Education" [level=3] [ref=e1115]
+              - paragraph [ref=e1116]: Story-led campaigns that increase enrollments and make curriculum value immediately clear.
+        - link "Medical & Biotech Scientific and clinical narratives translated into clear, compelling stakeholder content." [ref=e1117] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1121]:
+            - img [ref=e1124]
+            - generic [ref=e1127]:
+              - heading "Medical & Biotech" [level=3] [ref=e1128]
+              - paragraph [ref=e1129]: Scientific and clinical narratives translated into clear, compelling stakeholder content.
+        - link "Travel & Hospitality Destination-led storytelling that drives bookings, occupancy, and repeat guest demand." [ref=e1130] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1134]:
+            - img [ref=e1137]
+            - generic [ref=e1139]:
+              - heading "Travel & Hospitality" [level=3] [ref=e1140]
+              - paragraph [ref=e1141]: Destination-led storytelling that drives bookings, occupancy, and repeat guest demand.
+        - link "Automotive & Mobility Premium launch and performance content for electric, luxury, and mass-market vehicle brands." [ref=e1142] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1146]:
+            - img [ref=e1149]
+            - generic [ref=e1153]:
+              - heading "Automotive & Mobility" [level=3] [ref=e1154]
+              - paragraph [ref=e1155]: Premium launch and performance content for electric, luxury, and mass-market vehicle brands.
+    - generic [ref=e1157]:
+      - generic [ref=e1159]:
+        - generic [ref=e1160]: Our work
+        - heading "We've produced over 30,000 videos." [level=2] [ref=e1162]:
+          - text: We've produced over
+          - generic [ref=e1163]: 30,000 videos.
+        - paragraph [ref=e1164]: From global brand films to scroll-stopping TikToks — here's a taste of what Catalyst crews have shipped recently.
+      - generic [ref=e1166]:
+        - generic [ref=e1167] [cursor=pointer]:
+          - generic [ref=e1169]:
+            - img [ref=e1171]
+            - generic [ref=e1173]: Watch Now
+          - generic [ref=e1174]:
+            - generic [ref=e1175]: Beauty
+            - heading "Meaningful Beauty" [level=3] [ref=e1176]
+        - generic [ref=e1177] [cursor=pointer]:
+          - generic [ref=e1179]:
+            - img [ref=e1181]
+            - generic [ref=e1183]: Watch Now
+          - generic [ref=e1184]:
+            - generic [ref=e1185]: Beverage
+            - heading "Stella Rosa" [level=3] [ref=e1186]
+        - generic [ref=e1187] [cursor=pointer]:
+          - generic [ref=e1189]:
+            - img [ref=e1191]
+            - generic [ref=e1193]: Watch Now
+          - generic [ref=e1194]:
+            - generic [ref=e1195]: Retail
+            - heading "Walmart | Maui" [level=3] [ref=e1196]
+        - generic [ref=e1197] [cursor=pointer]:
+          - generic [ref=e1199]:
+            - img [ref=e1201]
+            - generic [ref=e1203]: Watch Now
+          - generic [ref=e1204]:
+            - generic [ref=e1205]: Luxury
+            - heading "Rolex Heritage" [level=3] [ref=e1206]
+        - generic [ref=e1207] [cursor=pointer]:
+          - generic [ref=e1209]:
+            - img [ref=e1211]
+            - generic [ref=e1213]: Watch Now
+          - generic [ref=e1214]:
+            - generic [ref=e1215]: Tech
+            - heading "Amazon I AM" [level=3] [ref=e1216]
+        - generic [ref=e1217] [cursor=pointer]:
+          - generic [ref=e1219]:
+            - img [ref=e1221]
+            - generic [ref=e1223]: Watch Now
+          - generic [ref=e1224]:
+            - generic [ref=e1225]: Travel
+            - heading "Samsonite CLite" [level=3] [ref=e1226]
+        - generic [ref=e1227] [cursor=pointer]:
+          - generic [ref=e1229]:
+            - img [ref=e1231]
+            - generic [ref=e1233]: Watch Now
+          - generic [ref=e1234]:
+            - generic [ref=e1235]: F&B
+            - heading "Din Tai Fung" [level=3] [ref=e1236]
+        - generic [ref=e1237] [cursor=pointer]:
+          - generic [ref=e1239]:
+            - img [ref=e1241]
+            - generic [ref=e1243]: Watch Now
+          - generic [ref=e1244]:
+            - generic [ref=e1245]: Sport
+            - heading "Potent Hockey" [level=3] [ref=e1246]
+        - generic [ref=e1247] [cursor=pointer]:
+          - generic [ref=e1249]:
+            - img [ref=e1251]
+            - generic [ref=e1253]: Watch Now
+          - generic [ref=e1254]:
+            - generic [ref=e1255]: Insurance
+            - heading "AAA Membership" [level=3] [ref=e1256]
+        - generic [ref=e1257] [cursor=pointer]:
+          - generic [ref=e1259]:
+            - img [ref=e1261]
+            - generic [ref=e1263]: Watch Now
+          - generic [ref=e1264]:
+            - generic [ref=e1265]: Auto
+            - heading "Edmunds" [level=3] [ref=e1266]
+        - generic [ref=e1267] [cursor=pointer]:
+          - generic [ref=e1269]:
+            - img [ref=e1271]
+            - generic [ref=e1273]: Watch Now
+          - generic [ref=e1274]:
+            - generic [ref=e1275]: Beauty
+            - heading "Meaningful Beauty" [level=3] [ref=e1276]
+        - generic [ref=e1277] [cursor=pointer]:
+          - generic [ref=e1279]:
+            - img [ref=e1281]
+            - generic [ref=e1283]: Watch Now
+          - generic [ref=e1284]:
+            - generic [ref=e1285]: Beverage
+            - heading "Stella Rosa" [level=3] [ref=e1286]
+        - generic [ref=e1287] [cursor=pointer]:
+          - generic [ref=e1289]:
+            - img [ref=e1291]
+            - generic [ref=e1293]: Watch Now
+          - generic [ref=e1294]:
+            - generic [ref=e1295]: Retail
+            - heading "Walmart | Maui" [level=3] [ref=e1296]
+        - generic [ref=e1297] [cursor=pointer]:
+          - generic [ref=e1299]:
+            - img [ref=e1301]
+            - generic [ref=e1303]: Watch Now
+          - generic [ref=e1304]:
+            - generic [ref=e1305]: Luxury
+            - heading "Rolex Heritage" [level=3] [ref=e1306]
+        - generic [ref=e1307] [cursor=pointer]:
+          - generic [ref=e1309]:
+            - img [ref=e1311]
+            - generic [ref=e1313]: Watch Now
+          - generic [ref=e1314]:
+            - generic [ref=e1315]: Tech
+            - heading "Amazon I AM" [level=3] [ref=e1316]
+        - generic [ref=e1317] [cursor=pointer]:
+          - generic [ref=e1319]:
+            - img [ref=e1321]
+            - generic [ref=e1323]: Watch Now
+          - generic [ref=e1324]:
+            - generic [ref=e1325]: Travel
+            - heading "Samsonite CLite" [level=3] [ref=e1326]
+        - generic [ref=e1327] [cursor=pointer]:
+          - generic [ref=e1329]:
+            - img [ref=e1331]
+            - generic [ref=e1333]: Watch Now
+          - generic [ref=e1334]:
+            - generic [ref=e1335]: F&B
+            - heading "Din Tai Fung" [level=3] [ref=e1336]
+        - generic [ref=e1337] [cursor=pointer]:
+          - generic [ref=e1339]:
+            - img [ref=e1341]
+            - generic [ref=e1343]: Watch Now
+          - generic [ref=e1344]:
+            - generic [ref=e1345]: Sport
+            - heading "Potent Hockey" [level=3] [ref=e1346]
+        - generic [ref=e1347] [cursor=pointer]:
+          - generic [ref=e1349]:
+            - img [ref=e1351]
+            - generic [ref=e1353]: Watch Now
+          - generic [ref=e1354]:
+            - generic [ref=e1355]: Insurance
+            - heading "AAA Membership" [level=3] [ref=e1356]
+        - generic [ref=e1357] [cursor=pointer]:
+          - generic [ref=e1359]:
+            - img [ref=e1361]
+            - generic [ref=e1363]: Watch Now
+          - generic [ref=e1364]:
+            - generic [ref=e1365]: Auto
+            - heading "Edmunds" [level=3] [ref=e1366]
+      - generic [ref=e1368]:
+        - generic [ref=e1369] [cursor=pointer]:
+          - img [ref=e1373]
+          - heading "Samsonite CLite" [level=3] [ref=e1376]
+        - generic [ref=e1377] [cursor=pointer]:
+          - img [ref=e1381]
+          - heading "Din Tai Fung" [level=3] [ref=e1384]
+        - generic [ref=e1385] [cursor=pointer]:
+          - img [ref=e1389]
+          - heading "Potent Hockey" [level=3] [ref=e1392]
+        - generic [ref=e1393] [cursor=pointer]:
+          - img [ref=e1397]
+          - heading "AAA Membership" [level=3] [ref=e1400]
+        - generic [ref=e1401] [cursor=pointer]:
+          - img [ref=e1405]
+          - heading "Edmunds" [level=3] [ref=e1408]
+        - generic [ref=e1409] [cursor=pointer]:
+          - img [ref=e1413]
+          - heading "Meaningful Beauty" [level=3] [ref=e1416]
+        - generic [ref=e1417] [cursor=pointer]:
+          - img [ref=e1421]
+          - heading "Stella Rosa" [level=3] [ref=e1424]
+        - generic [ref=e1425] [cursor=pointer]:
+          - img [ref=e1429]
+          - heading "Walmart | Maui" [level=3] [ref=e1432]
+        - generic [ref=e1433] [cursor=pointer]:
+          - img [ref=e1437]
+          - heading "Rolex Heritage" [level=3] [ref=e1440]
+        - generic [ref=e1441] [cursor=pointer]:
+          - img [ref=e1445]
+          - heading "Amazon I AM" [level=3] [ref=e1448]
+        - generic [ref=e1449] [cursor=pointer]:
+          - img [ref=e1453]
+          - heading "Samsonite CLite" [level=3] [ref=e1456]
+        - generic [ref=e1457] [cursor=pointer]:
+          - img [ref=e1461]
+          - heading "Din Tai Fung" [level=3] [ref=e1464]
+        - generic [ref=e1465] [cursor=pointer]:
+          - img [ref=e1469]
+          - heading "Potent Hockey" [level=3] [ref=e1472]
+        - generic [ref=e1473] [cursor=pointer]:
+          - img [ref=e1477]
+          - heading "AAA Membership" [level=3] [ref=e1480]
+        - generic [ref=e1481] [cursor=pointer]:
+          - img [ref=e1485]
+          - heading "Edmunds" [level=3] [ref=e1488]
+        - generic [ref=e1489] [cursor=pointer]:
+          - img [ref=e1493]
+          - heading "Meaningful Beauty" [level=3] [ref=e1496]
+        - generic [ref=e1497] [cursor=pointer]:
+          - img [ref=e1501]
+          - heading "Stella Rosa" [level=3] [ref=e1504]
+        - generic [ref=e1505] [cursor=pointer]:
+          - img [ref=e1509]
+          - heading "Walmart | Maui" [level=3] [ref=e1512]
+        - generic [ref=e1513] [cursor=pointer]:
+          - img [ref=e1517]
+          - heading "Rolex Heritage" [level=3] [ref=e1520]
+        - generic [ref=e1521] [cursor=pointer]:
+          - img [ref=e1525]
+          - heading "Amazon I AM" [level=3] [ref=e1528]
+      - link "View the full portfolio" [ref=e1530] [cursor=pointer]:
+        - /url: "#"
+        - text: View the full portfolio
+        - img [ref=e1531]
+    - generic [ref=e1535]:
+      - generic [ref=e1536]:
+        - generic [ref=e1537]: Our process
+        - heading "Simple. Seamless. Professional." [level=2] [ref=e1539]:
+          - text: Simple. Seamless.
+          - generic [ref=e1540]: Professional.
+        - paragraph [ref=e1541]: Three clean steps to world-class video. No chaos. No surprises. No blown timelines.
+      - generic [ref=e1542]:
+        - generic [ref=e1543]:
+          - generic [ref=e1544]:
+            - img [ref=e1547]
+            - generic [ref=e1550]: "01"
+          - generic [ref=e1551]:
+            - generic [ref=e1552]: Step 01
+            - heading "Pre-Production" [level=3] [ref=e1553]
+            - paragraph [ref=e1554]: Creative brief, storyboard, script, talent and logistics — locked before a single frame rolls.
+            - list [ref=e1555]:
+              - listitem [ref=e1556]:
+                - img [ref=e1557]
+                - generic [ref=e1560]: Strategy workshop
+              - listitem [ref=e1561]:
+                - img [ref=e1562]
+                - generic [ref=e1565]: Storyboard & script
+              - listitem [ref=e1566]:
+                - img [ref=e1567]
+                - generic [ref=e1570]: Talent & locations
+        - generic [ref=e1571]:
+          - generic [ref=e1572]:
+            - img [ref=e1575]
+            - generic [ref=e1578]: "02"
+          - generic [ref=e1579]:
+            - generic [ref=e1580]: Step 02
+            - heading "Production" [level=3] [ref=e1581]
+            - paragraph [ref=e1582]: Experienced crews shoot with cinema-grade gear across 80+ cities worldwide.
+            - list [ref=e1583]:
+              - listitem [ref=e1584]:
+                - img [ref=e1585]
+                - generic [ref=e1588]: 4K / 6K capture
+              - listitem [ref=e1589]:
+                - img [ref=e1590]
+                - generic [ref=e1593]: Global crews
+              - listitem [ref=e1594]:
+                - img [ref=e1595]
+                - generic [ref=e1598]: Director of photography
+        - generic [ref=e1599]:
+          - generic [ref=e1600]:
+            - img [ref=e1603]
+            - generic [ref=e1606]: "03"
+          - generic [ref=e1607]:
+            - generic [ref=e1608]: Step 03
+            - heading "Post-Production" [level=3] [ref=e1609]
+            - paragraph [ref=e1610]: Editing, color grading, motion graphics, VFX and sound design that elevate every frame.
+            - list [ref=e1611]:
+              - listitem [ref=e1612]:
+                - img [ref=e1613]
+                - generic [ref=e1616]: Edit & color
+              - listitem [ref=e1617]:
+                - img [ref=e1618]
+                - generic [ref=e1621]: Motion graphics
+              - listitem [ref=e1622]:
+                - img [ref=e1623]
+                - generic [ref=e1626]: Sound design & mix
+    - generic [ref=e1629]:
+      - generic [ref=e1630]:
+        - generic [ref=e1631]: Real results
+        - heading "Performance you can actually measure." [level=2] [ref=e1633]:
+          - text: Performance you can
+          - generic [ref=e1634]: actually measure.
+        - paragraph [ref=e1635]: Sourced from Meta, Wistia, HubSpot and Catalyst internal benchmarks across thousands of real campaigns.
+      - generic [ref=e1636]:
+        - generic [ref=e1637]:
+          - generic [ref=e1639]: 2.7×
+          - paragraph [ref=e1641]: More leads vs. static image ads
+          - paragraph [ref=e1642]: Measured across 4,500+ campaigns
+        - generic [ref=e1643]:
+          - generic [ref=e1645]: 1.7×
+          - paragraph [ref=e1647]: Higher return on ad spend
+          - paragraph [ref=e1648]: Average across e-commerce & DTC
+        - generic [ref=e1649]:
+          - generic [ref=e1651]: 90%
+          - paragraph [ref=e1653]: Lower production cost
+          - paragraph [ref=e1654]: vs. traditional studio production
+      - paragraph [ref=e1655]: "*Sources: Meta, Wistia, HubSpot, Catalyst benchmarks · Independently audited 2026"
+    - generic [ref=e1658]:
+      - generic [ref=e1659]:
+        - generic [ref=e1660]: Testimonials
+        - heading "Loved by the best marketing teams." [level=2] [ref=e1662]:
+          - text: Loved by the best
+          - generic [ref=e1663]: marketing teams.
+      - generic [ref=e1664]:
+        - generic [ref=e1665]:
+          - generic:
+            - img
+          - generic [ref=e1666]:
+            - generic [ref=e1667]:
+              - img [ref=e1668]
+              - img [ref=e1670]
+              - img [ref=e1672]
+              - img [ref=e1674]
+              - img [ref=e1676]
+            - generic [ref=e1678]: 340% conversion lift
+          - paragraph [ref=e1679]: "\"Catalyst transformed our brand presence. The quality of their video production is unmatched — every project exceeded expectations and came in under budget.\""
+          - generic [ref=e1680]:
+            - img "Sarah Chen" [ref=e1681]
+            - generic [ref=e1682]:
+              - paragraph [ref=e1683]: Sarah Chen
+              - paragraph [ref=e1684]: CMO, TechFlow
+            - generic [ref=e1685]: TechFlow
+        - generic [ref=e1686]:
+          - generic:
+            - img
+          - generic [ref=e1687]:
+            - generic [ref=e1688]:
+              - img [ref=e1689]
+              - img [ref=e1691]
+              - img [ref=e1693]
+              - img [ref=e1695]
+              - img [ref=e1697]
+            - generic [ref=e1699]: 50+ videos in 6 weeks
+          - paragraph [ref=e1700]: "\"Working with Catalyst was seamless from kickoff to delivery. They shipped 50+ videos for our global campaign on time and the creative outperformed every benchmark.\""
+          - generic [ref=e1701]:
+            - img "Marcus Rodriguez" [ref=e1702]
+            - generic [ref=e1703]:
+              - paragraph [ref=e1704]: Marcus Rodriguez
+              - paragraph [ref=e1705]: Head of Marketing, Elevate
+            - generic [ref=e1706]: Elevate
+        - generic [ref=e1707]:
+          - generic:
+            - img
+          - generic [ref=e1708]:
+            - generic [ref=e1709]:
+              - img [ref=e1710]
+              - img [ref=e1712]
+              - img [ref=e1714]
+              - img [ref=e1716]
+              - img [ref=e1718]
+            - generic [ref=e1720]: $1.2M new ARR
+          - paragraph [ref=e1721]: "\"The explainer video they created drove a 340% increase in conversions. Easily the best content investment we've made this year — possibly this decade.\""
+          - generic [ref=e1722]:
+            - img "Emily Watson" [ref=e1723]
+            - generic [ref=e1724]:
+              - paragraph [ref=e1725]: Emily Watson
+              - paragraph [ref=e1726]: Founder, Bloom
+            - generic [ref=e1727]: Bloom
+        - generic [ref=e1728]:
+          - generic:
+            - img
+          - generic [ref=e1729]:
+            - generic [ref=e1730]:
+              - img [ref=e1731]
+              - img [ref=e1733]
+              - img [ref=e1735]
+              - img [ref=e1737]
+              - img [ref=e1739]
+            - generic [ref=e1741]: 4× faster shipping
+          - paragraph [ref=e1742]: "\"Catalyst delivered in days what took our agency months. Same quality. A fraction of the cost. I'll never go back to the old model.\""
+          - generic [ref=e1743]:
+            - img "David Park" [ref=e1744]
+            - generic [ref=e1745]:
+              - paragraph [ref=e1746]: David Park
+              - paragraph [ref=e1747]: VP Growth, Stride
+            - generic [ref=e1748]: Stride
+        - generic [ref=e1749]:
+          - generic:
+            - img
+          - generic [ref=e1750]:
+            - generic [ref=e1751]:
+              - img [ref=e1752]
+              - img [ref=e1754]
+              - img [ref=e1756]
+              - img [ref=e1758]
+              - img [ref=e1760]
+            - generic [ref=e1762]: 92% brand recall
+          - paragraph [ref=e1763]: "\"The creative team truly gets our brand. Every video feels like us, just sharper, brighter, and more on-strategy than we could have built alone.\""
+          - generic [ref=e1764]:
+            - img "Priya Shah" [ref=e1765]
+            - generic [ref=e1766]:
+              - paragraph [ref=e1767]: Priya Shah
+              - paragraph [ref=e1768]: Brand Director, Luna Skincare
+            - generic [ref=e1769]: Luna
+        - generic [ref=e1770]:
+          - generic:
+            - img
+          - generic [ref=e1771]:
+            - generic [ref=e1772]:
+              - img [ref=e1773]
+              - img [ref=e1775]
+              - img [ref=e1777]
+              - img [ref=e1779]
+              - img [ref=e1781]
+            - generic [ref=e1783]: 2× output, flat cost
+          - paragraph [ref=e1784]: "\"We doubled our creative output without adding headcount. Our TikTok account has never performed better. Catalyst is a cheat code.\""
+          - generic [ref=e1785]:
+            - img "James Carter" [ref=e1786]
+            - generic [ref=e1787]:
+              - paragraph [ref=e1788]: James Carter
+              - paragraph [ref=e1789]: Performance Lead, Nomad Apparel
+            - generic [ref=e1790]: Nomad
+    - generic [ref=e1793]:
+      - generic [ref=e1794]:
+        - generic [ref=e1795]: Global coverage
+        - heading "We shoot anywhere you need us." [level=2] [ref=e1797]
+        - paragraph [ref=e1798]: Production crews in 80+ cities across 6 continents. Same creative standard. Any time zone.
+      - generic [ref=e1799]:
+        - img [ref=e1801]
+        - generic:
+          - generic:
+            - generic: New York
+        - generic:
+          - generic:
+            - generic: London
+        - generic:
+          - generic:
+            - generic: Dubai
+        - generic:
+          - generic:
+            - generic: Tokyo
+        - generic:
+          - generic:
+            - generic: Sydney
+        - generic:
+          - generic:
+            - generic: São Paulo
+        - generic:
+          - generic:
+            - generic: Berlin
+        - generic:
+          - generic:
+            - generic: LA
+        - generic:
+          - generic:
+            - generic: Singapore
+        - generic:
+          - generic:
+            - generic: Mumbai
+        - paragraph [ref=e1809]: 80+ cities · 6 continents · one standard
+      - generic [ref=e1810]:
+        - generic [ref=e1811]:
+          - generic [ref=e1812]: 28 cities
+          - generic [ref=e1813]: North America
+        - generic [ref=e1814]:
+          - generic [ref=e1815]: 22 cities
+          - generic [ref=e1816]: Europe
+        - generic [ref=e1817]:
+          - generic [ref=e1818]: 18 cities
+          - generic [ref=e1819]: Asia & Pacific
+        - generic [ref=e1820]:
+          - generic [ref=e1821]: 14 cities
+          - generic [ref=e1822]: Rest of world
+    - generic [ref=e1825]:
+      - generic [ref=e1826]:
+        - generic [ref=e1827]:
+          - generic [ref=e1828]: Read the latest
+          - heading "Ideas, insights & creative tips from the Catalyst team." [level=2] [ref=e1830]:
+            - text: Ideas, insights & creative tips
+            - generic [ref=e1831]: from the Catalyst team.
+        - link "View all posts" [ref=e1832] [cursor=pointer]:
+          - /url: "#"
+          - text: View all posts
+          - img [ref=e1833]
+      - generic [ref=e1835]:
+        - link "Video Marketing How to make a product video in 2026 (no studio needed) Alex Rivera Alex Rivera Apr 20, 2026 6 min read" [ref=e1836] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1839]: Video Marketing
+          - generic [ref=e1840]:
+            - heading "How to make a product video in 2026 (no studio needed)" [level=3] [ref=e1841]
+            - generic [ref=e1842]:
+              - generic [ref=e1843]:
+                - img "Alex Rivera" [ref=e1844]
+                - generic [ref=e1845]:
+                  - generic [ref=e1846]: Alex Rivera
+                  - generic [ref=e1847]: Apr 20, 2026
+              - generic [ref=e1848]:
+                - img [ref=e1849]
+                - text: 6 min read
+        - link "Strategy What is Google Performance Max? A complete 2026 guide Priya Shah Priya Shah Apr 19, 2026 9 min read" [ref=e1852] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1855]: Strategy
+          - generic [ref=e1856]:
+            - heading "What is Google Performance Max? A complete 2026 guide" [level=3] [ref=e1857]
+            - generic [ref=e1858]:
+              - generic [ref=e1859]:
+                - img "Priya Shah" [ref=e1860]
+                - generic [ref=e1861]:
+                  - generic [ref=e1862]: Priya Shah
+                  - generic [ref=e1863]: Apr 19, 2026
+              - generic [ref=e1864]:
+                - img [ref=e1865]
+                - text: 9 min read
+        - link "Inspiration 7 brilliant AI marketing campaigns to inspire you in 2026 Sam Patel Sam Patel Apr 17, 2026 7 min read" [ref=e1868] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1871]: Inspiration
+          - generic [ref=e1872]:
+            - heading "7 brilliant AI marketing campaigns to inspire you in 2026" [level=3] [ref=e1873]
+            - generic [ref=e1874]:
+              - generic [ref=e1875]:
+                - img "Sam Patel" [ref=e1876]
+                - generic [ref=e1877]:
+                  - generic [ref=e1878]: Sam Patel
+                  - generic [ref=e1879]: Apr 17, 2026
+              - generic [ref=e1880]:
+                - img [ref=e1881]
+                - text: 7 min read
+    - generic [ref=e1886]:
+      - generic [ref=e1887]:
+        - generic [ref=e1888]: Trust & compliance
+        - heading "Built for enterprise. Loved by creators." [level=2] [ref=e1890]:
+          - text: Built for enterprise.
+          - generic [ref=e1891]: Loved by creators.
+      - generic [ref=e1892]:
+        - link "Industry 40+ G2 badges and a 4.9/5 average rating from real customers. Learn more" [ref=e1893] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1894]:
+            - img [ref=e1897]
+            - heading "Industry" [level=3] [ref=e1900]
+            - paragraph [ref=e1901]: 40+ G2 badges and a 4.9/5 average rating from real customers.
+          - generic [ref=e1902]:
+            - text: Learn more
+            - img [ref=e1903]
+        - link "Media Featured by Fast Company, Bloomberg, TechCrunch and Forbes. Read coverage" [ref=e1906] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1907]:
+            - img [ref=e1910]
+            - heading "Media" [level=3] [ref=e1913]
+            - paragraph [ref=e1914]: Featured by Fast Company, Bloomberg, TechCrunch and Forbes.
+          - generic [ref=e1915]:
+            - text: Read coverage
+            - img [ref=e1916]
+        - link "SOC 2 Compliance SOC 2 Type II certified. Enterprise-grade security & data controls. Download SOC 2" [ref=e1919] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1920]:
+            - generic [ref=e1921]:
+              - img [ref=e1923]
+              - generic [ref=e1926]: SOC 2
+            - heading "Compliance" [level=3] [ref=e1927]
+            - paragraph [ref=e1928]: SOC 2 Type II certified. Enterprise-grade security & data controls.
+          - generic [ref=e1929]:
+            - text: Download SOC 2
+            - img [ref=e1930]
+        - link "Channels Works natively with Meta, TikTok, YouTube, Snap, Amazon & more. See integrations" [ref=e1933] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1934]:
+            - img [ref=e1937]
+            - heading "Channels" [level=3] [ref=e1943]
+            - paragraph [ref=e1944]: Works natively with Meta, TikTok, YouTube, Snap, Amazon & more.
+          - generic [ref=e1945]:
+            - text: See integrations
+            - img [ref=e1946]
+        - link "Investors Backed by WndrCo, Kindred Ventures, NFDG and Comcast Ventures. Our story" [ref=e1949] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1950]:
+            - img [ref=e1953]
+            - heading "Investors" [level=3] [ref=e1958]
+            - paragraph [ref=e1959]: Backed by WndrCo, Kindred Ventures, NFDG and Comcast Ventures.
+          - generic [ref=e1960]:
+            - text: Our story
+            - img [ref=e1961]
+    - generic [ref=e1969]:
+      - generic [ref=e1970]:
+        - img [ref=e1971]
+        - generic [ref=e1974]: Your first video is free
+      - heading "Ready to make videos that actually win?" [level=2] [ref=e1975]:
+        - text: Ready to make videos
+        - generic [ref=e1976]: that actually win?
+      - paragraph [ref=e1977]: Paste a product URL and we'll generate your first video — on us. No credit card. No commitments. Delivered in 48 hours.
+      - generic [ref=e1978]:
+        - img [ref=e1980]
+        - textbox "Paste your product URL…" [ref=e1983]
+        - button "Start free" [ref=e1984] [cursor=pointer]:
+          - text: Start free
+          - img
+      - generic [ref=e1985]:
+        - generic [ref=e1986]: ✓ No credit card required
+        - generic [ref=e1987]: ✓ 4,500+ brands trust Catalyst
+        - generic [ref=e1988]: ✓ Cancel anytime
+    - contentinfo [ref=e1989]:
+      - generic [ref=e1990]:
+        - generic [ref=e1991]:
+          - generic [ref=e1992]:
+            - link "C CatalystAI" [ref=e1993] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e1995]: C
+              - generic [ref=e1996]: CatalystAI
+            - paragraph [ref=e1997]: World-class video production, powered by AI and built for the teams making the next decade of great marketing.
+            - generic [ref=e1998]:
+              - link "LinkedIn" [ref=e1999] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e2000]
+              - link "Instagram" [ref=e2003] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e2004]
+              - link "YouTube" [ref=e2007] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e2008]
+              - link "Twitter" [ref=e2011] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e2012]
+            - generic [ref=e2015]:
+              - generic [ref=e2016]: Get creative tips
+              - paragraph [ref=e2017]: Weekly playbook. No spam. Unsubscribe anytime.
+              - generic [ref=e2018]:
+                - textbox "you@company.com" [ref=e2019]
+                - button "Subscribe" [ref=e2020] [cursor=pointer]
+          - generic [ref=e2021]:
+            - heading "Features" [level=4] [ref=e2022]
+            - list [ref=e2023]:
+              - listitem [ref=e2024]:
+                - link "URL to Video" [ref=e2025] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2026]:
+                - link "AI Avatars" [ref=e2027] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2028]:
+                - link "Asset Generator" [ref=e2029] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2030]:
+                - link "Product Ads" [ref=e2031] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2032]:
+                - link "Batch Mode" [ref=e2033] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2034]:
+                - link "Ad Cloner" [ref=e2035] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2036]:
+                - link "API" [ref=e2037] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=e2038]:
+            - heading "Solutions" [level=4] [ref=e2039]
+            - list [ref=e2040]:
+              - listitem [ref=e2041]:
+                - link "E-commerce" [ref=e2042] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2043]:
+                - link "DTC Brands" [ref=e2044] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2045]:
+                - link "Agencies" [ref=e2046] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2047]:
+                - link "Real Estate" [ref=e2048] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2049]:
+                - link "SaaS & Apps" [ref=e2050] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2051]:
+                - link "UGC" [ref=e2052] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2053]:
+                - link "Performance" [ref=e2054] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=e2055]:
+            - heading "Channels" [level=4] [ref=e2056]
+            - list [ref=e2057]:
+              - listitem [ref=e2058]:
+                - link "Meta" [ref=e2059] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2060]:
+                - link "TikTok" [ref=e2061] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2062]:
+                - link "YouTube" [ref=e2063] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2064]:
+                - link "Instagram" [ref=e2065] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2066]:
+                - link "Snapchat" [ref=e2067] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2068]:
+                - link "OTT & CTV" [ref=e2069] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2070]:
+                - link "Amazon" [ref=e2071] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=e2072]:
+            - heading "Company" [level=4] [ref=e2073]
+            - list [ref=e2074]:
+              - listitem [ref=e2075]:
+                - link "About us" [ref=e2076] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2077]:
+                - link "Pricing" [ref=e2078] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2079]:
+                - link "Case studies" [ref=e2080] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2081]:
+                - link "Blog" [ref=e2082] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2083]:
+                - link "Careers" [ref=e2084] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2085]:
+                - link "Contact" [ref=e2086] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e2087]:
+                - link "Affiliate" [ref=e2088] [cursor=pointer]:
+                  - /url: "#"
+        - generic [ref=e2089]:
+          - paragraph [ref=e2090]: © 2026 Catalyst AI. All rights reserved. · Made for marketers who ship.
+          - generic [ref=e2091]:
+            - link "Terms of service" [ref=e2092] [cursor=pointer]:
+              - /url: "#"
+            - link "Privacy policy" [ref=e2093] [cursor=pointer]:
+              - /url: "#"
+            - link "Moderation policy" [ref=e2094] [cursor=pointer]:
+              - /url: "#"
+            - link "Status" [ref=e2095] [cursor=pointer]:
+              - /url: "#"

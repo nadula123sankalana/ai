@@ -10,7 +10,6 @@ import IndustryShowcaseSection from "@/components/IndustryShowcaseSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import ProcessSection from "@/components/ProcessSection";
 import StatsSection from "@/components/StatsSection";
-import CaseStudiesSection from "@/components/CaseStudiesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import GlobalSection from "@/components/GlobalSection";
 import BlogSection from "@/components/BlogSection";
@@ -24,21 +23,48 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <TrustSection />
-      <ResultsBannerSection />
-      <PipelineSection />
-      <ToolkitSection />
-      <FeaturesSection />
-      <ServicesSection />
-      <IndustryShowcaseSection />
-      <PortfolioSection />
-      <ProcessSection />
-      <StatsSection />
-      <CaseStudiesSection />
-      <TestimonialsSection />
-      <GlobalSection />
-      <BlogSection />
-      <ComplianceSection />
-      <CTASection />
+      <div className="scroll-perf-section">
+        <ResultsBannerSection />
+      </div>
+      <div className="scroll-perf-section">
+        <PipelineSection />
+      </div>
+      <div className="scroll-perf-section">
+        <ToolkitSection />
+      </div>
+      <div className="scroll-perf-section">
+        <FeaturesSection />
+      </div>
+      <div className="scroll-perf-section">
+        <ServicesSection />
+      </div>
+      <div className="scroll-perf-section">
+        <IndustryShowcaseSection />
+      </div>
+      <div className="scroll-perf-section">
+        <PortfolioSection />
+      </div>
+      <div className="scroll-perf-section">
+        <ProcessSection />
+      </div>
+      <div className="scroll-perf-section">
+        <StatsSection />
+      </div>
+      <div className="scroll-perf-section">
+        <TestimonialsSection />
+      </div>
+      <div className="scroll-perf-section">
+        <GlobalSection />
+      </div>
+      <div className="scroll-perf-section">
+        <BlogSection />
+      </div>
+      <div className="scroll-perf-section">
+        <ComplianceSection />
+      </div>
+      <div className="scroll-perf-section">
+        <CTASection />
+      </div>
       <Footer />
     </div>
   );

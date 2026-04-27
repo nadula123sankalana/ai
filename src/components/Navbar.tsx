@@ -60,13 +60,14 @@ const Navbar = () => {
       }`}
     >
       <div className="container relative flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="flex items-center gap-2" aria-label="Catalyst AI home">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-hero-gradient shadow-[0_8px_20px_-6px_hsl(var(--glow-primary)/0.5)]">
-            <span className="font-heading text-lg font-900 text-white">C</span>
-          </div>
-          <span className="font-heading text-lg font-800 tracking-tight text-white">
-            Catalyst<span className="text-white/75">AI</span>
-          </span>
+        <a href="#" className="flex items-center" aria-label="Catalyst AI home">
+          <img
+            src="/c.png"
+            alt="Catalyst AI"
+            className="h-9 w-auto object-contain md:h-10"
+            loading="eager"
+            decoding="async"
+          />
         </a>
 
         <nav className="hidden rounded-2xl border border-white/20 bg-white/10 p-1.5 md:absolute md:left-1/2 md:flex md:-translate-x-1/2 md:items-center md:gap-1">

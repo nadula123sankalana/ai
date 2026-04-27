@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const HERO_BG_VIDEO_ID = "I9qBS0zLGKo";
-const heroEmbedSrc = `https://www.youtube.com/embed/${HERO_BG_VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${HERO_BG_VIDEO_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1`;
+const heroEmbedSrc = `https://www.youtube.com/embed/${HERO_BG_VIDEO_ID}?autoplay=0&mute=1&controls=1&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3`;
 
 const marqueeImages = [
   { label: "Brand Films", image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200&h=750&fit=crop&q=85" },
@@ -118,6 +118,7 @@ const HeroSection = () => {
                 title="Catalyst hero preview"
                 className="absolute inset-0 h-full w-full"
                 src={heroEmbedSrc}
+                loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
@@ -174,7 +175,7 @@ const HeroSection = () => {
         </div>
 
         <div className="mt-16 w-full overflow-hidden md:mt-20 mask-fade-x">
-          <div className="flex animate-marquee gap-4 w-max">
+          <div className="flex gap-4 w-max lg:animate-marquee">
             {[...marqueeImages, ...marqueeImages].map((img, i) => (
               <div
                 key={i}
@@ -184,7 +185,7 @@ const HeroSection = () => {
                   src={img.image}
                   alt=""
                   className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105"
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
