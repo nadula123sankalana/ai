@@ -11,7 +11,6 @@ import {
   CheckCircle2,
   Activity,
   Flame,
-  Layers,
   Globe,
   ArrowUpRight,
 } from "lucide-react";
@@ -35,7 +34,6 @@ const accentMap: Record<
     text: string;
     bg: string;
     softBg: string;
-    badge: string;
     glow: string;
     ring: string;
     gradient: string;
@@ -48,7 +46,6 @@ const accentMap: Record<
     text: "text-primary",
     bg: "bg-primary",
     softBg: "bg-primary/10",
-    badge: "border-primary/30 bg-primary/10 text-primary",
     glow: "bg-primary/30",
     ring: "ring-primary/30",
     gradient: "from-primary via-cyan-400 to-sky-500",
@@ -60,7 +57,6 @@ const accentMap: Record<
     text: "text-accent",
     bg: "bg-accent",
     softBg: "bg-accent/10",
-    badge: "border-accent/30 bg-accent/10 text-accent",
     glow: "bg-accent/30",
     ring: "ring-accent/30",
     gradient: "from-accent via-fuchsia-500 to-pink-500",
@@ -72,7 +68,6 @@ const accentMap: Record<
     text: "text-[hsl(var(--warm))]",
     bg: "bg-[hsl(var(--warm))]",
     softBg: "bg-[hsl(var(--warm))]/10",
-    badge: "border-[hsl(var(--warm))]/30 bg-[hsl(var(--warm))]/10 text-[hsl(var(--warm))]",
     glow: "bg-[hsl(var(--warm))]/30",
     ring: "ring-[hsl(var(--warm))]/30",
     gradient: "from-[hsl(var(--warm))] via-orange-500 to-rose-500",
@@ -84,7 +79,6 @@ const accentMap: Record<
     text: "text-[hsl(var(--pink))]",
     bg: "bg-[hsl(var(--pink))]",
     softBg: "bg-[hsl(var(--pink))]/10",
-    badge: "border-[hsl(var(--pink))]/30 bg-[hsl(var(--pink))]/10 text-[hsl(var(--pink))]",
     glow: "bg-[hsl(var(--pink))]/30",
     ring: "ring-[hsl(var(--pink))]/30",
     gradient: "from-[hsl(var(--pink))] via-rose-500 to-purple-500",
@@ -500,10 +494,11 @@ const PipelineSection = () => {
                         >
                           {stepNum}
                         </span>
-                        <span
-                          className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 font-heading text-xs font-extrabold uppercase tracking-[0.22em] ${accent.badge}`}
-                        >
-                          <span className={`h-1.5 w-1.5 rounded-full ${accent.bg}`} />
+                        <span className="inline-flex items-center gap-2 self-center rounded-full border border-border bg-white/90 px-3 py-1.5 font-heading text-[10px] font-bold uppercase tracking-[0.2em] text-foreground/75 backdrop-blur-sm soft-shadow sm:text-xs">
+                          <span
+                            className={`h-2 w-2 shrink-0 rounded-full ${accent.bg}`}
+                            aria-hidden
+                          />
                           {step.eyebrow}
                         </span>
                       </div>
@@ -570,17 +565,20 @@ const PipelineSection = () => {
                         <div
                           className={`absolute -bottom-4 ${
                             imageFirst ? "right-6" : "left-6"
-                          } z-20 flex items-center gap-2 rounded-full border border-border bg-white px-3.5 py-1.5 soft-shadow`}
+                          } z-20 inline-flex items-center gap-2 rounded-full border border-border bg-white/85 px-3 py-1.5 backdrop-blur-sm soft-shadow`}
                         >
                           <span
-                            className={`flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br ${accent.gradient} text-white`}
-                          >
-                            <Layers className="h-2.5 w-2.5" strokeWidth={3} />
-                          </span>
-                          <span className="text-[11px] font-bold text-foreground">
+                            className={`h-2 w-2 shrink-0 rounded-full ${accent.bg}`}
+                            aria-hidden
+                          />
+                          <span className="font-heading text-[10px] font-bold tracking-wide text-foreground/80">
                             {step.eyebrow.toLowerCase()}.catalyst
                           </span>
-                          <ArrowUpRight className={`h-3 w-3 ${accent.text}`} />
+                          <ArrowUpRight
+                            className="h-3 w-3 shrink-0 text-foreground/40"
+                            strokeWidth={2.25}
+                            aria-hidden
+                          />
                         </div>
                       </div>
                     </div>
