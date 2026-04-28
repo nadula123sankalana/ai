@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
 import {
-  Compass,
+  ArrowRight,
   Wand2,
   Rocket,
-  LineChart,
-  ArrowRight,
   Sparkles,
   Search,
   Play,
@@ -27,7 +25,6 @@ type Step = {
   bullets: string[];
   tags: string[];
   kpis: { label: string; value: string; delta?: string }[];
-  icon: typeof Compass;
   accent: AccentKey;
   visual: () => JSX.Element;
 };
@@ -362,7 +359,6 @@ const steps: Step[] = [
       { label: "Winning angles", value: "27x", delta: "vs. manual research" },
       { label: "Time to concept", value: "2.3m", delta: "avg. session" },
     ],
-    icon: Compass,
     accent: "primary",
     visual: DiscoverMock,
   },
@@ -380,7 +376,6 @@ const steps: Step[] = [
       { label: "Variants / sprint", value: "48+", delta: "in parallel" },
       { label: "Revisions saved", value: "63%", delta: "vs. agency" },
     ],
-    icon: Wand2,
     accent: "accent",
     visual: CreateMock,
   },
@@ -398,7 +393,6 @@ const steps: Step[] = [
       { label: "Accounts linked", value: "12", delta: "one-click sync" },
       { label: "Launch latency", value: "<30s", delta: "to live" },
     ],
-    icon: Rocket,
     accent: "warm",
     visual: LaunchMock,
   },
@@ -416,7 +410,6 @@ const steps: Step[] = [
       { label: "Live creative", value: "3.4k", delta: "tracked" },
       { label: "Wasted spend", value: "−41%", delta: "auto-killed" },
     ],
-    icon: LineChart,
     accent: "pink",
     visual: OptimizeMock,
   },
@@ -439,7 +432,7 @@ const PipelineSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mx-auto mb-16 max-w-3xl text-center"
+          className="mx-auto mb-24 max-w-3xl text-center md:mb-32"
         >
           <div className="relative">
             <div className="pointer-events-none absolute -left-64 top-1/2 hidden -translate-y-1/2 lg:block xl:-left-80">
@@ -483,18 +476,10 @@ const PipelineSection = () => {
         </motion.div>
 
         <div className="relative">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 md:block"
-          >
-            <div className="h-full w-full bg-gradient-to-b from-transparent via-border to-transparent" />
-          </div>
-
-          <div className="space-y-20 md:space-y-28">
+          <div className="space-y-28 md:space-y-40">
             {steps.map((step, i) => {
               const accent = accentMap[step.accent];
               const imageFirst = i % 2 === 1;
-              const Icon = step.icon;
               const Visual = step.visual;
               const stepNum = `0${i + 1}`;
 
@@ -507,15 +492,7 @@ const PipelineSection = () => {
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   className="relative"
                 >
-                  <div className="absolute left-1/2 top-0 z-10 hidden -translate-x-1/2 md:block">
-                    <div
-                      className={`relative flex h-11 w-11 items-center justify-center rounded-full border border-white bg-gradient-to-br ${accent.gradient} text-white soft-shadow`}
-                    >
-                      <Icon className="h-5 w-5" strokeWidth={2.5} />
-                    </div>
-                  </div>
-
-                  <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16 md:pt-16">
+                  <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
                     <div className={imageFirst ? "md:order-2 md:pl-8" : "md:pr-8"}>
                       <div className="flex items-center gap-3">
                         <span
