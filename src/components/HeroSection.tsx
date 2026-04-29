@@ -1,5 +1,4 @@
-import { ArrowRight, Link as LinkIcon, Play, TrendingUp, Eye, Clock } from "lucide-react";
-import { useState } from "react";
+import { ChevronRight, Link as LinkIcon, Play, TrendingUp, Eye, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HERO_BG_VIDEO_ID = "I9qBS0zLGKo";
@@ -25,8 +24,6 @@ const heroAvatars = [
 ];
 
 const HeroSection = () => {
-  const [url, setUrl] = useState("");
-
   return (
     <section className="relative overflow-hidden bg-neutral-950 pt-28 text-white md:pt-32">
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
@@ -51,30 +48,24 @@ const HeroSection = () => {
             in days, optimized for performance.
           </p>
 
-          <form onSubmit={(e) => e.preventDefault()} className="mx-auto mb-5 w-full max-w-xl">
-            <div className="group relative flex items-center gap-2 rounded-full border border-white/15 bg-white/10 p-1.5 transition-all focus-within:border-primary/60 focus-within:ring-4 focus-within:ring-primary/20">
-              <div className="pl-4 pr-1 text-white/65">
-                <LinkIcon className="h-5 w-5" />
-              </div>
-              <input
-                type="url"
-                inputMode="url"
-                value={url}
-                onChange={(e) => setUrl(e.target.value)}
-                placeholder="Paste your product URL…"
-                className="min-w-0 flex-1 bg-transparent py-3 text-[15px] text-white placeholder:text-white/45 outline-none"
-              />
+          <div className="mx-auto mb-5 w-full max-w-xl">
+            <div className="flex justify-center">
               <Button
-                type="submit"
-                className="btn-shine h-11 shrink-0 rounded-full bg-hero-gradient px-5 text-sm font-semibold text-white shadow-[0_12px_30px_-8px_hsl(var(--glow-primary)/0.55)] hover:opacity-95"
+                type="button"
+                className="group h-16 overflow-hidden rounded-xl border border-cyan-300/45 bg-black p-0 text-white shadow-[0_18px_40px_-14px_rgba(42,77,255,0.85)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_48px_-14px_rgba(42,77,255,0.95)]"
               >
-                Generate <ArrowRight className="ml-1 h-4 w-4" />
+                <span className="flex h-full w-16 items-center justify-center bg-gradient-to-br from-[#14c6b7] via-[#14a6ff] to-[#5b3df5] transition-all duration-300 group-hover:brightness-110">
+                  <ChevronRight className="h-8 w-8" />
+                </span>
+                <span className="bg-gradient-to-r from-[#0f1118] via-[#171a28] to-[#1d1230] px-8 text-sm font-extrabold uppercase tracking-[0.12em] leading-[4rem]">
+                  Get Started
+                </span>
               </Button>
             </div>
             <p className="mt-3 text-xs text-white/55">
               No credit card · First video free · Delivered in 48 hours
             </p>
-          </form>
+          </div>
 
           <div className="mb-14 flex items-center justify-center gap-3">
             <div className="flex -space-x-2">

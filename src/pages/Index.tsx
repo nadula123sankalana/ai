@@ -8,7 +8,6 @@ import FeaturesSection from "@/components/FeaturesSection";
 import ServicesSection from "@/components/ServicesSection";
 import IndustryShowcaseSection from "@/components/IndustryShowcaseSection";
 import PortfolioSection from "@/components/PortfolioSection";
-import ProcessSection from "@/components/ProcessSection";
 import StatsSection from "@/components/StatsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import GlobalSection from "@/components/GlobalSection";
@@ -43,9 +42,6 @@ const Index = () => {
       </div>
       <div className="scroll-perf-section">
         <IndustryShowcaseSection />
-      </div>
-      <div className="scroll-perf-section">
-        <ProcessSection />
       </div>
       <div className="scroll-perf-section">
         <StatsSection />
