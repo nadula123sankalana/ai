@@ -2,7 +2,7 @@ import { ChevronRight, Link as LinkIcon, Play, TrendingUp, Eye, Clock } from "lu
 import { Button } from "@/components/ui/button";
 
 const HERO_BG_VIDEO_ID = "I9qBS0zLGKo";
-const heroEmbedSrc = `https://www.youtube.com/embed/${HERO_BG_VIDEO_ID}?autoplay=0&mute=1&controls=1&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3`;
+const heroEmbedSrc = `https://www.youtube.com/embed/${HERO_BG_VIDEO_ID}?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3`;
 
 const marqueeImages = [
   { label: "Brand Films", image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200&h=750&fit=crop&q=85" },
