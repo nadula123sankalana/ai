@@ -1,17 +1,19 @@
 import { motion } from "framer-motion";
+import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
 
 const cities = [
-  { name: "New York", top: "35%", left: "25%" },
-  { name: "London", top: "28%", left: "47%" },
-  { name: "Dubai", top: "42%", left: "60%" },
-  { name: "Tokyo", top: "35%", left: "82%" },
-  { name: "Sydney", top: "72%", left: "85%" },
-  { name: "São Paulo", top: "62%", left: "32%" },
-  { name: "Berlin", top: "26%", left: "52%" },
-  { name: "LA", top: "38%", left: "15%" },
-  { name: "Singapore", top: "55%", left: "74%" },
-  { name: "Mumbai", top: "48%", left: "66%" },
+  { name: "New York", coordinates: [-74.006, 40.7128] as [number, number] },
+  { name: "London", coordinates: [-0.1276, 51.5072] as [number, number] },
+  { name: "Dubai", coordinates: [55.2708, 25.2048] as [number, number] },
+  { name: "Tokyo", coordinates: [139.6503, 35.6762] as [number, number] },
+  { name: "Sydney", coordinates: [151.2093, -33.8688] as [number, number] },
+  { name: "Sao Paulo", coordinates: [-46.6333, -23.5505] as [number, number] },
+  { name: "Berlin", coordinates: [13.405, 52.52] as [number, number] },
+  { name: "LA", coordinates: [-118.2437, 34.0522] as [number, number] },
+  { name: "Singapore", coordinates: [103.8198, 1.3521] as [number, number] },
+  { name: "Mumbai", coordinates: [72.8777, 19.076] as [number, number] },
 ];
+const WORLD_GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
 const GlobalSection = () => {
   return (
@@ -52,36 +54,46 @@ const GlobalSection = () => {
         >
           <div className="pointer-events-none absolute inset-0 bg-grid-fade opacity-40" />
 
-          <div className="absolute inset-0 opacity-30">
-            <svg viewBox="0 0 100 50" className="h-full w-full" preserveAspectRatio="xMidYMid slice">
-              <ellipse cx="25" cy="20" rx="12" ry="8" fill="hsl(0 0% 100%)" opacity="0.4" />
-              <ellipse cx="50" cy="18" rx="10" ry="10" fill="hsl(0 0% 100%)" opacity="0.4" />
-              <ellipse cx="65" cy="22" rx="8" ry="7" fill="hsl(0 0% 100%)" opacity="0.4" />
-              <ellipse cx="80" cy="20" rx="7" ry="8" fill="hsl(0 0% 100%)" opacity="0.4" />
-              <ellipse cx="30" cy="35" rx="6" ry="8" fill="hsl(0 0% 100%)" opacity="0.4" />
-              <ellipse cx="85" cy="38" rx="5" ry="5" fill="hsl(0 0% 100%)" opacity="0.4" />
-            </svg>
-          </div>
-
-          {cities.map((city, i) => (
-            <motion.div
-              key={city.name}
-              initial={{ scale: 0, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.25 + i * 0.08 }}
-              className="group absolute"
-              style={{ top: city.top, left: city.left }}
+          <div className="absolute inset-0 p-1 md:p-2">
+            <ComposableMap
+              projection="geoEqualEarth"
+              projectionConfig={{ scale: 190 }}
+              className="h-full w-full"
             >
-              <div className="relative">
-                <span className="absolute -inset-3 rounded-full bg-primary/35 blur-md animate-pulse-glow" />
-                <span className="relative block h-2.5 w-2.5 rounded-full bg-primary shadow-[0_0_14px_hsl(var(--primary))]" />
-                <div className="absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/20 bg-black/70 px-2.5 py-1 text-[11px] font-semibold text-white opacity-0 backdrop-blur transition-opacity group-hover:opacity-100">
-                  {city.name}
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              <Geographies geography={WORLD_GEO_URL}>
+                {({ geographies }) =>
+                  geographies.map((geo) => (
+                    <Geography
+                      key={geo.rsmKey}
+                      geography={geo}
+                      fill="hsl(0 0% 100% / 0.17)"
+                      stroke="hsl(0 0% 100% / 0.14)"
+                      strokeWidth={0.35}
+                      style={{
+                        default: { outline: "none" },
+                        hover: { outline: "none", fill: "hsl(0 0% 100% / 0.24)" },
+                        pressed: { outline: "none" },
+                      }}
+                    />
+                  ))
+                }
+              </Geographies>
+
+              {cities.map((city, i) => (
+                <Marker key={city.name} coordinates={city.coordinates}>
+                  <motion.g
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 + i * 0.06 }}
+                  >
+                    <circle r={8} fill="hsl(168 94% 44% / 0.22)" />
+                    <circle r={3.4} fill="hsl(168 94% 44%)" />
+                  </motion.g>
+                </Marker>
+              ))}
+            </ComposableMap>
+          </div>
 
           <div className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full border border-white/20 bg-black/50 px-4 py-2 backdrop-blur">
             <p className="font-heading text-xs font-bold uppercase tracking-[0.2em] text-white/80">
