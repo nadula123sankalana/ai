@@ -36,7 +36,10 @@ const tools = [
 
 const ToolkitSection = () => {
   return (
-    <section id="toolkit" className="relative overflow-hidden bg-neutral-950 py-20 md:py-24">
+    <section
+      id="toolkit"
+      className="relative scroll-mt-24 bg-neutral-950 pt-24 pb-20 md:scroll-mt-32 md:pt-28 md:pb-24"
+    >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-hero-gradient opacity-80" />
         <div className="absolute inset-0 bg-black/45" />
@@ -48,7 +51,7 @@ const ToolkitSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mx-auto mb-8 max-w-3xl text-center"
+          className="relative z-10 mx-auto mb-10 max-w-3xl text-center md:mb-14"
         >
           <h2 className="font-heading text-3xl font-800 leading-tight tracking-tight text-white md:text-4xl">
             Vertical video tools bar
@@ -58,7 +61,7 @@ const ToolkitSection = () => {
           </p>
         </motion.div>
 
-        <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-none">
+        <div className="relative z-0 flex gap-4 overflow-x-auto pb-2 pt-1 scrollbar-none">
           {tools.map((t, i) => (
             <motion.a
               key={t.title}

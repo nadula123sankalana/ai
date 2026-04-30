@@ -31,9 +31,7 @@ const Index = () => {
       <div className="scroll-perf-section">
         <PortfolioSection />
       </div>
-      <div className="scroll-perf-section">
-        <ToolkitSection />
-      </div>
+      <ToolkitSection />
       <div className="scroll-perf-section">
         <FeaturesSection />
       </div>
