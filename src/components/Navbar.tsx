@@ -97,7 +97,7 @@ const Navbar = () => {
                       transition={{ duration: 0.15 }}
                       className="absolute left-1/2 top-full z-50 w-[320px] -translate-x-1/2 pt-2"
                     >
-                      <div className="overflow-hidden rounded-2xl border border-white/20 bg-[#313995]/95 p-2 shadow-[0_24px_40px_-22px_rgba(0,0,0,0.7)] backdrop-blur-xl">
+                      <div className="overflow-hidden rounded-2xl border border-white/20 bg-black/95 p-2 shadow-[0_24px_40px_-22px_rgba(0,0,0,0.7)] backdrop-blur-xl">
                         {group.items!.map((item) => (
                           <button
                             key={item.label}
@@ -154,7 +154,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="border-b border-white/10 bg-[#272f86]/95 backdrop-blur-2xl md:hidden"
+            className="border-b border-white/10 bg-black/95 backdrop-blur-2xl md:hidden"
           >
             <div className="container py-4 flex flex-col gap-1">
               {navGroups.map((group) => (
