@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -90,15 +91,88 @@ const accentMap: Record<
 
 /** ---------- Per-step interactive mockups ---------- */
 
+type VimeoCardAspect = "3:4" | "4:5";
+
+/** Vimeo iframe Cover: `object-fit: cover` inside `aspect-[3/4]` or `aspect-[4/5]` mock cards. */
+function vimeoCoverIframeStyle(
+  videoAspect: "16:9" | "9:16",
+  cardAspect: VimeoCardAspect = "3:4",
+): CSSProperties {
+  if (cardAspect === "3:4") {
+    if (videoAspect === "16:9") {
+      return {
+        width: "calc(100% * 64 / 27)",
+        height: "100%",
+        maxWidth: "none",
+      };
+    }
+    return {
+      width: "100%",
+      height: "calc(100% * 4 / 3)",
+      maxHeight: "none",
+    };
+  }
+  /** `aspect-[4/5]` grid (Create mock) */
+  if (videoAspect === "16:9") {
+    return {
+      width: "calc(100% * 20 / 9)",
+      height: "100%",
+      maxWidth: "none",
+    };
+  }
+  return {
+    width: "100%",
+    height: "calc(100% * 64 / 45)",
+    maxHeight: "none",
+  };
+}
+
 const DiscoverMock = () => {
   const a = accentMap.primary;
   const cards = [
-    { tag: "Viral", roas: "+312%", hue: "from-emerald-400 to-teal-500" },
-    { tag: "Hot", roas: "+184%", hue: "from-cyan-400 to-blue-500" },
-    { tag: "Rising", roas: "+96%", hue: "from-sky-400 to-indigo-500" },
-    { tag: "Proven", roas: "+221%", hue: "from-teal-400 to-emerald-500" },
-    { tag: "Trending", roas: "+148%", hue: "from-blue-400 to-cyan-500" },
-    { tag: "New", roas: "+72%", hue: "from-indigo-400 to-purple-500" },
+    {
+      tag: "Viral",
+      roas: "+312%",
+      hue: "from-emerald-400 to-teal-500",
+      vimeoId: "1189260251",
+      /** Source is portrait / mobile creative */
+      vimeoAspect: "9:16" as const,
+    },
+    {
+      tag: "Hot",
+      roas: "+184%",
+      hue: "from-cyan-400 to-blue-500",
+      vimeoId: "1189266962",
+      vimeoAspect: "9:16" as const,
+    },
+    {
+      tag: "Rising",
+      roas: "+96%",
+      hue: "from-sky-400 to-indigo-500",
+      vimeoId: "1189267739",
+      vimeoAspect: "9:16" as const,
+    },
+    {
+      tag: "Proven",
+      roas: "+221%",
+      hue: "from-teal-400 to-emerald-500",
+      vimeoId: "1189278816",
+      vimeoAspect: "9:16" as const,
+    },
+    {
+      tag: "Trending",
+      roas: "+148%",
+      hue: "from-blue-400 to-cyan-500",
+      vimeoId: "1189278621",
+      vimeoAspect: "9:16" as const,
+    },
+    {
+      tag: "New",
+      roas: "+72%",
+      hue: "from-indigo-400 to-purple-500",
+      vimeoId: "1189279069",
+      vimeoAspect: "9:16" as const,
+    },
   ];
   return (
     <div className="relative h-full w-full p-4 md:p-5">
@@ -126,13 +200,34 @@ const DiscoverMock = () => {
             key={i}
             className="group relative aspect-[3/4] overflow-hidden rounded-lg border border-border/70 bg-white"
           >
-            <div className={`absolute inset-0 bg-gradient-to-br ${c.hue} opacity-80`} />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.35),transparent_60%)]" />
-            <div className="absolute left-1.5 top-1.5 inline-flex items-center gap-1 rounded-full border border-border bg-white/85 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-foreground/80 backdrop-blur">
+            {"vimeoId" in c && c.vimeoId ? (
+              <>
+                <div className="absolute inset-0 z-0 overflow-hidden bg-black">
+                  <iframe
+                    title={`${c.tag} — Vimeo preview`}
+                    src={`https://player.vimeo.com/video/${c.vimeoId}?badge=0&autopause=0&muted=1&autoplay=1&loop=1&background=1&controls=0&playsinline=1&dnt=1`}
+                    className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-0"
+                    style={vimeoCoverIframeStyle(
+                      "vimeoAspect" in c && c.vimeoAspect ? c.vimeoAspect : "9:16",
+                      "3:4",
+                    )}
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
+                </div>
+                <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-transparent to-black/35" />
+              </>
+            ) : (
+              <div className={`absolute inset-0 bg-gradient-to-br ${c.hue} opacity-80`} />
+            )}
+            <div className="pointer-events-none absolute inset-0 z-[2] bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.35),transparent_60%)]" />
+            <div className="absolute left-1.5 top-1.5 z-[3] inline-flex items-center gap-1 rounded-full border border-border bg-white/85 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-foreground/80 backdrop-blur">
               <span className={`h-1 w-1 rounded-full ${a.bg}`} />
               {c.tag}
             </div>
-            <div className="absolute bottom-1.5 left-1.5 right-1.5 flex items-center justify-between">
+            <div className="absolute bottom-1.5 left-1.5 right-1.5 z-[3] flex items-center justify-between">
               <span className="rounded-md bg-white/90 px-1.5 py-0.5 text-[8px] font-bold text-emerald-600">
                 {c.roas}
               </span>
@@ -150,12 +245,48 @@ const DiscoverMock = () => {
 const CreateMock = () => {
   const a = accentMap.accent;
   const variants = [
-    { v: "v01", state: "done", hue: "from-violet-500 to-fuchsia-500" },
-    { v: "v02", state: "done", hue: "from-fuchsia-500 to-pink-500" },
-    { v: "v03", state: "rendering", hue: "from-purple-500 to-indigo-500" },
-    { v: "v04", state: "done", hue: "from-pink-500 to-rose-500" },
-    { v: "v05", state: "rendering", hue: "from-indigo-500 to-violet-500" },
-    { v: "v06", state: "queued", hue: "from-slate-500 to-slate-700" },
+    {
+      v: "v01",
+      state: "done",
+      hue: "from-violet-500 to-fuchsia-500",
+      vimeoId: "1189276052",
+      vimeoAspect: "9:16" as const,
+    },
+    {
+      v: "v02",
+      state: "done",
+      hue: "from-fuchsia-500 to-pink-500",
+      vimeoId: "1189277073",
+      vimeoAspect: "9:16" as const,
+    },
+    {
+      v: "v03",
+      state: "rendering",
+      hue: "from-purple-500 to-indigo-500",
+      vimeoId: "1189277705",
+      vimeoAspect: "9:16" as const,
+    },
+    {
+      v: "v04",
+      state: "done",
+      hue: "from-pink-500 to-rose-500",
+      vimeoId: "1189277973",
+      vimeoAspect: "9:16" as const,
+    },
+    {
+      v: "v05",
+      state: "rendering",
+      hue: "from-indigo-500 to-violet-500",
+      vimeoId: "1189279169",
+      vimeoAspect: "9:16" as const,
+    },
+    {
+      v: "v06",
+      state: "queued",
+      hue: "from-slate-500 to-slate-700",
+      vimeoId: "1189279630",
+      vimeoAspect: "9:16" as const,
+    },
   ];
   return (
     <div className="relative h-full w-full p-4 md:p-5">
@@ -182,20 +313,43 @@ const CreateMock = () => {
             key={i}
             className="relative aspect-[4/5] overflow-hidden rounded-lg border border-border/70 bg-white"
           >
-            <div className={`absolute inset-0 bg-gradient-to-br ${v.hue} ${v.state === "queued" ? "opacity-25" : "opacity-85"}`} />
-            {v.state === "rendering" && (
-              <div className="absolute inset-0 animate-shine" />
+            {"vimeoId" in v && v.vimeoId ? (
+              <>
+                <div className="absolute inset-0 z-0 overflow-hidden bg-black">
+                  <iframe
+                    title={`${v.v} — Vimeo preview`}
+                    src={`https://player.vimeo.com/video/${v.vimeoId}?badge=0&autopause=0&muted=1&autoplay=1&loop=1&background=1&controls=0&playsinline=1&dnt=1`}
+                    className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-0"
+                    style={vimeoCoverIframeStyle(
+                      "vimeoAspect" in v && v.vimeoAspect ? v.vimeoAspect : "9:16",
+                      "4:5",
+                    )}
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
+                </div>
+                <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/20 via-transparent to-black/30" />
+              </>
+            ) : (
+              <>
+                <div className={`absolute inset-0 bg-gradient-to-br ${v.hue} ${v.state === "queued" ? "opacity-25" : "opacity-85"}`} />
+                {v.state === "rendering" && (
+                  <div className="absolute inset-0 animate-shine" />
+                )}
+              </>
             )}
-            <div className="absolute left-1 top-1 rounded bg-white/90 px-1 py-0.5 text-[8px] font-bold text-foreground/80">
+            <div className="absolute left-1 top-1 z-[2] rounded bg-white/90 px-1 py-0.5 text-[8px] font-bold text-foreground/80">
               {v.v}
             </div>
             {v.state === "done" && (
-              <div className="absolute right-1 top-1 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500/90 text-white">
+              <div className="absolute right-1 top-1 z-[2] flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500/90 text-white">
                 <CheckCircle2 className="h-2.5 w-2.5" strokeWidth={3} />
               </div>
             )}
             {v.state === "rendering" && (
-              <div className="absolute right-1 top-1 rounded-full border border-border bg-white/90 px-1 py-0.5 text-[7px] font-bold uppercase tracking-wider text-foreground/75">
+              <div className="absolute right-1 top-1 z-[2] rounded-full border border-border bg-white/90 px-1 py-0.5 text-[7px] font-bold uppercase tracking-wider text-foreground/75">
                 ...
               </div>
             )}

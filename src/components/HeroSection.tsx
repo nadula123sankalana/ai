@@ -1,8 +1,8 @@
 import { ChevronRight, Link as LinkIcon, Play, TrendingUp, Eye, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const HERO_BG_VIDEO_ID = "I9qBS0zLGKo";
-const heroEmbedSrc = `https://www.youtube.com/embed/${HERO_BG_VIDEO_ID}?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3`;
+const heroEmbedSrc =
+  "https://player.vimeo.com/video/1189280066?autoplay=1&muted=0&loop=1&autopause=0&controls=1&title=0&byline=0&portrait=0&playsinline=1&dnt=1";
 
 const marqueeImages = [
   { label: "Brand Films", image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200&h=750&fit=crop&q=85" },
@@ -54,7 +54,7 @@ const HeroSection = () => {
                 type="button"
                 className="group h-16 overflow-hidden rounded-xl border border-cyan-300/45 bg-black p-0 text-white shadow-[0_18px_40px_-14px_rgba(42,77,255,0.85)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_48px_-14px_rgba(42,77,255,0.95)]"
               >
-                <span className="flex h-full w-16 items-center justify-center bg-gradient-to-br from-[#14c6b7] via-[#14a6ff] to-[#5b3df5] transition-all duration-300 group-hover:brightness-110">
+                <span className="flex h-full w-16 items-center justify-center bg-gradient-to-br from-[#14a6ff] via-[#3b82f6] to-[#5b3df5] transition-all duration-300 group-hover:brightness-110">
                   <ChevronRight className="h-8 w-8" />
                 </span>
                 <span className="bg-gradient-to-r from-[#0f1118] via-[#171a28] to-[#1d1230] px-8 text-sm font-extrabold uppercase tracking-[0.12em] leading-[4rem]">
