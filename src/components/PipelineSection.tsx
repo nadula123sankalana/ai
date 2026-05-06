@@ -253,10 +253,17 @@ const CreateMock = () => {
       vimeoAspect: "9:16" as const,
     },
     {
+      v: "v04",
+      state: "done",
+      hue: "from-pink-500 to-rose-500",
+      vimeoId: "1189277973",
+      vimeoAspect: "9:16" as const,
+    },
+    {
       v: "v02",
       state: "done",
-      hue: "from-fuchsia-500 to-pink-500",
-      vimeoId: "1189277073",
+      hue: "from-slate-500 to-slate-700",
+      vimeoId: "1189279630",
       vimeoAspect: "9:16" as const,
     },
     {
@@ -267,10 +274,10 @@ const CreateMock = () => {
       vimeoAspect: "9:16" as const,
     },
     {
-      v: "v04",
-      state: "done",
-      hue: "from-pink-500 to-rose-500",
-      vimeoId: "1189277973",
+      v: "v06",
+      state: "queued",
+      hue: "from-slate-500 to-slate-700",
+      vimeoId: "1189279630",
       vimeoAspect: "9:16" as const,
     },
     {
@@ -278,13 +285,6 @@ const CreateMock = () => {
       state: "rendering",
       hue: "from-indigo-500 to-violet-500",
       vimeoId: "1189279169",
-      vimeoAspect: "9:16" as const,
-    },
-    {
-      v: "v06",
-      state: "queued",
-      hue: "from-slate-500 to-slate-700",
-      vimeoId: "1189279630",
       vimeoAspect: "9:16" as const,
     },
   ];

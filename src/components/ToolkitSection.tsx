@@ -1,31 +1,48 @@
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 
-const tools = [
+type ToolCard = {
+  title: string;
+  desc: string;
+  image: string;
+  embedSrc?: string;
+};
+
+const tools: ToolCard[] = [
   {
     title: "Inspiration Library",
     desc: "Find what is trending and remix winners fast.",
     image: "https://picsum.photos/seed/vertical-inspiration/420/740",
+    embedSrc:
+      "https://player.vimeo.com/video/1189640524?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
   },
   {
     title: "Ad Cloner",
     desc: "Recreate winning ads for your brand in minutes.",
     image: "https://picsum.photos/seed/vertical-ad-cloner/420/740",
+    embedSrc:
+      "https://player.vimeo.com/video/1189640522?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
   },
   {
     title: "URL to Video",
     desc: "Turn product links into ready-to-launch videos.",
     image: "https://picsum.photos/seed/vertical-url-video/420/740",
+    embedSrc:
+      "https://player.vimeo.com/video/1189640523?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
   },
   {
     title: "Asset Generator",
     desc: "Images, scripts and voice in one workflow.",
     image: "https://picsum.photos/seed/vertical-assets/420/740",
+    embedSrc:
+      "https://player.vimeo.com/video/1189644405?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
   },
   {
     title: "AI Avatars",
     desc: "Create realistic avatar videos in multiple languages.",
     image: "https://picsum.photos/seed/vertical-avatars/420/740",
+    embedSrc:
+      "https://player.vimeo.com/video/1189279630?badge=0&autopause=0&muted=1&autoplay=1&loop=1&background=1&controls=0&playsinline=1&dnt=1",
   },
   {
     title: "Product Ads",
@@ -62,35 +79,50 @@ const ToolkitSection = () => {
         </motion.div>
 
         <div className="relative z-0 flex gap-4 overflow-x-auto pb-2 pt-1 scrollbar-none">
-          {tools.map((t, i) => (
-            <motion.a
-              key={t.title}
-              href="#"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ delay: i * 0.05 }}
-              className="group min-w-[210px] overflow-hidden rounded-[20px] border-2 border-white/70 bg-white text-black shadow-[0_10px_30px_-14px_rgba(0,0,0,0.5)] md:min-w-[260px]"
-            >
-              <div className="relative aspect-[9/14] overflow-hidden">
-                <img
-                  src={t.image}
-                  alt=""
-                  className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105"
-                  loading="lazy"
-                />
+          {tools.map((t, i) => {
+            const hasEmbeddedVideo = Boolean(t.embedSrc);
+            return (
+              <motion.div
+                key={t.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ delay: i * 0.05 }}
+                className="group min-w-[210px] overflow-hidden rounded-[20px] border-2 border-white/70 bg-white text-black shadow-[0_10px_30px_-14px_rgba(0,0,0,0.5)] md:min-w-[260px]"
+              >
+                <div className="relative aspect-[9/14] overflow-hidden">
+                  {hasEmbeddedVideo ? (
+                    <iframe
+                      title={`${t.title} preview`}
+                      src={t.embedSrc}
+                      className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-0"
+                      style={{ width: "100%", height: "calc(100% * 8 / 7)", maxHeight: "none" }}
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                    />
+                  ) : (
+                    <img
+                      src={t.image}
+                      alt=""
+                      className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  )}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
                 <span className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/85 text-black backdrop-blur">
                   <Play className="ml-0.5 h-4 w-4 fill-current" />
                 </span>
-              </div>
+                </div>
 
-              <div className="p-3.5">
-                <h3 className="font-heading text-[1.75rem] font-700 leading-none text-black md:text-[2rem]">{t.title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-black/60">{t.desc}</p>
-              </div>
-            </motion.a>
-          ))}
+                <div className="p-3.5">
+                  <h3 className="font-heading text-[1.75rem] font-700 leading-none text-black md:text-[2rem]">{t.title}</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-black/60">{t.desc}</p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
