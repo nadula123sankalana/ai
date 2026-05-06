@@ -1,9 +1,6 @@
 import { ChevronRight, Link as LinkIcon, Play, TrendingUp, Eye, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const heroEmbedSrc =
-  "https://player.vimeo.com/video/1189280066?autoplay=1&muted=0&loop=1&autopause=0&controls=1&title=0&byline=0&portrait=0&playsinline=1&dnt=1";
-
 const marqueeImages = [
   { label: "Product Videos", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&h=750&fit=crop&q=85" },
   { label: "Commercials", image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&h=750&fit=crop&q=85" },
@@ -104,14 +101,6 @@ const HeroSection = () => {
             </div>
 
             <div className="relative aspect-video w-full bg-black">
-              <iframe
-                title="Catalyst hero preview"
-                className="absolute inset-0 h-full w-full"
-                src={heroEmbedSrc}
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30" />
 
               <div className="absolute left-4 top-4 flex items-center gap-2 rounded-xl border border-white/15 bg-black/55 px-3 py-2 backdrop-blur-md sm:left-6 sm:top-6">
