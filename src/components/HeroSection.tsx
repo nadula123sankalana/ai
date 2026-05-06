@@ -5,7 +5,6 @@ const heroEmbedSrc =
   "https://player.vimeo.com/video/1189280066?autoplay=1&muted=0&loop=1&autopause=0&controls=1&title=0&byline=0&portrait=0&playsinline=1&dnt=1";
 
 const marqueeImages = [
-  { label: "Brand Films", image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200&h=750&fit=crop&q=85" },
   { label: "Product Videos", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&h=750&fit=crop&q=85" },
   { label: "Commercials", image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&h=750&fit=crop&q=85" },
   { label: "Social Content", image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1200&h=750&fit=crop&q=85" },
