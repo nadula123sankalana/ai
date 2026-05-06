@@ -202,7 +202,14 @@ const DiscoverMock = () => {
           >
             {"vimeoId" in c && c.vimeoId ? (
               <>
-                <div className="absolute inset-0 z-0 overflow-hidden bg-black">
+                <div className="absolute inset-0 z-0 overflow-hidden bg-neutral-900">
+                  <img
+                    src={`https://vumbnail.com/${c.vimeoId}_large.jpg`}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
                   <iframe
                     title={`${c.tag} — Vimeo preview`}
                     src={`https://player.vimeo.com/video/${c.vimeoId}?badge=0&autopause=0&muted=1&autoplay=1&loop=1&background=1&controls=0&playsinline=1&dnt=1`}
@@ -315,7 +322,14 @@ const CreateMock = () => {
           >
             {"vimeoId" in v && v.vimeoId ? (
               <>
-                <div className="absolute inset-0 z-0 overflow-hidden bg-black">
+                <div className="absolute inset-0 z-0 overflow-hidden bg-neutral-900">
+                  <img
+                    src={`https://vumbnail.com/${v.vimeoId}_large.jpg`}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
                   <iframe
                     title={`${v.v} — Vimeo preview`}
                     src={`https://player.vimeo.com/video/${v.vimeoId}?badge=0&autopause=0&muted=1&autoplay=1&loop=1&background=1&controls=0&playsinline=1&dnt=1`}
