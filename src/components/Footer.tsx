@@ -1,4 +1,5 @@
 import { Globe } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const footerLinks = {
   Features: [
@@ -106,12 +107,15 @@ const Footer = () => {
               <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link}>
-                    <a
-                      href="#"
-                      className="text-sm text-white/75 transition-colors hover:text-white"
-                    >
-                      {link}
-                    </a>
+                    {title === "Company" && link === "Pricing" ? (
+                      <Link to="/pricing" className="text-sm text-white/75 transition-colors hover:text-white">
+                        {link}
+                      </Link>
+                    ) : (
+                      <a href="#" className="text-sm text-white/75 transition-colors hover:text-white">
+                        {link}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

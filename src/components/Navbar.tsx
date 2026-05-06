@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 type NavGroup = {
@@ -32,6 +33,7 @@ const navGroups: NavGroup[] = [
 ];
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
@@ -60,7 +62,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container relative flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="flex items-center" aria-label="Catalyst AI home">
+        <Link to="/" className="flex items-center" aria-label="Catalyst AI home">
           <img
             src="/c.png"
             alt="Catalyst AI"
@@ -68,7 +70,7 @@ const Navbar = () => {
             loading="eager"
             decoding="async"
           />
-        </a>
+        </Link>
 
         <nav className="hidden rounded-2xl border border-white/20 bg-white/10 p-1.5 md:absolute md:left-1/2 md:flex md:-translate-x-1/2 md:items-center md:gap-1">
           {navGroups.map((group) => {
@@ -82,7 +84,21 @@ const Navbar = () => {
                 onMouseLeave={() => hasItems && setOpenGroup(null)}
               >
                 <button
-                  onClick={() => (hasItems ? setOpenGroup(isOpen ? null : group.label) : group.sectionId && scrollTo(group.sectionId))}
+                  onClick={() => {
+                    if (hasItems) {
+                      setOpenGroup(isOpen ? null : group.label);
+                      return;
+                    }
+
+                    if (group.label === "Pricing") {
+                      navigate("/pricing");
+                      return;
+                    }
+
+                    if (group.sectionId) {
+                      scrollTo(group.sectionId);
+                    }
+                  }}
                   className="flex items-center gap-1 rounded-xl px-4 py-2 text-sm font-medium text-white/90 transition-colors hover:bg-white/15 hover:text-white"
                 >
                   {group.label}
@@ -176,7 +192,17 @@ const Navbar = () => {
                     </>
                   ) : (
                     <button
-                      onClick={() => group.sectionId && scrollTo(group.sectionId)}
+                      onClick={() => {
+                        if (group.label === "Pricing") {
+                          navigate("/pricing");
+                          setMobileOpen(false);
+                          return;
+                        }
+
+                        if (group.sectionId) {
+                          scrollTo(group.sectionId);
+                        }
+                      }}
                       className="w-full rounded-lg px-2 py-2 text-left text-sm font-semibold text-white/90 transition-colors hover:bg-white/10"
                     >
                       {group.label}
