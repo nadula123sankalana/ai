@@ -1,5 +1,6 @@
+import * as React from "react";
 import { Link } from "react-router-dom";
-import { ChevronLeft, Check } from "lucide-react";
+import { ChevronLeft, Check, Plus, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type Plan = {
@@ -94,6 +95,12 @@ const faqs = [
 ];
 
 const Pricing = () => {
+  const [openFaq, setOpenFaq] = React.useState(faqs[0]?.q ?? "");
+
+  const toggleFaq = (question: string) => {
+    setOpenFaq((current) => (current === question ? "" : question));
+  };
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-neutral-950 pt-8 text-white md:pt-10">
       <div className="pointer-events-none absolute inset-0">
@@ -169,30 +176,32 @@ const Pricing = () => {
       </section>
 
       <section className="container relative z-10 pb-20 md:pb-24">
-        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
-          <h2 className="font-heading text-3xl font-800">
-            Frequently Asked <span className="text-gradient-primary">Questions</span>
-          </h2>
-          <div className="mt-6 space-y-4">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="rounded-xl border border-white/10 bg-black/30 p-4">
-                <h3 className="text-base font-semibold">{faq.q}</h3>
-                <p className="mt-1 text-sm text-white/70">{faq.a}</p>
-              </div>
-            ))}
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center font-heading text-4xl font-800 tracking-tight sm:text-5xl">FAQ</h2>
+
+          <div className="mt-10 border-t border-white/20">
+            {faqs.map((faq) => {
+              const isOpen = openFaq === faq.q;
+
+              return (
+                <article key={faq.q} className="border-b border-white/20 py-6 md:py-7">
+                  <button
+                    type="button"
+                    onClick={() => toggleFaq(faq.q)}
+                    className="flex w-full items-start justify-between gap-6 text-left"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="text-lg font-semibold text-white md:text-xl">{faq.q}</span>
+                    <span className="mt-1 shrink-0 text-white/85">
+                      {isOpen ? <Minus className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
+                    </span>
+                  </button>
+                  {isOpen && <p className="mt-4 max-w-4xl text-base leading-relaxed text-white/70">{faq.a}</p>}
+                </article>
+              );
+            })}
           </div>
 
-          <p className="mt-8 text-xs text-white/50">
-            Source content adapted from Waymark pricing page:{" "}
-            <a
-              href="https://waymark.com/marketing/pricing"
-              target="_blank"
-              rel="noreferrer"
-              className="text-primary underline-offset-4 hover:underline"
-            >
-              waymark.com/marketing/pricing
-            </a>
-          </p>
         </div>
       </section>
     </main>

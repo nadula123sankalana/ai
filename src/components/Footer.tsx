@@ -57,14 +57,15 @@ const Footer = () => {
       <div className="container relative">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-6 md:gap-8">
           <div className="col-span-2">
-            <a href="#" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-hero-gradient shadow-[0_10px_30px_-8px_hsl(var(--glow-primary)/0.6)]">
-                <span className="font-heading text-xl font-900 text-white">C</span>
-              </div>
-              <span className="font-heading text-2xl font-800 tracking-tight text-white">
-                Catalyst<span className="text-gradient">AI</span>
-              </span>
-            </a>
+            <Link to="/" className="flex items-center" aria-label="Catalyst AI home">
+              <img
+                src="/c.png"
+                alt="Catalyst AI"
+                className="h-10 w-auto object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+            </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/65">
               World-class video production, powered by AI and built for the teams
               making the next decade of great marketing.
