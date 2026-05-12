@@ -18,7 +18,11 @@ const ServicesSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="services" className="relative overflow-hidden bg-neutral-950 py-24 md:py-32">
+    <section
+      id="services"
+      className="relative overflow-hidden bg-neutral-950 py-24 md:py-32"
+      data-switcher-surface="dark"
+    >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-28 top-8 h-[360px] w-[360px] rounded-full bg-primary/15 blur-[120px]" />
         <div className="absolute right-0 top-1/3 h-[420px] w-[420px] rounded-full bg-accent/15 blur-[140px]" />

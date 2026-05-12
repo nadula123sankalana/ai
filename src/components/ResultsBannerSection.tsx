@@ -64,7 +64,7 @@ const ResultsBannerSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative py-16 md:py-20">
+    <section className="relative py-16 md:py-20" data-switcher-surface="light">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

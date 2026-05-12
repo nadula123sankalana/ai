@@ -43,7 +43,10 @@ const StatsSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative overflow-hidden bg-neutral-950 py-24 text-white md:py-32">
+    <section
+      className="relative overflow-hidden bg-neutral-950 py-24 text-white md:py-32"
+      data-switcher-surface="dark"
+    >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-0 h-[600px] w-[900px] -translate-x-1/2 rounded-full bg-hero-gradient opacity-[0.12] blur-[140px]" />
         <div className="absolute inset-0 bg-dot-grid opacity-30" />

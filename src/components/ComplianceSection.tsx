@@ -40,7 +40,7 @@ const ComplianceSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative bg-surface py-24 md:py-32">
+    <section className="relative bg-surface py-24 md:py-32" data-switcher-surface="light">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -597,6 +597,7 @@ const PipelineSection = () => {
     <section
       id="pipeline"
       className="scroll-perf-section relative overflow-hidden bg-surface py-24 md:py-32"
+      data-switcher-surface="light"
     >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-28 top-16 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />

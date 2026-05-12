@@ -46,7 +46,7 @@ const FeaturesSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative py-24 md:py-32">
+    <section className="relative py-24 md:py-32" data-switcher-surface="light">
       <div className="container">
         <div className="mb-16 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>

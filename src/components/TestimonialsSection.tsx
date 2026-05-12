@@ -57,7 +57,11 @@ const TestimonialsSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="testimonials" className="relative bg-surface py-24 md:py-32">
+    <section
+      id="testimonials"
+      className="relative bg-surface py-24 md:py-32"
+      data-switcher-surface="light"
+    >
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

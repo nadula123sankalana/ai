@@ -87,7 +87,10 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-neutral-950 pt-24 text-white md:pt-32">
+    <section
+      className="relative overflow-hidden bg-neutral-950 pt-24 text-white md:pt-32"
+      data-switcher-surface="dark"
+    >
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <div className="absolute -left-36 top-0 h-[520px] w-[520px] rounded-full bg-primary/20 blur-[130px]" />
         <div className="absolute -right-20 top-20 h-[480px] w-[480px] rounded-full bg-accent/20 blur-[140px]" />

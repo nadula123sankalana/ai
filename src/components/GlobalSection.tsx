@@ -27,7 +27,10 @@ const GlobalSection = () => {
   ] as const;
 
   return (
-    <section className="relative overflow-hidden bg-neutral-950 py-24 text-white md:py-32">
+    <section
+      className="relative overflow-hidden bg-neutral-950 py-24 text-white md:py-32"
+      data-switcher-surface="dark"
+    >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-40 top-20 h-[520px] w-[520px] rounded-full bg-primary/20 blur-[140px]" />
         <div className="absolute -right-40 bottom-20 h-[520px] w-[520px] rounded-full bg-accent/20 blur-[140px]" />

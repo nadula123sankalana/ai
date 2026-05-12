@@ -19,7 +19,11 @@ const PortfolioSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="portfolio" className="relative bg-neutral-950 py-24 text-white md:py-32">
+    <section
+      id="portfolio"
+      className="relative bg-neutral-950 py-24 text-white md:py-32"
+      data-switcher-surface="dark"
+    >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-40 top-40 h-[520px] w-[520px] rounded-full bg-primary/20 blur-[140px]" />
         <div className="absolute -right-40 bottom-40 h-[520px] w-[520px] rounded-full bg-accent/20 blur-[140px]" />

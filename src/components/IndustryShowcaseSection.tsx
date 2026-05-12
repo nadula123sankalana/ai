@@ -91,7 +91,7 @@ const IndustryShowcaseSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="industries" className="relative py-24 md:py-32">
+    <section id="industries" className="relative py-24 md:py-32" data-switcher-surface="light">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -9,7 +9,7 @@ const CTASection = () => {
   const [url, setUrl] = useState("");
 
   return (
-    <section id="cta" className="relative py-24 md:py-32">
+    <section id="cta" className="relative py-24 md:py-32" data-switcher-surface="light">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

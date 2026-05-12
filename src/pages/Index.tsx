@@ -53,7 +53,7 @@ const DeferredSection = ({ children }: DeferredSectionProps) => {
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground" data-switcher-surface="light">
       <Navbar />
       <HeroSection />
       <TrustSection />

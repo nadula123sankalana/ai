@@ -24,7 +24,10 @@ const TrustSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative border-y border-border bg-surface py-14">
+    <section
+      className="relative border-y border-border bg-surface py-14"
+      data-switcher-surface="light"
+    >
       <div className="container">
         <motion.p
           initial={{ opacity: 0 }}

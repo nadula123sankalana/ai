@@ -36,7 +36,10 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="relative overflow-hidden bg-neutral-950 pb-10 pt-20 text-white">
+    <footer
+      className="relative overflow-hidden bg-neutral-950 pb-10 pt-20 text-white"
+      data-switcher-surface="dark"
+    >
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
       <div className="pointer-events-none absolute -top-32 left-1/2 h-[360px] w-[900px] -translate-x-1/2 rounded-full bg-hero-gradient opacity-[0.1] blur-[120px]" />
       <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-15" />

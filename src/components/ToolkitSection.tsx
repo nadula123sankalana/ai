@@ -59,6 +59,7 @@ const ToolkitSection = () => {
     <section
       id="toolkit"
       className="relative scroll-mt-24 bg-neutral-950 pt-24 pb-20 md:scroll-mt-32 md:pt-28 md:pb-24"
+      data-switcher-surface="dark"
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-hero-gradient opacity-80" />
