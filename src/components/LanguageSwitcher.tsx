@@ -1,4 +1,4 @@
-import { ChevronDown, Check, Languages } from "lucide-react";
+import { ChevronDown, Check, Languages, Loader2 } from "lucide-react";
 import { useTranslation, SITE_LANGUAGES, type SiteLanguage } from "@/context/LanguageContext";
 import {
   DropdownMenu,
@@ -17,12 +17,17 @@ type LanguageSwitcherProps = {
 };
 
 export function LanguageSwitcher({ className, variant = "floating" }: LanguageSwitcherProps) {
-  const { language, setLanguage, isTranslating, translateError } = useTranslation();
+  const { language, setLanguage, t, isTranslating, translateError, isDetectingLocale } = useTranslation();
 
   const current = SITE_LANGUAGES.find((l) => l.code === language) ?? SITE_LANGUAGES[0];
   const code = current.code.toUpperCase();
 
-  const triggerFloating = (
+  const triggerFloating = isDetectingLocale ? (
+    <>
+      <Loader2 className="h-4 w-4 shrink-0 animate-spin text-white/80" aria-hidden />
+      <span className="text-xs font-medium text-white/75">{t("Detecting…")}</span>
+    </>
+  ) : (
     <>
       <span className="font-bold tracking-wide text-white/95">{code}</span>
       <span className="text-base leading-none" aria-hidden>
@@ -34,7 +39,12 @@ export function LanguageSwitcher({ className, variant = "floating" }: LanguageSw
     </>
   );
 
-  const triggerNavbar = (
+  const triggerNavbar = isDetectingLocale ? (
+    <>
+      <Loader2 className="h-4 w-4 shrink-0 animate-spin opacity-80" aria-hidden />
+      <span className="text-xs text-white/75">{t("Detecting…")}</span>
+    </>
+  ) : (
     <>
       <Languages className="h-4 w-4 shrink-0 opacity-80" />
       <span className="hidden sm:inline">
