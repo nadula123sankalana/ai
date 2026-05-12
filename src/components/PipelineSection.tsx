@@ -24,6 +24,7 @@ type Step = {
   title: string;
   description: string;
   bullets: string[];
+  cta: string;
   tags: string[];
   kpis: { label: string; value: string; delta?: string }[];
   accent: AccentKey;
@@ -514,68 +515,75 @@ const OptimizeMock = () => {
 const steps: Step[] = [
   {
     eyebrow: "DISCOVER",
-    title: "See exactly what's converting right now",
-    description: "Your live signal feed of winning creative — by industry, platform & format.",
+    title: "We understand what your video needs to do.",
+    description:
+      "Before creating anything, we learn about your business, audience, offer, and the purpose of the video.",
     bullets: [
-      "Browse winning creative by industry & platform",
-      "Analyze competitors' actual video strategy",
-      "Remix proven concepts in seconds",
+      "Discuss your product, service, or campaign goal",
+      "Understand your audience and message",
+      "Find the best video angle, style, and format",
     ],
-    tags: ["Meta Ads", "TikTok Shop", "YouTube Shorts", "Reels"],
+    cta: "Discuss Requirements",
+    tags: ["Goals", "Audience", "Creative direction"],
     kpis: [
-      { label: "Winning angles", value: "27x", delta: "vs. manual research" },
-      { label: "Time to concept", value: "2.3m", delta: "avg. session" },
+      { label: "Discovery focus", value: "100%", delta: "your brief" },
+      { label: "Formats explored", value: "12+", delta: "typical scope" },
     ],
     accent: "primary",
     visual: DiscoverMock,
   },
   {
     eyebrow: "CREATE",
-    title: "Every video format, one creative partner",
-    description: "Generate dozens of on-brand variants in parallel — UGC, cinematic, explainer.",
+    title: "We create the concept, script, and AI video.",
+    description:
+      "Once the direction is clear, our team develops the creative idea, writes the script, designs the scenes, and produces the AI-generated video.",
     bullets: [
-      "Product, explainer, UGC, brand films & ads",
-      "Cinematic production or authentic UGC style",
-      "Batch-produce dozens of variants in parallel",
+      "Product videos, ads, explainers, UGC-style videos, and brand content",
+      "Script, storyboard, scene direction, and visual style included",
+      "Multiple creative versions can be created when needed",
     ],
-    tags: ["UGC", "Cinematic", "Explainer", "Product"],
+    cta: "Create My Video",
+    tags: ["Script", "AI video", "Storyboard"],
     kpis: [
-      { label: "Variants / sprint", value: "48+", delta: "in parallel" },
-      { label: "Revisions saved", value: "63%", delta: "vs. agency" },
+      { label: "Creative routes", value: "6+", delta: "when needed" },
+      { label: "Production", value: "AI", delta: "led by creatives" },
     ],
     accent: "accent",
     visual: CreateMock,
   },
   {
     eyebrow: "LAUNCH",
-    title: "Push live to every channel instantly",
-    description: "One-click deploy across Meta, TikTok, YouTube and Google with platform-perfect specs.",
+    title: "Videos ready for your marketing channels.",
+    description:
+      "We deliver videos in the right format for your platforms, so your content is ready to use for social media, websites, campaigns, or presentations.",
     bullets: [
-      "Auto-optimized for Meta, TikTok, YouTube & more",
-      "Connect ad accounts once, launch forever",
-      "Built-in A/B testing across campaigns",
+      "Optimized for Instagram, TikTok, YouTube, Meta ads, and websites",
+      "Delivered in platform-friendly sizes and formats",
+      "Ready to post, promote, or use in campaigns",
     ],
-    tags: ["Meta", "TikTok", "YouTube", "Google"],
+    cta: "Get Video Content",
+    tags: ["Social", "Ads", "Web"],
     kpis: [
-      { label: "Accounts linked", value: "12", delta: "one-click sync" },
-      { label: "Launch latency", value: "<30s", delta: "to live" },
+      { label: "Platforms", value: "10+", delta: "export-ready" },
+      { label: "Turnaround", value: "Fast", delta: "per plan" },
     ],
     accent: "warm",
     visual: LaunchMock,
   },
   {
     eyebrow: "OPTIMIZE",
-    title: "Track what works. Kill what doesn't.",
-    description: "Real-time performance for every variant, hook and angle — automatically.",
+    title: "Create better content with every campaign.",
+    description: "Once your videos are used, we can help you create new versions based on what performs best.",
     bullets: [
-      "Spend, ROAS and CTR per creative, in real time",
-      "Compare performance across every variant",
-      "Know which hooks and angles actually convert",
+      "Create different hooks, angles, and versions",
+      "Improve videos based on audience response",
+      "Build a repeatable video content system for your brand",
     ],
-    tags: ["ROAS", "CTR", "CPA", "Hook Quality"],
+    cta: "Plan More Videos",
+    tags: ["Iterations", "Learning", "Scale"],
     kpis: [
-      { label: "Live creative", value: "3.4k", delta: "tracked" },
-      { label: "Wasted spend", value: "−41%", delta: "auto-killed" },
+      { label: "New angles", value: "∞", delta: "over time" },
+      { label: "System", value: "1", delta: "repeatable" },
     ],
     accent: "pink",
     visual: OptimizeMock,
@@ -633,13 +641,15 @@ const PipelineSection = () => {
               </div>
             </div>
             <h2 className="font-heading text-4xl font-800 leading-tight tracking-tight text-foreground md:text-6xl">
-              {t("From brief to winning creative.")}
-              <span className="mt-1 block text-gradient">{t("All in one platform.")}</span>
+              {t("From your requirement to ready-to-use video.")}
+              <span className="mt-1 block text-gradient">
+                {t("One creative partner for AI video content.")}
+              </span>
             </h2>
           </div>
           <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
             {t(
-              "Four steps. One partner. Built to make high-performing video the new default — not a moonshot.",
+              "You share the goal, product, brand, or campaign idea. We handle the creative thinking, scripting, visual direction, AI generation, and final video delivery.",
             )}
           </p>
         </motion.div>
@@ -699,9 +709,10 @@ const PipelineSection = () => {
                       </ul>
 
                       <button
+                        type="button"
                         className="btn-shine mt-10 inline-flex h-14 items-center gap-2 rounded-xl border border-black bg-black px-8 text-base font-bold uppercase tracking-wider text-white shadow-[0_10px_28px_-10px_rgba(0,0,0,0.55)] transition-all hover:-translate-y-0.5 hover:bg-neutral-900"
                       >
-                        {t("Learn more")}
+                        {t(step.cta)}
                         <ArrowRight className="h-5 w-5" />
                       </button>
                     </div>

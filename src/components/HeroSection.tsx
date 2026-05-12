@@ -98,15 +98,15 @@ const HeroSection = () => {
       <div className="container relative z-10">
         <div className="mx-auto max-w-5xl text-center">
           <h1 className="mb-5 text-[2.45rem] font-heading font-800 leading-[1.06] tracking-[-0.03em] text-white sm:text-6xl md:text-7xl lg:text-[5.6rem]">
-            {t("Videos that")}
+            {t("AI videos made for your business.")}
             <span className="block">
-              <span className="text-gradient">{t("actually convert.")}</span>
+              <span className="text-gradient">{t("From idea to final video.")}</span>
             </span>
           </h1>
 
           <p className="mx-auto mb-8 max-w-2xl text-[1.06rem] leading-relaxed text-white/70 md:mb-10 md:text-lg">
             {t(
-              "Paste a product URL or brief. Get cinematic video ads, explainers, and social content — produced by world-class crews in 80+ cities, delivered in days, optimized for performance.",
+              "Tell us what you need. Our team will plan, script, create, and deliver AI-generated videos for ads, social media, product launches, explainers, and brand content.",
             )}
           </p>
 
@@ -125,11 +125,11 @@ const HeroSection = () => {
               </Button>
             </div>
             <p className="mt-3 text-xs text-white/55">
-              {t("No credit card · First video free · Delivered in 48 hours")}
+              {t("No complicated tools • No production team needed • Fast delivery")}
             </p>
           </div>
 
-          <div className="mb-12 flex items-center justify-center gap-2 text-[11px] md:mb-14 md:gap-3 md:text-xs">
+          <div className="mb-12 flex flex-col items-center justify-center gap-3 text-center text-[11px] md:mb-14 md:text-xs">
             <div className="flex -space-x-2">
               {heroAvatars.map((src, i) => (
                 <img
@@ -141,9 +141,8 @@ const HeroSection = () => {
                 />
               ))}
             </div>
-            <p className="font-semibold leading-tight text-white/95">
-              {t("Joined by")}{" "}
-              <span className="text-gradient-primary">{t("2,300+ marketers")}</span> {t("this month")}
+            <p className="max-w-xl font-semibold leading-snug text-white/90">
+              {t("Created for brands, startups, marketers, and product-based businesses")}
             </p>
           </div>
         </div>

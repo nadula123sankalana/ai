@@ -11,44 +11,44 @@ type ToolCard = {
 
 const tools: ToolCard[] = [
   {
-    title: "Inspiration Library",
-    desc: "Find what is trending and remix winners fast.",
-    image: "https://picsum.photos/seed/vertical-inspiration/420/740",
-    embedSrc:
-      "https://player.vimeo.com/video/1189640524?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-  },
-  {
-    title: "Ad Cloner",
-    desc: "Recreate winning ads for your brand in minutes.",
-    image: "https://picsum.photos/seed/vertical-ad-cloner/420/740",
-    embedSrc:
-      "https://player.vimeo.com/video/1189640522?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
-  },
-  {
-    title: "URL to Video",
-    desc: "Turn product links into ready-to-launch videos.",
-    image: "https://picsum.photos/seed/vertical-url-video/420/740",
+    title: "Product Videos",
+    desc: "Showcase your product clearly with strong visuals and simple messaging.",
+    image: "https://picsum.photos/seed/vertical-product-videos/420/740",
     embedSrc:
       "https://player.vimeo.com/video/1189640523?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
   },
   {
-    title: "Asset Generator",
-    desc: "Images, scripts and voice in one workflow.",
-    image: "https://picsum.photos/seed/vertical-assets/420/740",
+    title: "Social Media Ads",
+    desc: "Short, attention-grabbing videos made for campaigns and conversions.",
+    image: "https://picsum.photos/seed/vertical-social-ads/420/740",
     embedSrc:
-      "https://player.vimeo.com/video/1189644405?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
+      "https://player.vimeo.com/video/1189640522?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
   },
   {
-    title: "AI Avatars",
-    desc: "Create realistic avatar videos in multiple languages.",
-    image: "https://picsum.photos/seed/vertical-avatars/420/740",
+    title: "UGC-Style Videos",
+    desc: "Natural-looking videos that feel relatable, direct, and made for social platforms.",
+    image: "https://picsum.photos/seed/vertical-ugc-style/420/740",
     embedSrc:
       "https://player.vimeo.com/video/1189279630?badge=0&autopause=0&muted=1&autoplay=1&loop=1&background=1&controls=0&playsinline=1&dnt=1",
   },
   {
-    title: "Product Ads",
-    desc: "Generate product-led concepts and ad variants quickly.",
-    image: "https://picsum.photos/seed/vertical-product-ads/420/740",
+    title: "Explainer Videos",
+    desc: "Simple videos that explain your product, service, offer, or process.",
+    image: "https://picsum.photos/seed/vertical-explainer/420/740",
+    embedSrc:
+      "https://player.vimeo.com/video/1189644405?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
+  },
+  {
+    title: "Brand Videos",
+    desc: "Polished AI-generated content to present your brand with a stronger visual identity.",
+    image: "https://picsum.photos/seed/vertical-brand-videos/420/740",
+    embedSrc:
+      "https://player.vimeo.com/video/1189640524?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1",
+  },
+  {
+    title: "Launch Videos",
+    desc: "Create hype around a new product, service, offer, or campaign.",
+    image: "https://picsum.photos/seed/vertical-launch-videos/420/740",
   },
 ];
 
@@ -74,10 +74,12 @@ const ToolkitSection = () => {
           className="relative z-10 mx-auto mb-10 max-w-3xl text-center md:mb-14"
         >
           <h2 className="font-heading text-3xl font-800 leading-tight tracking-tight text-white md:text-4xl">
-            {t("Vertical video tools bar")}
+            {t("Video styles we can create")}
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-white/80 md:text-base">
-            {t("Browse quick-start creative modules in a scrollable reel.")}
+            {t(
+              "Choose the type of video your business needs, or tell us your goal and we will recommend the best format.",
+            )}
           </p>
         </motion.div>
 
