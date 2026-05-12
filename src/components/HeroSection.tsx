@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { ChevronRight, Link as LinkIcon, Play, TrendingUp, Eye, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -20,8 +21,71 @@ const heroAvatars = [
 ];
 
 const HeroSection = () => {
+  const sliderRef = useRef<HTMLDivElement | null>(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+
+    const getStep = () => {
+      const firstCard = slider.children[0] as HTMLElement | undefined;
+      if (!firstCard) return 1;
+      const gap = parseFloat(getComputedStyle(slider).columnGap || getComputedStyle(slider).gap || "0");
+      return firstCard.getBoundingClientRect().width + gap;
+    };
+
+    const onScroll = () => {
+      const step = getStep();
+      const nextIndex = Math.max(0, Math.min(marqueeImages.length - 1, Math.round(slider.scrollLeft / step)));
+      setActiveSlide(nextIndex);
+    };
+
+    onScroll();
+    slider.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      slider.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+  const goToSlide = (index: number) => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+    const firstCard = slider.children[0] as HTMLElement | undefined;
+    if (!firstCard) return;
+    const gap = parseFloat(getComputedStyle(slider).columnGap || getComputedStyle(slider).gap || "0");
+    const step = firstCard.getBoundingClientRect().width + gap;
+
+    slider.scrollTo({ left: step * index, behavior: "smooth" });
+    setActiveSlide(index);
+  };
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider || !window.matchMedia("(max-width: 767px)").matches) return;
+
+    const intervalId = window.setInterval(() => {
+      setActiveSlide((current) => {
+        const next = (current + 1) % marqueeImages.length;
+        const firstCard = slider.children[0] as HTMLElement | undefined;
+        if (!firstCard) return current;
+
+        const gap = parseFloat(getComputedStyle(slider).columnGap || getComputedStyle(slider).gap || "0");
+        const step = firstCard.getBoundingClientRect().width + gap;
+        slider.scrollTo({ left: step * next, behavior: "smooth" });
+
+        return next;
+      });
+    }, 3500);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
   return (
-    <section className="relative overflow-hidden bg-neutral-950 pt-28 text-white md:pt-32">
+    <section className="relative overflow-hidden bg-neutral-950 pt-24 text-white md:pt-32">
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <div className="absolute -left-36 top-0 h-[520px] w-[520px] rounded-full bg-primary/20 blur-[130px]" />
         <div className="absolute -right-20 top-20 h-[480px] w-[480px] rounded-full bg-accent/20 blur-[140px]" />
@@ -31,24 +95,24 @@ const HeroSection = () => {
 
       <div className="container relative z-10">
         <div className="mx-auto max-w-5xl text-center">
-          <h1 className="mb-6 text-[2.8rem] font-heading font-800 leading-[1.02] tracking-[-0.035em] text-white sm:text-6xl md:text-7xl lg:text-[5.6rem]">
+          <h1 className="mb-5 text-[2.45rem] font-heading font-800 leading-[1.06] tracking-[-0.03em] text-white sm:text-6xl md:text-7xl lg:text-[5.6rem]">
             Videos that
             <span className="block">
               <span className="text-gradient">actually convert.</span>
             </span>
           </h1>
 
-          <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
+          <p className="mx-auto mb-8 max-w-2xl text-[1.06rem] leading-relaxed text-white/70 md:mb-10 md:text-lg">
             Paste a product URL or brief. Get cinematic video ads, explainers, and
             social content — produced by world-class crews in 80+ cities, delivered
             in days, optimized for performance.
           </p>
 
-          <div className="mx-auto mb-5 w-full max-w-xl">
+          <div className="mx-auto mb-4 w-full max-w-xl md:mb-5">
             <div className="flex justify-center">
               <Button
                 type="button"
-                className="group h-16 overflow-hidden rounded-xl border border-cyan-300/45 bg-black p-0 text-white shadow-[0_18px_40px_-14px_rgba(42,77,255,0.85)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_48px_-14px_rgba(42,77,255,0.95)]"
+                className="group h-16 w-full overflow-hidden rounded-xl border border-cyan-300/45 bg-black p-0 text-white shadow-[0_18px_40px_-14px_rgba(42,77,255,0.85)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_48px_-14px_rgba(42,77,255,0.95)] sm:w-auto"
               >
                 <span className="flex h-full w-16 items-center justify-center bg-gradient-to-br from-[#14a6ff] via-[#3b82f6] to-[#5b3df5] transition-all duration-300 group-hover:brightness-110">
                   <ChevronRight className="h-8 w-8" />
@@ -63,19 +127,19 @@ const HeroSection = () => {
             </p>
           </div>
 
-          <div className="mb-14 flex items-center justify-center gap-3">
+          <div className="mb-12 flex items-center justify-center gap-2 text-[11px] md:mb-14 md:gap-3 md:text-xs">
             <div className="flex -space-x-2">
               {heroAvatars.map((src, i) => (
                 <img
                   key={i}
                   src={src}
                   alt=""
-                  className="h-8 w-8 rounded-full border-2 border-neutral-950 object-cover"
+                  className="h-7 w-7 rounded-full border-2 border-neutral-950 object-cover md:h-8 md:w-8"
                   loading="eager"
                 />
               ))}
             </div>
-            <p className="text-xs font-semibold text-white">
+            <p className="font-semibold leading-tight text-white/95">
               Joined by <span className="text-gradient-primary">2,300+ marketers</span> this month
             </p>
           </div>
@@ -84,55 +148,66 @@ const HeroSection = () => {
         <div className="relative mx-auto max-w-6xl">
           <div className="absolute -inset-8 rounded-[40px] bg-hero-gradient-soft blur-2xl" />
 
-          <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-neutral-900 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)]">
-            <div className="flex items-center gap-2 border-b border-white/10 bg-white/5 px-4 py-3">
+          <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-neutral-900 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)] md:rounded-[28px]">
+            <div className="flex items-center gap-1.5 border-b border-white/10 bg-white/5 px-3 py-2.5 sm:gap-2 sm:px-4 sm:py-3">
               <div className="flex gap-1.5">
                 <span className="h-2.5 w-2.5 rounded-full bg-[hsl(var(--pink))]/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[hsl(var(--warm))]/80" />
                 <span className="h-2.5 w-2.5 rounded-full bg-primary/80" />
               </div>
               <div className="ml-3 flex-1">
-                <div className="mx-auto flex w-fit items-center gap-2 rounded-full border border-white/10 bg-black/35 px-3 py-1 text-xs font-medium text-white/65">
+                <div className="mx-auto flex w-fit items-center gap-1.5 rounded-full border border-white/10 bg-black/35 px-2.5 py-0.5 text-[10px] font-medium text-white/65 sm:gap-2 sm:px-3 sm:py-1 sm:text-xs">
                   <LinkIcon className="h-3 w-3" />
                   catalyst.ai / studio / preview
                 </div>
               </div>
-              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary">Live</span>
+              <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-primary sm:px-2.5 sm:text-[10px]">Live</span>
             </div>
 
-            <div className="relative aspect-video w-full bg-black">
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30" />
+            <div className="relative w-full bg-black">
+              <div className="relative w-full" style={{ padding: "56.25% 0 0 0" }}>
+                <iframe
+                  title="hf_20260504_121600_d7cf8e52-accf-4587-ac88-b016d5582946"
+                  src="https://player.vimeo.com/video/1191428392?badge=0&autopause=0&player_id=0&app_id=58479"
+                  className="absolute left-0 top-0 z-0 h-full w-full border-0"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  allowFullScreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  loading="eager"
+                />
+              </div>
+              <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-black/30" />
 
-              <div className="absolute left-4 top-4 flex items-center gap-2 rounded-xl border border-white/15 bg-black/55 px-3 py-2 backdrop-blur-md sm:left-6 sm:top-6">
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/90">
-                  <Eye className="h-3.5 w-3.5 text-white" strokeWidth={2.5} />
+              <div className="pointer-events-none absolute left-2.5 top-2.5 z-10 flex items-center gap-1.5 rounded-xl border border-white/15 bg-black/55 px-2 py-1 backdrop-blur-md sm:left-6 sm:top-6 sm:gap-2 sm:px-3 sm:py-2">
+                <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-primary/90 sm:h-7 sm:w-7">
+                  <Eye className="h-3 w-3 text-white sm:h-3.5 sm:w-3.5" strokeWidth={2.5} />
                 </div>
                 <div>
-                  <div className="font-heading text-sm font-800 text-white leading-none">1.2M</div>
-                  <div className="text-[10px] text-white/75">views · this week</div>
+                  <div className="font-heading text-xs font-800 leading-none text-white sm:text-sm">1.2M</div>
+                  <div className="text-[9px] text-white/75 sm:text-[10px]">views · this week</div>
                 </div>
               </div>
 
-              <div className="absolute right-4 top-4 flex items-center gap-2 rounded-xl border border-white/15 bg-black/55 px-3 py-2 backdrop-blur-md sm:right-6 sm:top-6">
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[hsl(var(--warm))]/90">
-                  <TrendingUp className="h-3.5 w-3.5 text-white" strokeWidth={2.5} />
+              <div className="pointer-events-none absolute right-2.5 top-2.5 z-10 flex items-center gap-1.5 rounded-xl border border-white/15 bg-black/55 px-2 py-1 backdrop-blur-md sm:right-6 sm:top-6 sm:gap-2 sm:px-3 sm:py-2">
+                <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-[hsl(var(--warm))]/90 sm:h-7 sm:w-7">
+                  <TrendingUp className="h-3 w-3 text-white sm:h-3.5 sm:w-3.5" strokeWidth={2.5} />
                 </div>
                 <div>
-                  <div className="font-heading text-sm font-800 text-white leading-none">+273%</div>
-                  <div className="text-[10px] text-white/75">ROAS vs. baseline</div>
+                  <div className="font-heading text-xs font-800 leading-none text-white sm:text-sm">+273%</div>
+                  <div className="text-[9px] text-white/75 sm:text-[10px]">ROAS vs. baseline</div>
                 </div>
               </div>
 
-              <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-3 rounded-full border border-white/20 bg-black/60 px-4 py-2.5 backdrop-blur-md sm:bottom-6">
-                <button className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-black shadow-md hover:scale-105 transition">
-                  <Play className="ml-0.5 h-4 w-4 fill-black" />
-                </button>
+              <div className="pointer-events-none absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/20 bg-black/60 px-2.5 py-1.5 backdrop-blur-md sm:bottom-6 sm:gap-3 sm:px-4 sm:py-2.5">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-black shadow-md sm:h-9 sm:w-9">
+                  <Play className="ml-0.5 h-3.5 w-3.5 fill-black sm:h-4 sm:w-4" />
+                </span>
                 <div className="hidden sm:block h-1 w-48 overflow-hidden rounded-full bg-white/15">
-                  <div className="h-full w-1/3 rounded-full bg-hero-gradient" />
+                  <div className="h-full w-[35%] rounded-full bg-hero-gradient" />
                 </div>
                 <div className="hidden items-center gap-1.5 text-xs font-medium text-white/85 sm:flex">
                   <Clock className="h-3 w-3" />
-                  0:18 / 0:60
+                  0:03 / 0:08
                 </div>
               </div>
             </div>
@@ -144,40 +219,77 @@ const HeroSection = () => {
                 { label: "CPA", value: "–42%", tone: "text-gradient-warm" },
                 { label: "Variants live", value: "24", tone: "text-gradient" },
               ].map((s) => (
-                <div key={s.label} className="bg-neutral-900 p-4 text-center">
-                  <div className={`font-heading text-2xl font-800 leading-none ${s.tone}`}>{s.value}</div>
-                  <div className="mt-1.5 text-[11px] font-semibold uppercase tracking-wider text-white/60">{s.label}</div>
+                <div key={s.label} className="bg-neutral-900 p-3 text-center sm:p-4">
+                  <div className={`font-heading text-[1.8rem] font-800 leading-none sm:text-2xl ${s.tone}`}>{s.value}</div>
+                  <div className="mt-1 text-[9px] font-semibold uppercase tracking-[0.08em] text-white/60 sm:mt-1.5 sm:text-[11px] sm:tracking-wider">{s.label}</div>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="mt-16 w-full overflow-hidden md:mt-20 mask-fade-x">
-          <div className="flex gap-4 w-max lg:animate-marquee">
-            {[...marqueeImages, ...marqueeImages].map((img, i) => (
+        <div className="mt-14 w-full md:mt-20">
+          <div ref={sliderRef} className="scrollbar-none -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 md:hidden">
+            {marqueeImages.map((img) => (
               <div
-                key={i}
-                className="group relative h-[180px] w-[280px] flex-shrink-0 overflow-hidden rounded-2xl border border-white/10 md:h-[220px] md:w-[340px]"
+                key={img.label}
+                className="group relative h-[180px] w-[82vw] max-w-[320px] flex-shrink-0 snap-center overflow-hidden rounded-2xl border border-white/10"
               >
                 <img
                   src={img.image}
                   alt=""
-                  className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105"
+                  className="h-full w-full object-cover"
                   loading="lazy"
                   decoding="async"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/95 shadow-md">
-                    <Play className="ml-0.5 h-5 w-5 fill-neutral-900 text-neutral-900" />
-                  </span>
-                </div>
-                <span className="absolute bottom-0 left-0 z-10 p-5 font-heading text-sm font-700 text-white drop-shadow-md md:text-base">
+                <span className="absolute bottom-0 left-0 z-10 p-5 font-heading text-sm font-700 text-white drop-shadow-md">
                   {img.label}
                 </span>
               </div>
             ))}
+          </div>
+          <div className="mt-4 flex items-center justify-center gap-2 md:hidden">
+            {marqueeImages.map((img, index) => (
+              <button
+                key={`${img.label}-dot`}
+                type="button"
+                onClick={() => goToSlide(index)}
+                aria-label={`Go to ${img.label}`}
+                aria-current={activeSlide === index}
+                className={`h-2 rounded-full transition-all ${
+                  activeSlide === index ? "w-6 bg-white" : "w-2 bg-white/35 hover:bg-white/60"
+                }`}
+              />
+            ))}
+          </div>
+
+          <div className="hidden w-full overflow-hidden mask-fade-x md:block">
+            <div className="flex w-max gap-4 lg:animate-marquee">
+              {[...marqueeImages, ...marqueeImages].map((img, i) => (
+                <div
+                  key={`${img.label}-${i}`}
+                  className="group relative h-[220px] w-[340px] flex-shrink-0 overflow-hidden rounded-2xl border border-white/10"
+                >
+                  <img
+                    src={img.image}
+                    alt=""
+                    className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/95 shadow-md">
+                      <Play className="ml-0.5 h-5 w-5 fill-neutral-900 text-neutral-900" />
+                    </span>
+                  </div>
+                  <span className="absolute bottom-0 left-0 z-10 p-5 font-heading text-base font-700 text-white drop-shadow-md">
+                    {img.label}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

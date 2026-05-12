@@ -80,36 +80,36 @@ const TestimonialsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: (i % 3) * 0.1 }}
-              className="card-hover relative flex flex-col overflow-hidden rounded-3xl border border-border bg-white p-8 soft-shadow hover:border-primary/30"
+              className="card-hover relative flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-white p-6 md:rounded-3xl md:border-border md:p-8 soft-shadow hover:border-primary/30"
             >
               <div className="pointer-events-none absolute -right-10 -top-10 opacity-[0.07]">
-                <Quote className="h-32 w-32 text-primary" />
+                <Quote className="h-24 w-24 text-primary md:h-32 md:w-32" />
               </div>
               <div className="relative flex items-center justify-between">
                 <div className="flex gap-0.5">
                   {Array.from({ length: 5 }).map((_, j) => (
-                    <Star key={j} className="h-4 w-4 fill-[hsl(var(--warm))] text-[hsl(var(--warm))]" />
+                    <Star key={j} className="h-3.5 w-3.5 fill-[hsl(var(--warm))] text-[hsl(var(--warm))] md:h-4 md:w-4" />
                   ))}
                 </div>
-                <span className="rounded-full border border-primary/20 bg-primary/8 px-2.5 py-0.5 font-heading text-[10px] font-extrabold uppercase tracking-wider text-primary">
+                <span className="rounded-full border border-primary/20 bg-primary/8 px-2 py-0.5 font-heading text-[9px] font-extrabold uppercase tracking-[0.08em] text-primary md:px-2.5 md:text-[10px] md:tracking-wider">
                   {t.highlight}
                 </span>
               </div>
-              <p className="relative mt-6 flex-1 text-[15px] leading-relaxed text-foreground/85">
+              <p className="relative mt-4 flex-1 text-[13px] leading-relaxed text-foreground/85 md:mt-6 md:text-[15px]">
                 "{t.text}"
               </p>
-              <div className="relative mt-7 flex items-center gap-3 border-t border-border pt-5">
+              <div className="relative mt-5 flex items-center gap-2.5 border-t border-border/70 pt-4 md:mt-7 md:gap-3 md:border-border md:pt-5">
                 <img
                   src={t.avatar}
                   alt={t.name}
-                  className="h-11 w-11 rounded-full object-cover"
+                  className="h-9 w-9 rounded-full object-cover md:h-11 md:w-11"
                   loading="lazy"
                 />
                 <div className="flex-1">
-                  <p className="text-sm font-semibold text-foreground">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
+                  <p className="text-[13px] font-semibold text-foreground md:text-sm">{t.name}</p>
+                  <p className="text-[11px] text-muted-foreground md:text-xs">{t.role}</p>
                 </div>
-                <span className="font-heading text-xs font-800 uppercase tracking-wider text-foreground/40">
+                <span className="font-heading text-[11px] font-800 uppercase tracking-[0.08em] text-foreground/40 md:text-xs md:tracking-wider">
                   {t.logo}
                 </span>
               </div>

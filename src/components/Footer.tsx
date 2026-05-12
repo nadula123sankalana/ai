@@ -55,7 +55,7 @@ const Footer = () => {
       <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-15" />
 
       <div className="container relative">
-        <div className="grid grid-cols-2 gap-10 md:grid-cols-6 md:gap-8">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-6 md:gap-8">
           <div className="col-span-2">
             <Link to="/" className="flex items-center" aria-label="Catalyst AI home">
               <img

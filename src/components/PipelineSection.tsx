@@ -175,7 +175,7 @@ const DiscoverMock = () => {
     },
   ];
   return (
-    <div className="relative h-full w-full p-4 md:p-5">
+    <div className="relative h-full w-full p-3 md:p-5">
       <div className="flex items-center gap-2 rounded-xl border border-border bg-white/90 px-3 py-2 backdrop-blur">
         <Search className="h-3.5 w-3.5 text-foreground/60" />
         <span className="text-[12px] text-foreground/75">What's converting in fitness apps?</span>
@@ -314,11 +314,11 @@ const CreateMock = () => {
       <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-border/70">
         <div className={`h-full w-3/5 rounded-full bg-gradient-to-r ${a.gradient} animate-pulse-glow`} />
       </div>
-      <div className="mt-3 grid grid-cols-3 gap-2">
+      <div className="mt-2.5 grid grid-cols-3 gap-1.5 md:mt-3 md:gap-2">
         {variants.map((v, i) => (
           <div
             key={i}
-            className="relative aspect-[4/5] overflow-hidden rounded-lg border border-border/70 bg-white"
+            className="relative aspect-[4/5] overflow-hidden rounded-lg border border-border/70 bg-white max-md:aspect-square"
           >
             {"vimeoId" in v && v.vimeoId ? (
               <>
@@ -370,7 +370,7 @@ const CreateMock = () => {
           </div>
         ))}
       </div>
-      <div className="mt-3 flex items-center gap-2 rounded-lg border border-border bg-white/85 px-2.5 py-1.5">
+      <div className="mt-2.5 flex items-center gap-2 rounded-lg border border-border bg-white/85 px-2.5 py-1.5 md:mt-3">
         <Sparkles className={`h-3 w-3 ${a.text}`} />
         <span className="text-[10px] text-foreground/75">8 of 12 ready · ETA 1m 24s</span>
       </div>
@@ -704,7 +704,7 @@ const PipelineSection = () => {
                         <div
                           className={`absolute -inset-6 rounded-[32px] ${accent.glow} blur-2xl opacity-60`}
                         />
-                        <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] border border-border bg-white soft-shadow">
+                        <div className="relative aspect-[11/10] overflow-hidden rounded-[24px] border border-border bg-white soft-shadow sm:aspect-[4/3]">
                           <div className="absolute inset-0 bg-surface" />
                           <div
                             className={`absolute inset-0 bg-gradient-to-br ${accent.chipGradient} opacity-70`}
@@ -731,9 +731,9 @@ const PipelineSection = () => {
                         </div>
 
                         <div
-                          className={`absolute -bottom-4 ${
-                            imageFirst ? "right-6" : "left-6"
-                          } z-20 inline-flex items-center gap-2 rounded-full border border-border bg-white/85 px-3 py-1.5 backdrop-blur-sm soft-shadow`}
+                          className={`absolute bottom-2 ${
+                            imageFirst ? "right-4 sm:right-6" : "left-4 sm:left-6"
+                          } z-20 inline-flex items-center gap-2 rounded-full border border-border bg-white/85 px-3 py-1.5 backdrop-blur-sm soft-shadow sm:-bottom-4`}
                         >
                           <span
                             className={`h-2 w-2 shrink-0 rounded-full ${accent.bg}`}

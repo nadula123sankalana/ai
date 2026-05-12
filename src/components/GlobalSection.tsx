@@ -95,12 +95,26 @@ const GlobalSection = () => {
             </ComposableMap>
           </div>
 
-          <div className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full border border-white/20 bg-black/50 px-4 py-2 backdrop-blur">
+          <div className="absolute bottom-5 left-1/2 hidden -translate-x-1/2 rounded-full border border-white/20 bg-black/50 px-4 py-2 backdrop-blur sm:block">
             <p className="font-heading text-xs font-bold uppercase tracking-[0.2em] text-white/80">
               80+ cities · 6 continents · one standard
             </p>
           </div>
         </motion.div>
+        <div className="mt-3 grid grid-cols-3 border-t border-white/15 pt-3 text-center font-heading text-[10px] font-bold uppercase tracking-[0.1em] text-white/75 sm:hidden">
+          <div className="px-2">
+            <span className="block">80+</span>
+            <span className="block">cities</span>
+          </div>
+          <div className="border-l border-white/20 px-2">
+            <span className="block">6</span>
+            <span className="block">continents</span>
+          </div>
+          <div className="border-l border-white/20 px-2">
+            <span className="block">one</span>
+            <span className="block">standard</span>
+          </div>
+        </div>
 
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {[
