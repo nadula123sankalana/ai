@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { useTranslation } from "@/context/LanguageContext";
 
 const services = [
   { name: "Product Videos", hint: "Showcase, demo & lifestyle", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=400&fit=crop&q=80" },
@@ -14,6 +15,8 @@ const services = [
 ];
 
 const ServicesSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="services" className="relative overflow-hidden bg-neutral-950 py-24 md:py-32">
       <div className="pointer-events-none absolute inset-0">
@@ -30,15 +33,16 @@ const ServicesSection = () => {
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-primary">
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Every format
+            {t("Every format")}
           </span>
           <h2 className="mt-5 font-heading text-3xl font-800 leading-[1.05] tracking-tight text-white md:text-5xl">
-            Create any video.
-            <span className="block text-gradient">With one partner.</span>
+            {t("Create any video.")}
+            <span className="block text-gradient">{t("With one partner.")}</span>
           </h2>
           <p className="mt-4 text-base text-white/70 md:text-lg">
-            From 15-second TikToks to 60-second brand films — one production team, one creative
-            standard, zero friction.
+            {t(
+              "From 15-second TikToks to 60-second brand films — one production team, one creative standard, zero friction.",
+            )}
           </p>
         </motion.div>
 
@@ -55,13 +59,13 @@ const ServicesSection = () => {
             >
               <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-xl">
                 <img src={s.image} alt="" className="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 mix-blend-overlay opacity-0 transition-opacity group-hover:opacity-100" />
               </div>
               <div className="min-w-0 flex-1">
-                <span className="block font-heading text-base font-700 text-white group-hover:text-primary transition-colors">
-                  {s.name}
+                <span className="block font-heading text-base font-700 text-white transition-colors group-hover:text-primary">
+                  {t(s.name)}
                 </span>
-                <span className="mt-0.5 block text-xs text-white/65">{s.hint}</span>
+                <span className="mt-0.5 block text-xs text-white/65">{t(s.hint)}</span>
               </div>
               <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/5 text-white/60 transition-all group-hover:border-primary/40 group-hover:bg-primary/10 group-hover:text-primary">
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

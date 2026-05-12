@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Quote, Star } from "lucide-react";
+import { useTranslation } from "@/context/LanguageContext";
 
 const testimonials = [
   {
@@ -53,6 +54,8 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="testimonials" className="relative bg-surface py-24 md:py-32">
       <div className="container">
@@ -64,23 +67,23 @@ const TestimonialsSection = () => {
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-primary">
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Testimonials
+            {t("Testimonials")}
           </span>
           <h2 className="mt-5 font-heading text-3xl font-800 leading-tight tracking-tight text-foreground md:text-5xl">
-            Loved by the best
-            <span className="block text-gradient">marketing teams.</span>
+            {t("Loved by the best")}
+            <span className="block text-gradient">{t("marketing teams.")}</span>
           </h2>
         </motion.div>
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((t, i) => (
+          {testimonials.map((row, i) => (
             <motion.div
-              key={t.name}
+              key={row.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: (i % 3) * 0.1 }}
-              className="card-hover relative flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-white p-6 md:rounded-3xl md:border-border md:p-8 soft-shadow hover:border-primary/30"
+              className="card-hover relative flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-white p-6 soft-shadow hover:border-primary/30 md:rounded-3xl md:border-border md:p-8"
             >
               <div className="pointer-events-none absolute -right-10 -top-10 opacity-[0.07]">
                 <Quote className="h-24 w-24 text-primary md:h-32 md:w-32" />
@@ -92,25 +95,20 @@ const TestimonialsSection = () => {
                   ))}
                 </div>
                 <span className="rounded-full border border-primary/20 bg-primary/8 px-2 py-0.5 font-heading text-[9px] font-extrabold uppercase tracking-[0.08em] text-primary md:px-2.5 md:text-[10px] md:tracking-wider">
-                  {t.highlight}
+                  {t(row.highlight)}
                 </span>
               </div>
               <p className="relative mt-4 flex-1 text-[13px] leading-relaxed text-foreground/85 md:mt-6 md:text-[15px]">
-                "{t.text}"
+                &ldquo;{t(row.text)}&rdquo;
               </p>
               <div className="relative mt-5 flex items-center gap-2.5 border-t border-border/70 pt-4 md:mt-7 md:gap-3 md:border-border md:pt-5">
-                <img
-                  src={t.avatar}
-                  alt={t.name}
-                  className="h-9 w-9 rounded-full object-cover md:h-11 md:w-11"
-                  loading="lazy"
-                />
+                <img src={row.avatar} alt={row.name} className="h-9 w-9 rounded-full object-cover md:h-11 md:w-11" loading="lazy" />
                 <div className="flex-1">
-                  <p className="text-[13px] font-semibold text-foreground md:text-sm">{t.name}</p>
-                  <p className="text-[11px] text-muted-foreground md:text-xs">{t.role}</p>
+                  <p className="text-[13px] font-semibold text-foreground md:text-sm">{row.name}</p>
+                  <p className="text-[11px] text-muted-foreground md:text-xs">{t(row.role)}</p>
                 </div>
                 <span className="font-heading text-[11px] font-800 uppercase tracking-[0.08em] text-foreground/40 md:text-xs md:tracking-wider">
-                  {t.logo}
+                  {row.logo}
                 </span>
               </div>
             </motion.div>

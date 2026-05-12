@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, Check, Plus, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/context/LanguageContext";
 
 type Plan = {
   name: string;
@@ -95,10 +96,11 @@ const faqs = [
 ];
 
 const Pricing = () => {
-  const [openFaq, setOpenFaq] = React.useState(faqs[0]?.q ?? "");
+  const { t } = useTranslation();
+  const [openFaqIndex, setOpenFaqIndex] = React.useState(0);
 
-  const toggleFaq = (question: string) => {
-    setOpenFaq((current) => (current === question ? "" : question));
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex((current) => (current === index ? -1 : index));
   };
 
   return (
@@ -115,21 +117,23 @@ const Pricing = () => {
           className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-sm text-white/75 transition-colors hover:border-white/30 hover:text-white"
         >
           <ChevronLeft className="h-4 w-4" />
-          Back to home
+          {t("Back to home")}
         </Link>
       </div>
 
       <section className="container relative z-10 pb-16 pt-8 md:pb-20 md:pt-10">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gradient-primary">Pricing</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gradient-primary">{t("Pricing")}</p>
           <h1 className="mt-3 font-heading text-4xl font-800 tracking-tight sm:text-5xl md:text-6xl">
-            Plans built for
-            <span className="block text-gradient">high-performing creative teams</span>
+            {t("Plans built for")}
+            <span className="block text-gradient">{t("high-performing creative teams")}</span>
           </h1>
           <p className="mt-4 text-base text-white/70 md:text-lg">
-            Create your video ads, air your video ads, and see wins at hyperspeed.
+            {t("Create your video ads, air your video ads, and see wins at hyperspeed.")}
           </p>
-          <p className="mt-2 text-sm text-white/55">Monthly plan view based on provided source pricing content.</p>
+          <p className="mt-2 text-sm text-white/55">
+            {t("Monthly plan view based on provided source pricing content.")}
+          </p>
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
@@ -144,13 +148,13 @@ const Pricing = () => {
             >
               {plan.highlighted && (
                 <div className="mb-4 inline-flex rounded-full border border-primary/40 bg-primary/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-primary">
-                  Most Popular
+                  {t("Most Popular")}
                 </div>
               )}
-              <h2 className="font-heading text-2xl font-800">{plan.name}</h2>
-              <p className="mt-2 min-h-12 text-sm text-white/70">{plan.subtitle}</p>
-              <div className={`mt-5 text-3xl font-800 ${plan.highlighted ? "text-gradient" : ""}`}>{plan.price}</div>
-              <div className="mt-1 text-xs text-white/55">{plan.billing}</div>
+              <h2 className="font-heading text-2xl font-800">{t(plan.name)}</h2>
+              <p className="mt-2 min-h-12 text-sm text-white/70">{t(plan.subtitle)}</p>
+              <div className={`mt-5 text-3xl font-800 ${plan.highlighted ? "text-gradient" : ""}`}>{t(plan.price)}</div>
+              <div className="mt-1 text-xs text-white/55">{t(plan.billing)}</div>
 
               <Button
                 className={`mt-6 w-full rounded-xl ${
@@ -159,14 +163,14 @@ const Pricing = () => {
                     : "border border-white/20 bg-white/10 text-white hover:bg-white/15"
                 }`}
               >
-                {plan.cta}
+                {t(plan.cta)}
               </Button>
 
               <ul className="mt-6 space-y-2.5">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2 text-sm text-white/80">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                    <span>{feature}</span>
+                    <span>{t(feature)}</span>
                   </li>
                 ))}
               </ul>
@@ -177,31 +181,30 @@ const Pricing = () => {
 
       <section className="container relative z-10 pb-20 md:pb-24">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-center font-heading text-4xl font-800 tracking-tight sm:text-5xl">FAQ</h2>
+          <h2 className="text-center font-heading text-4xl font-800 tracking-tight sm:text-5xl">{t("FAQ")}</h2>
 
           <div className="mt-10 border-t border-white/20">
-            {faqs.map((faq) => {
-              const isOpen = openFaq === faq.q;
+            {faqs.map((faq, index) => {
+              const isOpen = openFaqIndex === index;
 
               return (
                 <article key={faq.q} className="border-b border-white/20 py-6 md:py-7">
                   <button
                     type="button"
-                    onClick={() => toggleFaq(faq.q)}
+                    onClick={() => toggleFaq(index)}
                     className="flex w-full items-start justify-between gap-6 text-left"
                     aria-expanded={isOpen}
                   >
-                    <span className="text-lg font-semibold text-white md:text-xl">{faq.q}</span>
+                    <span className="text-lg font-semibold text-white md:text-xl">{t(faq.q)}</span>
                     <span className="mt-1 shrink-0 text-white/85">
                       {isOpen ? <Minus className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
                     </span>
                   </button>
-                  {isOpen && <p className="mt-4 max-w-4xl text-base leading-relaxed text-white/70">{faq.a}</p>}
+                  {isOpen && <p className="mt-4 max-w-4xl text-base leading-relaxed text-white/70">{t(faq.a)}</p>}
                 </article>
               );
             })}
           </div>
-
         </div>
       </section>
     </main>

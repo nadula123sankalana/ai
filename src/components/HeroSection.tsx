@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronRight, Link as LinkIcon, Play, TrendingUp, Eye, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/context/LanguageContext";
 
 const marqueeImages = [
   { label: "Product Videos", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&h=750&fit=crop&q=85" },
@@ -21,6 +22,7 @@ const heroAvatars = [
 ];
 
 const HeroSection = () => {
+  const { t } = useTranslation();
   const sliderRef = useRef<HTMLDivElement | null>(null);
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -96,16 +98,16 @@ const HeroSection = () => {
       <div className="container relative z-10">
         <div className="mx-auto max-w-5xl text-center">
           <h1 className="mb-5 text-[2.45rem] font-heading font-800 leading-[1.06] tracking-[-0.03em] text-white sm:text-6xl md:text-7xl lg:text-[5.6rem]">
-            Videos that
+            {t("Videos that")}
             <span className="block">
-              <span className="text-gradient">actually convert.</span>
+              <span className="text-gradient">{t("actually convert.")}</span>
             </span>
           </h1>
 
           <p className="mx-auto mb-8 max-w-2xl text-[1.06rem] leading-relaxed text-white/70 md:mb-10 md:text-lg">
-            Paste a product URL or brief. Get cinematic video ads, explainers, and
-            social content — produced by world-class crews in 80+ cities, delivered
-            in days, optimized for performance.
+            {t(
+              "Paste a product URL or brief. Get cinematic video ads, explainers, and social content — produced by world-class crews in 80+ cities, delivered in days, optimized for performance.",
+            )}
           </p>
 
           <div className="mx-auto mb-4 w-full max-w-xl md:mb-5">
@@ -118,12 +120,12 @@ const HeroSection = () => {
                   <ChevronRight className="h-8 w-8" />
                 </span>
                 <span className="bg-gradient-to-r from-[#0f1118] via-[#171a28] to-[#1d1230] px-8 text-sm font-extrabold uppercase tracking-[0.12em] leading-[4rem]">
-                  Get Started
+                  {t("Get Started")}
                 </span>
               </Button>
             </div>
             <p className="mt-3 text-xs text-white/55">
-              No credit card · First video free · Delivered in 48 hours
+              {t("No credit card · First video free · Delivered in 48 hours")}
             </p>
           </div>
 
@@ -140,7 +142,8 @@ const HeroSection = () => {
               ))}
             </div>
             <p className="font-semibold leading-tight text-white/95">
-              Joined by <span className="text-gradient-primary">2,300+ marketers</span> this month
+              {t("Joined by")}{" "}
+              <span className="text-gradient-primary">{t("2,300+ marketers")}</span> {t("this month")}
             </p>
           </div>
         </div>
@@ -158,16 +161,18 @@ const HeroSection = () => {
               <div className="ml-3 flex-1">
                 <div className="mx-auto flex w-fit items-center gap-1.5 rounded-full border border-white/10 bg-black/35 px-2.5 py-0.5 text-[10px] font-medium text-white/65 sm:gap-2 sm:px-3 sm:py-1 sm:text-xs">
                   <LinkIcon className="h-3 w-3" />
-                  catalyst.ai / studio / preview
+                  {t("catalyst.ai / studio / preview")}
                 </div>
               </div>
-              <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-primary sm:px-2.5 sm:text-[10px]">Live</span>
+              <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-primary sm:px-2.5 sm:text-[10px]">
+                {t("Live")}
+              </span>
             </div>
 
             <div className="relative w-full bg-black">
               <div className="relative w-full" style={{ padding: "56.25% 0 0 0" }}>
                 <iframe
-                  title="hf_20260504_121600_d7cf8e52-accf-4587-ac88-b016d5582946"
+                  title={t("hf_20260504_121600_d7cf8e52-accf-4587-ac88-b016d5582946")}
                   src="https://player.vimeo.com/video/1191428392?badge=0&autopause=0&player_id=0&app_id=58479"
                   className="absolute left-0 top-0 z-0 h-full w-full border-0"
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
@@ -184,7 +189,7 @@ const HeroSection = () => {
                 </div>
                 <div>
                   <div className="font-heading text-xs font-800 leading-none text-white sm:text-sm">1.2M</div>
-                  <div className="text-[9px] text-white/75 sm:text-[10px]">views · this week</div>
+                  <div className="text-[9px] text-white/75 sm:text-[10px]">{t("views · this week")}</div>
                 </div>
               </div>
 
@@ -194,7 +199,7 @@ const HeroSection = () => {
                 </div>
                 <div>
                   <div className="font-heading text-xs font-800 leading-none text-white sm:text-sm">+273%</div>
-                  <div className="text-[9px] text-white/75 sm:text-[10px]">ROAS vs. baseline</div>
+                  <div className="text-[9px] text-white/75 sm:text-[10px]">{t("ROAS vs. baseline")}</div>
                 </div>
               </div>
 
@@ -207,7 +212,7 @@ const HeroSection = () => {
                 </div>
                 <div className="hidden items-center gap-1.5 text-xs font-medium text-white/85 sm:flex">
                   <Clock className="h-3 w-3" />
-                  0:03 / 0:08
+                  {t("0:03 / 0:08")}
                 </div>
               </div>
             </div>
@@ -221,7 +226,9 @@ const HeroSection = () => {
               ].map((s) => (
                 <div key={s.label} className="bg-neutral-900 p-3 text-center sm:p-4">
                   <div className={`font-heading text-[1.8rem] font-800 leading-none sm:text-2xl ${s.tone}`}>{s.value}</div>
-                  <div className="mt-1 text-[9px] font-semibold uppercase tracking-[0.08em] text-white/60 sm:mt-1.5 sm:text-[11px] sm:tracking-wider">{s.label}</div>
+                  <div className="mt-1 text-[9px] font-semibold uppercase tracking-[0.08em] text-white/60 sm:mt-1.5 sm:text-[11px] sm:tracking-wider">
+                    {t(s.label)}
+                  </div>
                 </div>
               ))}
             </div>
@@ -244,7 +251,7 @@ const HeroSection = () => {
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <span className="absolute bottom-0 left-0 z-10 p-5 font-heading text-sm font-700 text-white drop-shadow-md">
-                  {img.label}
+                  {t(img.label)}
                 </span>
               </div>
             ))}
@@ -255,7 +262,7 @@ const HeroSection = () => {
                 key={`${img.label}-dot`}
                 type="button"
                 onClick={() => goToSlide(index)}
-                aria-label={`Go to ${img.label}`}
+                aria-label={t(`Go to ${img.label}`)}
                 aria-current={activeSlide === index}
                 className={`h-2 rounded-full transition-all ${
                   activeSlide === index ? "w-6 bg-white" : "w-2 bg-white/35 hover:bg-white/60"
@@ -285,7 +292,7 @@ const HeroSection = () => {
                     </span>
                   </div>
                   <span className="absolute bottom-0 left-0 z-10 p-5 font-heading text-base font-700 text-white drop-shadow-md">
-                    {img.label}
+                    {t(img.label)}
                   </span>
                 </div>
               ))}

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Award, Newspaper, ShieldCheck, Share2, Handshake, ArrowUpRight } from "lucide-react";
+import { useTranslation } from "@/context/LanguageContext";
 
 const items = [
   {
@@ -36,6 +37,8 @@ const items = [
 ];
 
 const ComplianceSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative bg-surface py-24 md:py-32">
       <div className="container">
@@ -47,11 +50,11 @@ const ComplianceSection = () => {
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-primary">
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Trust & compliance
+            {t("Trust & compliance")}
           </span>
           <h2 className="mt-5 font-heading text-3xl font-800 leading-tight tracking-tight text-foreground md:text-5xl">
-            Built for enterprise.
-            <span className="block text-gradient">Loved by creators.</span>
+            {t("Built for enterprise.")}
+            <span className="block text-gradient">{t("Loved by creators.")}</span>
           </h2>
         </motion.div>
 
@@ -73,15 +76,15 @@ const ComplianceSection = () => {
                   </div>
                   {item.badge ? (
                     <span className="rounded-full border border-primary/30 bg-primary/8 px-2 py-0.5 font-heading text-[9px] font-extrabold uppercase tracking-wider text-primary">
-                      {item.badge}
+                      {t(item.badge)}
                     </span>
                   ) : null}
                 </div>
-                <h3 className="mt-5 font-heading text-base font-700 text-foreground">{item.title}</h3>
-                <p className="mt-1.5 text-[13px] leading-relaxed text-muted-foreground">{item.desc}</p>
+                <h3 className="mt-5 font-heading text-base font-700 text-foreground">{t(item.title)}</h3>
+                <p className="mt-1.5 text-[13px] leading-relaxed text-muted-foreground">{t(item.desc)}</p>
               </div>
               <div className="mt-5 flex items-center gap-1 text-xs font-semibold text-foreground/75 transition-colors group-hover:text-primary">
-                {item.cta} <ArrowUpRight className="h-3.5 w-3.5" />
+                {t(item.cta)} <ArrowUpRight className="h-3.5 w-3.5" />
               </div>
             </motion.a>
           ))}

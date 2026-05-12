@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ShoppingBag, Building2, Cpu, HeartPulse, GraduationCap, Stethoscope, Plane, Car } from "lucide-react";
+import { useTranslation } from "@/context/LanguageContext";
 
 type Industry = {
   name: string;
@@ -87,6 +88,8 @@ const industries: Industry[] = [
 ];
 
 const IndustryShowcaseSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="industries" className="relative py-24 md:py-32">
       <div className="container">
@@ -99,16 +102,17 @@ const IndustryShowcaseSection = () => {
           <div className="max-w-2xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/8 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-accent">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              Built for every vertical
+              {t("Built for every vertical")}
             </span>
             <h2 className="mt-5 font-heading text-3xl font-800 leading-[1.05] tracking-tight text-foreground md:text-5xl">
-              Proven results across
-              <span className="block text-gradient-accent">every industry you serve.</span>
+              {t("Proven results across")}
+              <span className="block text-gradient-accent">{t("every industry you serve.")}</span>
             </h2>
           </div>
           <p className="max-w-sm text-[15px] text-muted-foreground">
-            4,500+ brands trust Catalyst with video that moves the needle — from DTC
-            launches to enterprise rollouts to regulated healthcare.
+            {t(
+              "4,500+ brands trust Catalyst with video that moves the needle — from DTC launches to enterprise rollouts to regulated healthcare.",
+            )}
           </p>
         </motion.div>
 
@@ -146,12 +150,8 @@ const IndustryShowcaseSection = () => {
                 </div>
 
                 <div className="mt-auto pt-6">
-                  <h3 className="font-heading text-xl font-800 text-white drop-shadow md:text-[1.6rem]">
-                    {item.name}
-                  </h3>
-                  <p className="mt-3 max-w-[36ch] text-sm leading-relaxed text-white/90 md:text-base">
-                    {item.description}
-                  </p>
+                  <h3 className="font-heading text-xl font-800 text-white drop-shadow md:text-[1.6rem]">{t(item.name)}</h3>
+                  <p className="mt-3 max-w-[36ch] text-sm leading-relaxed text-white/90 md:text-base">{t(item.description)}</p>
                 </div>
               </div>
             </motion.a>

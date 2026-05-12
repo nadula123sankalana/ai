@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Play, ArrowRight } from "lucide-react";
+import { useTranslation } from "@/context/LanguageContext";
 
 const videos = [
   { title: "Meaningful Beauty", brand: "Beauty", image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1200&h=800&fit=crop&q=85" },
@@ -15,6 +16,8 @@ const videos = [
 ];
 
 const PortfolioSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="portfolio" className="relative bg-neutral-950 py-24 text-white md:py-32">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -32,26 +35,20 @@ const PortfolioSection = () => {
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-white/80 backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Our work
+            {t("Our work")}
           </span>
           <h2 className="max-w-3xl font-heading text-3xl font-800 leading-tight tracking-tight md:text-5xl lg:text-6xl">
-            We've produced over
-            <span className="block text-gradient">30,000 videos.</span>
+            {t("We've produced over")}
+            <span className="block text-gradient">{t("30,000 videos.")}</span>
           </h2>
           <p className="max-w-xl text-base text-white/70 md:text-lg">
-            From global brand films to scroll-stopping TikToks — here's a taste of what
-            Catalyst crews have shipped recently.
+            {t("From global brand films to scroll-stopping TikToks — here's a taste of what Catalyst crews have shipped recently.")}
           </p>
         </motion.div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="mt-4 overflow-hidden mask-fade-x"
-      >
-        <div className="flex animate-marquee gap-5 w-max px-4">
+      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mt-4 mask-fade-x overflow-hidden">
+        <div className="flex w-max animate-marquee gap-5 px-4">
           {[...videos, ...videos].map((v, i) => (
             <div
               key={i}
@@ -69,28 +66,21 @@ const PortfolioSection = () => {
                 <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-white/15 backdrop-blur-md">
                   <Play className="ml-0.5 h-6 w-6 fill-white text-white" />
                 </div>
-                <span className="text-sm font-semibold text-white">Watch Now</span>
+                <span className="text-sm font-semibold text-white">{t("Watch Now")}</span>
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-5">
                 <span className="inline-block rounded-full border border-white/20 bg-black/50 px-2 py-0.5 font-heading text-[9px] font-extrabold uppercase tracking-wider text-white backdrop-blur">
-                  {v.brand}
+                  {t(v.brand)}
                 </span>
-                <h3 className="mt-1.5 font-heading text-lg font-700 text-white drop-shadow-md md:text-xl">
-                  {v.title}
-                </h3>
+                <h3 className="mt-1.5 font-heading text-lg font-700 text-white drop-shadow-md md:text-xl">{t(v.title)}</h3>
               </div>
             </div>
           ))}
         </div>
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="mt-5 overflow-hidden mask-fade-x"
-      >
-        <div className="flex animate-marquee-reverse gap-5 w-max px-4">
+      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mt-5 mask-fade-x overflow-hidden">
+        <div className="flex w-max animate-marquee-reverse gap-5 px-4">
           {[...videos.slice(5), ...videos.slice(0, 5), ...videos.slice(5), ...videos.slice(0, 5)].map((v, i) => (
             <div
               key={i}
@@ -110,7 +100,7 @@ const PortfolioSection = () => {
                 </div>
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-4">
-                <h3 className="font-heading text-sm font-700 text-white drop-shadow">{v.title}</h3>
+                <h3 className="font-heading text-sm font-700 text-white drop-shadow">{t(v.title)}</h3>
               </div>
             </div>
           ))}
@@ -122,7 +112,7 @@ const PortfolioSection = () => {
           href="#"
           className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 font-heading text-sm font-semibold text-white backdrop-blur transition-colors hover:border-white/40 hover:bg-white/10"
         >
-          View the full portfolio <ArrowRight className="h-4 w-4" />
+          {t("View the full portfolio")} <ArrowRight className="h-4 w-4" />
         </a>
       </div>
     </section>

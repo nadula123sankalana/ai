@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "@/context/LanguageContext";
 
 type Stat = {
   value: number;
@@ -60,6 +61,8 @@ const Counter = ({ target, suffix, prefix }: { target: number; suffix: string; p
 };
 
 const ResultsBannerSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative py-16 md:py-20">
       <div className="container">
@@ -68,7 +71,7 @@ const ResultsBannerSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55 }}
-          className="relative overflow-hidden rounded-3xl border border-border bg-white p-8 md:p-12 soft-shadow"
+          className="soft-shadow relative overflow-hidden rounded-3xl border border-border bg-white p-8 md:p-12"
         >
           <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-40" />
 
@@ -80,7 +83,7 @@ const ResultsBannerSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className={`text-center py-6 md:py-5 ${
+                className={`py-6 text-center md:py-5 ${
                   i > 0 ? "border-t border-border md:border-t-0 md:border-l" : ""
                 }`}
               >
@@ -88,7 +91,7 @@ const ResultsBannerSection = () => {
                   <Counter target={s.value} suffix={s.suffix} prefix={s.prefix} />
                 </div>
                 <p className="mt-3 text-sm font-semibold uppercase tracking-[0.16em] text-muted-foreground md:text-base">
-                  {s.label}
+                  {t(s.label)}
                 </p>
               </motion.div>
             ))}

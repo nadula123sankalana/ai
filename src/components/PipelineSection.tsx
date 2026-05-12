@@ -15,6 +15,7 @@ import {
   Globe,
   ArrowUpRight,
 } from "lucide-react";
+import { useTranslation } from "@/context/LanguageContext";
 
 type AccentKey = "primary" | "accent" | "warm" | "pink";
 
@@ -128,6 +129,7 @@ function vimeoCoverIframeStyle(
 }
 
 const DiscoverMock = () => {
+  const { t } = useTranslation();
   const a = accentMap.primary;
   const cards = [
     {
@@ -178,10 +180,10 @@ const DiscoverMock = () => {
     <div className="relative h-full w-full p-3 md:p-5">
       <div className="flex items-center gap-2 rounded-xl border border-border bg-white/90 px-3 py-2 backdrop-blur">
         <Search className="h-3.5 w-3.5 text-foreground/60" />
-        <span className="text-[12px] text-foreground/75">What's converting in fitness apps?</span>
+        <span className="text-[12px] text-foreground/75">{t("What's converting in fitness apps?")}</span>
         <span className="ml-auto inline-flex items-center gap-1 rounded-full border border-border bg-surface px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-foreground/75">
           <Flame className="h-3 w-3 text-orange-400" />
-          Live
+          {t("Live")}
         </span>
       </div>
       <div className="mt-3 flex flex-wrap gap-1.5">
@@ -190,7 +192,7 @@ const DiscoverMock = () => {
             key={f}
             className="rounded-full border border-border bg-white px-2 py-0.5 text-[10px] font-semibold text-foreground/75"
           >
-            {f}
+            {t(f)}
           </span>
         ))}
       </div>
@@ -232,7 +234,7 @@ const DiscoverMock = () => {
             <div className="pointer-events-none absolute inset-0 z-[2] bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.35),transparent_60%)]" />
             <div className="absolute left-1.5 top-1.5 z-[3] inline-flex items-center gap-1 rounded-full border border-border bg-white/85 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-foreground/80 backdrop-blur">
               <span className={`h-1 w-1 rounded-full ${a.bg}`} />
-              {c.tag}
+              {t(c.tag)}
             </div>
             <div className="absolute bottom-1.5 left-1.5 right-1.5 z-[3] flex items-center justify-between">
               <span className="rounded-md bg-white/90 px-1.5 py-0.5 text-[8px] font-bold text-emerald-600">
@@ -250,6 +252,7 @@ const DiscoverMock = () => {
 };
 
 const CreateMock = () => {
+  const { t } = useTranslation();
   const a = accentMap.accent;
   const variants = [
     {
@@ -303,12 +306,12 @@ const CreateMock = () => {
             <Wand2 className="h-3 w-3" strokeWidth={2.5} />
           </span>
           <div>
-            <p className="text-[11px] font-bold text-foreground">Generating 12 variants</p>
-            <p className="text-[9px] text-muted-foreground">UGC · Cinematic · Explainer</p>
+            <p className="text-[11px] font-bold text-foreground">{t("Generating 12 variants")}</p>
+            <p className="text-[9px] text-muted-foreground">{t("UGC · Cinematic · Explainer")}</p>
           </div>
         </div>
         <span className="rounded-full border border-border bg-white px-2 py-0.5 text-[10px] font-bold text-foreground/75">
-          AI Studio
+          {t("AI Studio")}
         </span>
       </div>
       <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-border/70">
@@ -372,13 +375,14 @@ const CreateMock = () => {
       </div>
       <div className="mt-2.5 flex items-center gap-2 rounded-lg border border-border bg-white/85 px-2.5 py-1.5 md:mt-3">
         <Sparkles className={`h-3 w-3 ${a.text}`} />
-        <span className="text-[10px] text-foreground/75">8 of 12 ready · ETA 1m 24s</span>
+        <span className="text-[10px] text-foreground/75">{t("8 of 12 ready · ETA 1m 24s")}</span>
       </div>
     </div>
   );
 };
 
 const LaunchMock = () => {
+  const { t } = useTranslation();
   const a = accentMap.warm;
   const platforms = [
     { name: "Meta", status: "Live", color: "bg-blue-500", value: "$3.4k" },
@@ -394,13 +398,13 @@ const LaunchMock = () => {
             <Rocket className="h-3 w-3" strokeWidth={2.5} />
           </span>
           <div>
-            <p className="text-[11px] font-bold text-foreground">Deploying campaign</p>
-            <p className="text-[9px] text-muted-foreground">4 platforms · 12 creatives</p>
+            <p className="text-[11px] font-bold text-foreground">{t("Deploying campaign")}</p>
+            <p className="text-[9px] text-muted-foreground">{t("4 platforms · 12 creatives")}</p>
           </div>
         </div>
         <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/30 bg-emerald-400/15 px-2 py-0.5 text-[10px] font-bold text-emerald-300">
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
-          Sync
+          {t("Sync")}
         </span>
       </div>
       <div className="mt-3 space-y-1.5">
@@ -413,14 +417,14 @@ const LaunchMock = () => {
               <Globe className="h-3 w-3 text-white" />
             </span>
             <div className="flex-1">
-              <p className="text-[11px] font-bold text-foreground">{p.name}</p>
+              <p className="text-[11px] font-bold text-foreground">{t(p.name)}</p>
               <div className="mt-0.5 flex items-center gap-1.5">
                 <span
                   className={`h-1 w-1 rounded-full ${
                     p.status === "Live" ? "bg-emerald-400" : "bg-amber-400 animate-pulse"
                   }`}
                 />
-                <span className="text-[9px] text-muted-foreground">{p.status}</span>
+                <span className="text-[9px] text-muted-foreground">{t(p.status)}</span>
               </div>
             </div>
             <span className="text-[10px] font-bold text-foreground/75">{p.value}</span>
@@ -429,13 +433,14 @@ const LaunchMock = () => {
       </div>
       <div className="mt-3 flex items-center gap-2 rounded-lg border border-border bg-gradient-to-r from-emerald-500/10 to-transparent px-2.5 py-1.5">
         <Zap className="h-3 w-3 text-emerald-300" />
-        <span className="text-[10px] font-semibold text-foreground/80">All systems live in 24s</span>
+        <span className="text-[10px] font-semibold text-foreground/80">{t("All systems live in 24s")}</span>
       </div>
     </div>
   );
 };
 
 const OptimizeMock = () => {
+  const { t } = useTranslation();
   const a = accentMap.pink;
   const bars = [38, 52, 44, 68, 60, 82, 74, 90, 78, 96];
   const kpis = [
@@ -451,13 +456,13 @@ const OptimizeMock = () => {
             <Activity className="h-3 w-3" strokeWidth={2.5} />
           </span>
           <div>
-            <p className="text-[11px] font-bold text-foreground">Performance · Today</p>
-            <p className="text-[9px] text-muted-foreground">Live · refreshed 2s ago</p>
+            <p className="text-[11px] font-bold text-foreground">{t("Performance · Today")}</p>
+            <p className="text-[9px] text-muted-foreground">{t("Live · refreshed 2s ago")}</p>
           </div>
         </div>
         <span className="inline-flex items-center gap-1 rounded-full border border-border bg-white px-2 py-0.5 text-[10px] font-bold text-foreground/75">
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
-          Realtime
+          {t("Realtime")}
         </span>
       </div>
       <div className="mt-3 grid grid-cols-3 gap-2">
@@ -466,7 +471,7 @@ const OptimizeMock = () => {
             key={i}
             className="rounded-lg border border-border bg-white/90 p-2"
           >
-            <p className="text-[9px] uppercase tracking-wider text-foreground/55">{k.label}</p>
+            <p className="text-[9px] uppercase tracking-wider text-foreground/55">{t(k.label)}</p>
             <p className="mt-0.5 text-[14px] font-extrabold text-foreground">{k.value}</p>
             <span
               className={`mt-1 inline-flex items-center gap-0.5 text-[9px] font-bold ${
@@ -495,11 +500,11 @@ const OptimizeMock = () => {
           ))}
         </div>
         <div className="mt-2 flex items-center justify-between text-[9px] text-foreground/50">
-          <span>Mon</span>
-          <span>Tue</span>
-          <span>Wed</span>
-          <span>Thu</span>
-          <span>Fri</span>
+          <span>{t("Mon")}</span>
+          <span>{t("Tue")}</span>
+          <span>{t("Wed")}</span>
+          <span>{t("Thu")}</span>
+          <span>{t("Fri")}</span>
         </div>
       </div>
     </div>
@@ -578,6 +583,8 @@ const steps: Step[] = [
 ];
 
 const PipelineSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section
       id="pipeline"
@@ -626,14 +633,14 @@ const PipelineSection = () => {
               </div>
             </div>
             <h2 className="font-heading text-4xl font-800 leading-tight tracking-tight text-foreground md:text-6xl">
-              From brief to winning creative.
-              <span className="mt-1 block text-gradient">
-                All in one platform.
-              </span>
+              {t("From brief to winning creative.")}
+              <span className="mt-1 block text-gradient">{t("All in one platform.")}</span>
             </h2>
           </div>
           <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
-            Four steps. One partner. Built to make high-performing video the new default — not a moonshot.
+            {t(
+              "Four steps. One partner. Built to make high-performing video the new default — not a moonshot.",
+            )}
           </p>
         </motion.div>
 
@@ -667,15 +674,15 @@ const PipelineSection = () => {
                             className={`h-2 w-2 shrink-0 rounded-full ${accent.bg}`}
                             aria-hidden
                           />
-                          {step.eyebrow}
+                          {t(step.eyebrow)}
                         </span>
                       </div>
 
                       <h3 className="mt-5 font-heading text-4xl font-800 leading-[1.02] tracking-tight text-foreground md:text-[3rem]">
-                        {step.title}
+                        {t(step.title)}
                       </h3>
                       <p className="mt-4 max-w-xl text-lg text-muted-foreground md:text-xl">
-                        {step.description}
+                        {t(step.description)}
                       </p>
 
                       <ul className="mt-7 space-y-4 text-base text-muted-foreground md:text-lg">
@@ -686,7 +693,7 @@ const PipelineSection = () => {
                             >
                               <CheckCircle2 className="h-3 w-3" strokeWidth={3} />
                             </span>
-                            <span className="text-foreground/85">{b}</span>
+                            <span className="text-foreground/85">{t(b)}</span>
                           </li>
                         ))}
                       </ul>
@@ -694,7 +701,7 @@ const PipelineSection = () => {
                       <button
                         className="btn-shine mt-10 inline-flex h-14 items-center gap-2 rounded-xl border border-black bg-black px-8 text-base font-bold uppercase tracking-wider text-white shadow-[0_10px_28px_-10px_rgba(0,0,0,0.55)] transition-all hover:-translate-y-0.5 hover:bg-neutral-900"
                       >
-                        Learn more
+                        {t("Learn more")}
                         <ArrowRight className="h-5 w-5" />
                       </button>
                     </div>
@@ -715,7 +722,7 @@ const PipelineSection = () => {
                             <div className="flex items-center gap-2 rounded-full border border-border bg-white/85 px-2.5 py-1 backdrop-blur">
                               <span className={`h-2 w-2 rounded-full ${accent.bg}`} />
                               <span className="font-heading text-[10px] font-bold uppercase tracking-wider text-foreground/80">
-                                Live · Step {i + 1} of 4
+                                {t(`Live · Step ${i + 1} of 4`)}
                               </span>
                             </div>
                             <div className="flex items-center gap-1">

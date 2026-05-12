@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Play, Network, Globe, BarChart3, Clock, ShieldCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/context/LanguageContext";
 
 const features = [
   {
@@ -42,22 +43,20 @@ const features = [
 ];
 
 const FeaturesSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative py-24 md:py-32">
       <div className="container">
         <div className="mb-16 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-primary">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              Why Catalyst
+              {t("Why Catalyst")}
             </span>
             <h2 className="mt-5 font-heading text-3xl font-800 leading-[1.05] tracking-tight text-foreground md:text-5xl">
-              Your fast, reliable
-              <span className="block text-gradient">production partner.</span>
+              {t("Your fast, reliable")}
+              <span className="block text-gradient">{t("production partner.")}</span>
             </h2>
           </motion.div>
           <motion.div
@@ -68,13 +67,13 @@ const FeaturesSection = () => {
             className="flex flex-col gap-4 sm:flex-row lg:justify-end"
           >
             <Button className="btn-shine h-12 rounded-full bg-hero-gradient px-7 font-semibold text-white shadow-[0_12px_30px_-8px_hsl(var(--glow-primary)/0.55)] hover:opacity-95">
-              Get in Touch
+              {t("Get in Touch")}
             </Button>
             <Button
               variant="outline"
               className="h-12 rounded-full border-border bg-white px-7 font-semibold text-foreground hover:bg-surface"
             >
-              <Play className="mr-2 h-4 w-4 fill-primary text-primary" /> Watch Reel
+              <Play className="mr-2 h-4 w-4 fill-primary text-primary" /> {t("Watch Reel")}
             </Button>
           </motion.div>
         </div>
@@ -90,15 +89,20 @@ const FeaturesSection = () => {
               className="card-hover group relative overflow-hidden rounded-2xl border border-border bg-white soft-shadow hover:border-primary/40"
             >
               <div className="relative aspect-[16/9] overflow-hidden bg-surface">
-                <img src={f.image} alt="" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+                <img
+                  src={f.image}
+                  alt=""
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
                 <div className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-white text-primary soft-shadow">
                   <f.icon className="h-5 w-5" strokeWidth={2} />
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="font-heading text-lg font-700 text-foreground">{f.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
+                <h3 className="font-heading text-lg font-700 text-foreground">{t(f.title)}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{t(f.desc)}</p>
               </div>
             </motion.div>
           ))}

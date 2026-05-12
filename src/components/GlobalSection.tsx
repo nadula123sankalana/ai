@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
+import { useTranslation } from "@/context/LanguageContext";
 
 const cities = [
   { name: "New York", coordinates: [-74.006, 40.7128] as [number, number] },
@@ -16,6 +17,15 @@ const cities = [
 const WORLD_GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
 const GlobalSection = () => {
+  const { t } = useTranslation();
+
+  const regions = [
+    { k: "North America", v: "28 cities" },
+    { k: "Europe", v: "22 cities" },
+    { k: "Asia & Pacific", v: "18 cities" },
+    { k: "Rest of world", v: "14 cities" },
+  ] as const;
+
   return (
     <section className="relative overflow-hidden bg-neutral-950 py-24 text-white md:py-32">
       <div className="pointer-events-none absolute inset-0">
@@ -33,15 +43,15 @@ const GlobalSection = () => {
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-white/80 backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-            Global coverage
+            {t("Global coverage")}
           </span>
           <h2 className="mt-5 font-heading text-3xl font-800 leading-tight tracking-tight md:text-5xl lg:text-6xl">
-            We shoot
-            <span className="text-gradient"> anywhere </span>
-            you need us.
+            {t("We shoot")}
+            <span className="text-gradient"> {t("anywhere")} </span>
+            {t("you need us.")}
           </h2>
           <p className="mt-4 text-base text-white/70 md:text-lg">
-            Production crews in 80+ cities across 6 continents. Same creative standard. Any time zone.
+            {t("Production crews in 80+ cities across 6 continents. Same creative standard. Any time zone.")}
           </p>
         </motion.div>
 
@@ -55,11 +65,7 @@ const GlobalSection = () => {
           <div className="pointer-events-none absolute inset-0 bg-grid-fade opacity-40" />
 
           <div className="absolute inset-0 p-1 md:p-2">
-            <ComposableMap
-              projection="geoEqualEarth"
-              projectionConfig={{ scale: 190 }}
-              className="h-full w-full"
-            >
+            <ComposableMap projection="geoEqualEarth" projectionConfig={{ scale: 190 }} className="h-full w-full">
               <Geographies geography={WORLD_GEO_URL}>
                 {({ geographies }) =>
                   geographies.map((geo) => (
@@ -97,35 +103,30 @@ const GlobalSection = () => {
 
           <div className="absolute bottom-5 left-1/2 hidden -translate-x-1/2 rounded-full border border-white/20 bg-black/50 px-4 py-2 backdrop-blur sm:block">
             <p className="font-heading text-xs font-bold uppercase tracking-[0.2em] text-white/80">
-              80+ cities · 6 continents · one standard
+              {t("80+ cities · 6 continents · one standard")}
             </p>
           </div>
         </motion.div>
         <div className="mt-3 grid grid-cols-3 border-t border-white/15 pt-3 text-center font-heading text-[10px] font-bold uppercase tracking-[0.1em] text-white/75 sm:hidden">
           <div className="px-2">
             <span className="block">80+</span>
-            <span className="block">cities</span>
+            <span className="block">{t("cities")}</span>
           </div>
           <div className="border-l border-white/20 px-2">
             <span className="block">6</span>
-            <span className="block">continents</span>
+            <span className="block">{t("continents")}</span>
           </div>
           <div className="border-l border-white/20 px-2">
-            <span className="block">one</span>
-            <span className="block">standard</span>
+            <span className="block">{t("one")}</span>
+            <span className="block">{t("standard")}</span>
           </div>
         </div>
 
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {[
-            { k: "North America", v: "28 cities" },
-            { k: "Europe", v: "22 cities" },
-            { k: "Asia & Pacific", v: "18 cities" },
-            { k: "Rest of world", v: "14 cities" },
-          ].map((c) => (
+          {regions.map((c) => (
             <div key={c.k} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-center backdrop-blur">
-              <div className="font-heading text-2xl font-800 text-gradient">{c.v}</div>
-              <div className="mt-1 text-xs font-semibold uppercase tracking-wider text-white/60">{c.k}</div>
+              <div className="font-heading text-2xl font-800 text-gradient">{t(c.v)}</div>
+              <div className="mt-1 text-xs font-semibold uppercase tracking-wider text-white/60">{t(c.k)}</div>
             </div>
           ))}
         </div>

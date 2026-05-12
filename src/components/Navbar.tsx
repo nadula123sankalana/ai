@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/context/LanguageContext";
 
 type NavGroup = {
   label: string;
@@ -10,7 +11,7 @@ type NavGroup = {
   items?: { label: string; sectionId: string; desc?: string }[];
 };
 
-const navGroups: NavGroup[] = [
+const navGroupsEn: NavGroup[] = [
   {
     label: "Platform",
     items: [
@@ -33,6 +34,7 @@ const navGroups: NavGroup[] = [
 ];
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -61,11 +63,11 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="container relative flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center" aria-label="Catalyst AI home">
+      <div className="container relative flex h-16 items-center justify-between md:h-20">
+        <Link to="/" className="flex items-center" aria-label={t("Catalyst AI home")}>
           <img
             src="/c.png"
-            alt="Catalyst AI"
+            alt={t("Catalyst AI")}
             className="h-9 w-auto object-contain md:h-10"
             loading="eager"
             decoding="async"
@@ -73,7 +75,7 @@ const Navbar = () => {
         </Link>
 
         <nav className="hidden rounded-2xl border border-white/20 bg-white/10 p-1.5 md:absolute md:left-1/2 md:flex md:-translate-x-1/2 md:items-center md:gap-1">
-          {navGroups.map((group) => {
+          {navGroupsEn.map((group) => {
             const hasItems = !!group.items;
             const isOpen = openGroup === group.label;
             return (
@@ -101,7 +103,7 @@ const Navbar = () => {
                   }}
                   className="flex items-center gap-1 rounded-xl px-4 py-2 text-sm font-medium text-white/90 transition-colors hover:bg-white/15 hover:text-white"
                 >
-                  {group.label}
+                  {t(group.label)}
                   {hasItems && <ChevronDown className={`h-3.5 w-3.5 transition-transform ${isOpen ? "rotate-180" : ""}`} />}
                 </button>
                 <AnimatePresence>
@@ -120,8 +122,8 @@ const Navbar = () => {
                             onClick={() => scrollTo(item.sectionId)}
                             className="flex w-full flex-col gap-0.5 rounded-xl px-3.5 py-2.5 text-left transition-colors hover:bg-white/10"
                           >
-                            <span className="text-sm font-semibold text-white">{item.label}</span>
-                            {item.desc && <span className="text-xs text-white/60">{item.desc}</span>}
+                            <span className="text-sm font-semibold text-white">{t(item.label)}</span>
+                            {item.desc && <span className="text-xs text-white/60">{t(item.desc)}</span>}
                           </button>
                         ))}
                       </div>
@@ -133,12 +135,12 @@ const Navbar = () => {
           })}
         </nav>
 
-        <div className="hidden md:flex items-center gap-2">
+        <div className="hidden items-center gap-2 md:flex">
           <button
             onClick={() => scrollTo("cta")}
             className="rounded-lg px-3 py-2 text-xs font-semibold uppercase tracking-wider text-white/80 transition-colors hover:text-white"
           >
-            Book Demo
+            {t("Book Demo")}
           </button>
           <button
             onClick={() => scrollTo("cta")}
@@ -148,20 +150,22 @@ const Navbar = () => {
               <ChevronRight className="h-5 w-5" />
             </span>
             <span className="bg-gradient-to-r from-[#0f1118] via-[#171a28] to-[#1d1230] px-4 text-xs font-bold uppercase tracking-wider leading-[3rem]">
-              Create
+              {t("Create")}
             </span>
           </button>
         </div>
 
-        <button
-          type="button"
-          className="text-white md:hidden"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-expanded={mobileOpen}
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            type="button"
+            className="text-white"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-expanded={mobileOpen}
+            aria-label={mobileOpen ? t("Close menu") : t("Open menu")}
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -172,13 +176,13 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="border-b border-white/10 bg-black/95 backdrop-blur-2xl md:hidden"
           >
-            <div className="container py-4 flex flex-col gap-1">
-              {navGroups.map((group) => (
+            <div className="container flex flex-col gap-1 py-4">
+              {navGroupsEn.map((group) => (
                 <div key={group.label} className="py-1">
                   {group.items ? (
                     <>
                       <div className="px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-white/55">
-                        {group.label}
+                        {t(group.label)}
                       </div>
                       {group.items.map((item) => (
                         <button
@@ -186,7 +190,7 @@ const Navbar = () => {
                           onClick={() => scrollTo(item.sectionId)}
                           className="w-full rounded-lg px-2 py-2 text-left text-sm font-medium text-white/90 transition-colors hover:bg-white/10"
                         >
-                          {item.label}
+                          {t(item.label)}
                         </button>
                       ))}
                     </>
@@ -205,7 +209,7 @@ const Navbar = () => {
                       }}
                       className="w-full rounded-lg px-2 py-2 text-left text-sm font-semibold text-white/90 transition-colors hover:bg-white/10"
                     >
-                      {group.label}
+                      {t(group.label)}
                     </button>
                   )}
                 </div>
@@ -214,7 +218,7 @@ const Navbar = () => {
                 onClick={() => scrollTo("cta")}
                 className="mt-3 rounded-xl border border-cyan-300/35 bg-gradient-to-r from-[#14c6b7] via-[#14a6ff] to-[#5b3df5] font-semibold text-white shadow-[0_10px_28px_-10px_rgba(42,77,255,0.6)] hover:brightness-110"
               >
-                Create
+                {t("Create")}
               </Button>
             </div>
           </motion.div>
