@@ -71,7 +71,7 @@ const ResultsBannerSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55 }}
-          className="soft-shadow relative overflow-hidden rounded-3xl border border-border bg-white p-8 md:p-12"
+          className="soft-shadow relative overflow-hidden rounded-3xl border border-border bg-white p-8 max-md:p-6 md:p-12"
         >
           <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-40" />
 
@@ -83,14 +83,16 @@ const ResultsBannerSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className={`py-6 text-center md:py-5 ${
+                className={`max-md:py-4 py-6 text-center md:py-5 ${
                   i > 0 ? "border-t border-border md:border-t-0 md:border-l" : ""
                 }`}
               >
-                <div className={`font-heading text-4xl font-800 tracking-tight sm:text-5xl md:text-6xl ${toneMap[s.tone]}`}>
+                <div
+                  className={`font-heading font-800 tracking-tight max-md:text-[1.65rem] max-md:leading-none md:text-6xl ${toneMap[s.tone]}`}
+                >
                   <Counter target={s.value} suffix={s.suffix} prefix={s.prefix} />
                 </div>
-                <p className="mt-3 text-sm font-semibold uppercase tracking-[0.16em] text-muted-foreground md:text-base">
+                <p className="mt-3 text-sm font-semibold uppercase tracking-[0.16em] text-muted-foreground max-md:mt-2 max-md:text-[11px] max-md:tracking-[0.12em] md:text-base">
                   {t(s.label)}
                 </p>
               </motion.div>

@@ -101,14 +101,14 @@ const HeroSection = () => {
 
       <div className="container relative z-10">
         <div className="mx-auto max-w-5xl text-center">
-          <h1 className="mb-5 text-[2.45rem] font-heading font-800 leading-[1.06] tracking-[-0.03em] text-white sm:text-6xl md:text-7xl lg:text-[5.6rem]">
+          <h1 className="mb-5 font-heading font-800 tracking-[-0.03em] text-white max-md:mb-4 max-md:text-[2.12rem] max-md:leading-[1.08] max-md:tracking-[-0.025em] md:mb-5 md:text-7xl md:leading-[1.06] lg:text-[5.6rem]">
             {t("AI videos made for your business.")}
             <span className="block">
               <span className="text-gradient">{t("From idea to final video.")}</span>
             </span>
           </h1>
 
-          <p className="mx-auto mb-8 max-w-2xl text-[1.06rem] leading-relaxed text-white/70 md:mb-10 md:text-lg">
+          <p className="mx-auto mb-8 max-w-2xl text-[1.06rem] leading-relaxed text-white/70 max-md:mb-7 max-md:text-[0.98rem] md:mb-10 md:text-lg">
             {t(
               "Tell us what you need. Our team will plan, script, create, and deliver AI-generated videos for ads, social media, product launches, explainers, and brand content.",
             )}
@@ -118,22 +118,22 @@ const HeroSection = () => {
             <div className="flex justify-center">
               <Button
                 type="button"
-                className="group h-16 w-full overflow-hidden rounded-xl border border-cyan-300/45 bg-black p-0 text-white shadow-[0_18px_40px_-14px_rgba(42,77,255,0.85)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_48px_-14px_rgba(42,77,255,0.95)] sm:w-auto"
+                className="group h-16 w-full overflow-hidden rounded-xl border border-cyan-300/45 bg-black p-0 text-white shadow-[0_18px_40px_-14px_rgba(42,77,255,0.85)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_48px_-14px_rgba(42,77,255,0.95)] max-md:h-14 sm:w-auto"
               >
-                <span className="flex h-full w-16 items-center justify-center bg-gradient-to-br from-[#14a6ff] via-[#3b82f6] to-[#5b3df5] transition-all duration-300 group-hover:brightness-110">
-                  <ChevronRight className="h-8 w-8" />
+                <span className="flex h-full w-16 max-md:w-14 items-center justify-center bg-gradient-to-br from-[#14a6ff] via-[#3b82f6] to-[#5b3df5] transition-all duration-300 group-hover:brightness-110">
+                  <ChevronRight className="h-8 w-8 max-md:h-7 max-md:w-7" />
                 </span>
-                <span className="bg-gradient-to-r from-[#0f1118] via-[#171a28] to-[#1d1230] px-8 text-sm font-extrabold uppercase tracking-[0.12em] leading-[4rem]">
+                <span className="bg-gradient-to-r from-[#0f1118] via-[#171a28] to-[#1d1230] px-8 text-sm font-extrabold uppercase tracking-[0.12em] leading-[4rem] max-md:px-6 max-md:text-xs max-md:leading-[3.5rem] max-md:tracking-[0.1em]">
                   {t("Get Started")}
                 </span>
               </Button>
             </div>
-            <p className="mt-3 text-xs text-white/55">
+            <p className="mt-3 text-xs text-white/55 max-md:text-[11px] max-md:leading-snug">
               {t("No complicated tools • No production team needed • Fast delivery")}
             </p>
           </div>
 
-          <div className="mb-12 flex flex-col items-center justify-center gap-3 text-center text-[11px] md:mb-14 md:text-xs">
+          <div className="mb-12 flex flex-col items-center justify-center gap-3 text-center text-[11px] md:mb-14 md:text-xs max-md:gap-2.5">
             <div className="flex -space-x-2">
               {heroAvatars.map((src, i) => (
                 <img
@@ -145,7 +145,7 @@ const HeroSection = () => {
                 />
               ))}
             </div>
-            <p className="max-w-xl font-semibold leading-snug text-white/90">
+            <p className="max-w-xl font-semibold leading-snug text-white/90 max-md:text-[10px] max-md:leading-snug">
               {t("Created for brands, startups, marketers, and product-based businesses")}
             </p>
           </div>
@@ -181,9 +181,13 @@ const HeroSection = () => {
                 { label: "CPA", value: "–42%", tone: "text-gradient-warm" },
                 { label: "Variants live", value: "24", tone: "text-gradient" },
               ].map((s) => (
-                <div key={s.label} className="bg-neutral-900 p-3 text-center sm:p-4">
-                  <div className={`font-heading text-[1.8rem] font-800 leading-none sm:text-2xl ${s.tone}`}>{s.value}</div>
-                  <div className="mt-1 text-[9px] font-semibold uppercase tracking-[0.08em] text-white/60 sm:mt-1.5 sm:text-[11px] sm:tracking-wider">
+                <div key={s.label} className="bg-neutral-900 p-3 text-center max-md:p-2 sm:p-4">
+                  <div
+                    className={`font-heading text-[1.8rem] font-800 leading-none max-md:text-[1.2rem] sm:text-2xl ${s.tone}`}
+                  >
+                    {s.value}
+                  </div>
+                  <div className="mt-1 text-[9px] font-semibold uppercase tracking-[0.08em] text-white/60 max-md:mt-0.5 max-md:text-[8px] max-md:leading-tight max-md:tracking-[0.06em] sm:mt-1.5 sm:text-[11px] sm:tracking-wider">
                     {t(s.label)}
                   </div>
                 </div>

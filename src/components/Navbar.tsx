@@ -68,7 +68,7 @@ const Navbar = () => {
           <img
             src="/c.png"
             alt={t("Catalyst AI")}
-            className="h-9 w-auto object-contain md:h-10"
+            className="h-8 w-auto object-contain md:h-10"
             loading="eager"
             decoding="async"
           />

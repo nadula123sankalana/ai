@@ -190,9 +190,9 @@ export function HeroEmbeddedPreview() {
           aria-hidden
         />
       </div>
-      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-black/30" />
+      <div className="pointer-events-none absolute inset-0 z-10 hidden bg-gradient-to-b from-transparent via-transparent to-black/30 md:block" />
 
-      <div className="pointer-events-none absolute left-2.5 top-2.5 z-10 flex items-center gap-1.5 rounded-xl border border-white/15 bg-black/55 px-2 py-1 backdrop-blur-md sm:left-6 sm:top-6 sm:gap-2 sm:px-3 sm:py-2">
+      <div className="pointer-events-none absolute left-2.5 top-2.5 z-10 hidden items-center gap-1.5 rounded-xl border border-white/15 bg-black/55 px-2 py-1 backdrop-blur-md sm:left-6 sm:top-6 sm:gap-2 sm:px-3 sm:py-2 md:flex">
         <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-primary/90 sm:h-7 sm:w-7">
           <Eye className="h-3 w-3 text-white sm:h-3.5 sm:w-3.5" strokeWidth={2.5} />
         </div>
@@ -202,7 +202,7 @@ export function HeroEmbeddedPreview() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute right-2.5 top-2.5 z-10 flex items-center gap-1.5 rounded-xl border border-white/15 bg-black/55 px-2 py-1 backdrop-blur-md sm:right-6 sm:top-6 sm:gap-2 sm:px-3 sm:py-2">
+      <div className="pointer-events-none absolute right-2.5 top-2.5 z-10 hidden items-center gap-1.5 rounded-xl border border-white/15 bg-black/55 px-2 py-1 backdrop-blur-md sm:right-6 sm:top-6 sm:gap-2 sm:px-3 sm:py-2 md:flex">
         <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-[hsl(var(--warm))]/90 sm:h-7 sm:w-7">
           <TrendingUp className="h-3 w-3 text-white sm:h-3.5 sm:w-3.5" strokeWidth={2.5} />
         </div>
@@ -212,17 +212,17 @@ export function HeroEmbeddedPreview() {
         </div>
       </div>
 
-      <div className="pointer-events-auto absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/20 bg-black/60 px-2.5 py-1.5 backdrop-blur-md sm:bottom-6 sm:gap-3 sm:px-4 sm:py-2.5">
+      <div className="pointer-events-auto absolute bottom-2 left-1/2 z-20 flex w-[calc(100%-0.75rem)] max-w-lg -translate-x-1/2 items-center gap-1.5 rounded-full border border-white/20 bg-black/50 px-2 py-1 backdrop-blur-md md:bottom-6 md:w-auto md:max-w-none md:gap-3 md:bg-black/60 md:px-4 md:py-2.5">
         <button
           type="button"
           onClick={togglePlay}
           aria-label={paused ? t("Play video") : t("Pause video")}
-          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-black shadow-md transition hover:bg-white/95 sm:h-9 sm:w-9"
+          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-black shadow-md transition hover:bg-white/95 md:h-9 md:w-9"
         >
           {paused ? (
-            <Play className="ml-0.5 h-3.5 w-3.5 fill-black sm:h-4 sm:w-4" />
+            <Play className="ml-0.5 h-3 w-3 fill-black md:h-4 md:w-4" />
           ) : (
-            <Pause className="h-3.5 w-3.5 fill-black sm:h-4 sm:w-4" />
+            <Pause className="h-3 w-3 fill-black md:h-4 md:w-4" />
           )}
         </button>
         <div
@@ -247,18 +247,16 @@ export function HeroEmbeddedPreview() {
               void player.setCurrentTime(Math.max(0, current - step));
             }
           }}
-          className="h-1 w-28 cursor-pointer overflow-hidden rounded-full bg-white/15 sm:w-48 md:w-56"
+          className="h-0.5 min-w-[3.25rem] flex-1 cursor-pointer overflow-hidden rounded-full bg-white/15 md:h-1 md:w-48 md:flex-none lg:w-56"
         >
           <div
             className="h-full rounded-full bg-hero-gradient"
             style={{ width: `${progressPct}%` }}
           />
         </div>
-        <div className="flex shrink-0 items-center gap-1.5 text-[11px] font-medium text-white/85 sm:text-xs">
-          <Clock className="h-3 w-3 shrink-0" />
-          <span className="tabular-nums">
-            {formatClock(current)} / {formatClock(duration)}
-          </span>
+        <div className="flex shrink-0 items-center gap-1 text-[11px] font-medium tabular-nums text-white/85 max-md:text-[8.5px] sm:text-xs md:gap-1.5">
+          <Clock className="h-2.5 w-2.5 shrink-0 max-md:hidden sm:h-3 sm:w-3" />
+          <span>{formatClock(current)} / {formatClock(duration)}</span>
         </div>
       </div>
     </div>
